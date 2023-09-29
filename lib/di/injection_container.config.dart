@@ -12,6 +12,8 @@
 import 'package:flutter/material.dart' as _i4;
 import 'package:flutter_drift_1/feature/home/home_screen.dart' as _i3;
 import 'package:flutter_drift_1/main.dart' as _i5;
+import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart' as _i6;
+import 'package:flutter_drift_1/storage/database/app_database.dart' as _i7;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -28,6 +30,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i3.HomeScreen>(() => _i3.HomeScreen(key: gh<_i4.Key>()));
     gh.factory<_i5.MyApp>(() => _i5.MyApp(key: gh<_i4.Key>()));
+    gh.factory<_i6.NewsDaoImpl>(() => _i6.NewsDaoImpl(gh<_i7.AppDatabase>()));
     return this;
   }
 }

@@ -7,7 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: [NewsItemEntity])
+@DriftDatabase(tables: [NewsItems])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
