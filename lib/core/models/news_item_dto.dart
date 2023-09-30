@@ -44,4 +44,5 @@ class NewsItemDTO extends Equatable {
         pillarId,
         pillarName
       ];
+
 }

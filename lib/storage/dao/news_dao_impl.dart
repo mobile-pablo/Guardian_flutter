@@ -16,11 +16,11 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
 
   @override
   Future<List<NewsItem>> getNews() {
-    return (select(attachedDatabase.newsItems)).get();
+    return (select(newsItems)).get();
   }
 
   @override
-  Future insertNews(NewsItemDTO news) => into(attachedDatabase.newsItems).insertReturning(
+  Future insertNews(NewsItemDTO news) => into(newsItems).insertReturning(
         NewsItemsCompanion.insert(
           id: news.id,
           type: news.type,
@@ -35,4 +35,25 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           pillarName: news.pillarName,
         ),
       );
+
+  @override
+  Future removeNews(NewsItemDTO news) =>
+      (delete(newsItems)..where((t) => t.id.equals(news.id))).go();
+
+  @override
+  Future updateNews(NewsItemDTO news) => (update(newsItems).replace(
+        NewsItemsCompanion.insert(
+          id: news.id,
+          type: news.type,
+          sectionId: news.sectionId,
+          sectionName: news.sectionName,
+          webPublicationDate: news.webPublicationDate,
+          webTitle: news.webTitle,
+          webUrl: news.webUrl,
+          apiUrl: news.apiUrl,
+          isHosted: news.isHosted,
+          pillarId: news.pillarId,
+          pillarName: news.pillarName,
+        ),
+      ));
 }
