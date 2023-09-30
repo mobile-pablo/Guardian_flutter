@@ -3,12 +3,12 @@
 part of 'app_database.dart';
 
 // ignore_for_file: type=lint
-class $NewsItemsTable extends NewsItems
-    with TableInfo<$NewsItemsTable, NewsItem> {
+class $NewsItemsEntityTable extends NewsItemsEntity
+    with TableInfo<$NewsItemsEntityTable, NewsItemsEntityData> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
-  $NewsItemsTable(this.attachedDatabase, [this._alias]);
+  $NewsItemsEntityTable(this.attachedDatabase, [this._alias]);
   static const VerificationMeta _idMeta = const VerificationMeta('id');
   @override
   late final GeneratedColumn<String> id = GeneratedColumn<String>(
@@ -92,9 +92,10 @@ class $NewsItemsTable extends NewsItems
   String get aliasedName => _alias ?? actualTableName;
   @override
   String get actualTableName => $name;
-  static const String $name = 'news_items';
+  static const String $name = 'news_items_entity';
   @override
-  VerificationContext validateIntegrity(Insertable<NewsItem> instance,
+  VerificationContext validateIntegrity(
+      Insertable<NewsItemsEntityData> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -175,9 +176,9 @@ class $NewsItemsTable extends NewsItems
   @override
   Set<GeneratedColumn> get $primaryKey => const {};
   @override
-  NewsItem map(Map<String, dynamic> data, {String? tablePrefix}) {
+  NewsItemsEntityData map(Map<String, dynamic> data, {String? tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
-    return NewsItem(
+    return NewsItemsEntityData(
       id: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}id'])!,
       type: attachedDatabase.typeMapping
@@ -204,12 +205,13 @@ class $NewsItemsTable extends NewsItems
   }
 
   @override
-  $NewsItemsTable createAlias(String alias) {
-    return $NewsItemsTable(attachedDatabase, alias);
+  $NewsItemsEntityTable createAlias(String alias) {
+    return $NewsItemsEntityTable(attachedDatabase, alias);
   }
 }
 
-class NewsItem extends DataClass implements Insertable<NewsItem> {
+class NewsItemsEntityData extends DataClass
+    implements Insertable<NewsItemsEntityData> {
   final String id;
   final String type;
   final String sectionId;
@@ -221,7 +223,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
   final bool isHosted;
   final String pillarId;
   final String pillarName;
-  const NewsItem(
+  const NewsItemsEntityData(
       {required this.id,
       required this.type,
       required this.sectionId,
@@ -250,8 +252,8 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
     return map;
   }
 
-  NewsItemsCompanion toCompanion(bool nullToAbsent) {
-    return NewsItemsCompanion(
+  NewsItemsEntityCompanion toCompanion(bool nullToAbsent) {
+    return NewsItemsEntityCompanion(
       id: Value(id),
       type: Value(type),
       sectionId: Value(sectionId),
@@ -266,10 +268,10 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
     );
   }
 
-  factory NewsItem.fromJson(Map<String, dynamic> json,
+  factory NewsItemsEntityData.fromJson(Map<String, dynamic> json,
       {ValueSerializer? serializer}) {
     serializer ??= driftRuntimeOptions.defaultSerializer;
-    return NewsItem(
+    return NewsItemsEntityData(
       id: serializer.fromJson<String>(json['id']),
       type: serializer.fromJson<String>(json['type']),
       sectionId: serializer.fromJson<String>(json['sectionId']),
@@ -302,7 +304,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
     };
   }
 
-  NewsItem copyWith(
+  NewsItemsEntityData copyWith(
           {String? id,
           String? type,
           String? sectionId,
@@ -314,7 +316,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
           bool? isHosted,
           String? pillarId,
           String? pillarName}) =>
-      NewsItem(
+      NewsItemsEntityData(
         id: id ?? this.id,
         type: type ?? this.type,
         sectionId: sectionId ?? this.sectionId,
@@ -329,7 +331,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
       );
   @override
   String toString() {
-    return (StringBuffer('NewsItem(')
+    return (StringBuffer('NewsItemsEntityData(')
           ..write('id: $id, ')
           ..write('type: $type, ')
           ..write('sectionId: $sectionId, ')
@@ -361,7 +363,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      (other is NewsItem &&
+      (other is NewsItemsEntityData &&
           other.id == this.id &&
           other.type == this.type &&
           other.sectionId == this.sectionId &&
@@ -375,7 +377,7 @@ class NewsItem extends DataClass implements Insertable<NewsItem> {
           other.pillarName == this.pillarName);
 }
 
-class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
+class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
   final Value<String> id;
   final Value<String> type;
   final Value<String> sectionId;
@@ -388,7 +390,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
   final Value<String> pillarId;
   final Value<String> pillarName;
   final Value<int> rowid;
-  const NewsItemsCompanion({
+  const NewsItemsEntityCompanion({
     this.id = const Value.absent(),
     this.type = const Value.absent(),
     this.sectionId = const Value.absent(),
@@ -402,7 +404,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
     this.pillarName = const Value.absent(),
     this.rowid = const Value.absent(),
   });
-  NewsItemsCompanion.insert({
+  NewsItemsEntityCompanion.insert({
     required String id,
     required String type,
     required String sectionId,
@@ -426,7 +428,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
         isHosted = Value(isHosted),
         pillarId = Value(pillarId),
         pillarName = Value(pillarName);
-  static Insertable<NewsItem> custom({
+  static Insertable<NewsItemsEntityData> custom({
     Expression<String>? id,
     Expression<String>? type,
     Expression<String>? sectionId,
@@ -457,7 +459,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
     });
   }
 
-  NewsItemsCompanion copyWith(
+  NewsItemsEntityCompanion copyWith(
       {Value<String>? id,
       Value<String>? type,
       Value<String>? sectionId,
@@ -470,7 +472,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
       Value<String>? pillarId,
       Value<String>? pillarName,
       Value<int>? rowid}) {
-    return NewsItemsCompanion(
+    return NewsItemsEntityCompanion(
       id: id ?? this.id,
       type: type ?? this.type,
       sectionId: sectionId ?? this.sectionId,
@@ -530,7 +532,7 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
 
   @override
   String toString() {
-    return (StringBuffer('NewsItemsCompanion(')
+    return (StringBuffer('NewsItemsEntityCompanion(')
           ..write('id: $id, ')
           ..write('type: $type, ')
           ..write('sectionId: $sectionId, ')
@@ -550,10 +552,11 @@ class NewsItemsCompanion extends UpdateCompanion<NewsItem> {
 
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
-  late final $NewsItemsTable newsItems = $NewsItemsTable(this);
+  late final $NewsItemsEntityTable newsItemsEntity =
+      $NewsItemsEntityTable(this);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
-  List<DatabaseSchemaEntity> get allSchemaEntities => [newsItems];
+  List<DatabaseSchemaEntity> get allSchemaEntities => [newsItemsEntity];
 }

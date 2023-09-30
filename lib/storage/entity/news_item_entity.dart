@@ -1,7 +1,6 @@
-
 import 'package:drift/drift.dart';
 
-class NewsItems extends Table {
+class NewsItemsEntity extends Table {
   TextColumn get id => text()();
   TextColumn get type => text()();
   TextColumn get sectionId => text()();

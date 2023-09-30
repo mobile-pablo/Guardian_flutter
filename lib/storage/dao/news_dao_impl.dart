@@ -7,7 +7,7 @@ import 'package:flutter_drift_1/storage/entity/news_item_entity.dart';
 
 part 'news_dao_impl.g.dart';
 
-@DriftAccessor(tables: [NewsItems])
+@DriftAccessor(tables: [NewsItemsEntity])
 @Injectable()
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
@@ -15,13 +15,13 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
   NewsDaoImpl(AppDatabase db) : super(db);
 
   @override
-  Future<List<NewsItem>> getNews() {
-    return (select(newsItems)).get();
+  Future<List<NewsItemsEntityData>> getNews() {
+    return (select(newsItemsEntity)).get();
   }
 
   @override
-  Future insertNews(NewsItemDTO news) => into(newsItems).insertReturning(
-        NewsItemsCompanion.insert(
+  Future insertNews(NewsItemDTO news) => into(newsItemsEntity).insertReturning(
+        NewsItemsEntityCompanion.insert(
           id: news.id,
           type: news.type,
           sectionId: news.sectionId,
@@ -38,11 +38,11 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
 
   @override
   Future removeNews(NewsItemDTO news) =>
-      (delete(newsItems)..where((t) => t.id.equals(news.id))).go();
+      (delete(newsItemsEntity)..where((t) => t.id.equals(news.id))).go();
 
   @override
-  Future updateNews(NewsItemDTO news) => (update(newsItems).replace(
-        NewsItemsCompanion.insert(
+  Future updateNews(NewsItemDTO news) => (update(newsItemsEntity).replace(
+        NewsItemsEntityCompanion.insert(
           id: news.id,
           type: news.type,
           sectionId: news.sectionId,
