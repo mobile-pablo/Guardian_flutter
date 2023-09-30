@@ -13,8 +13,6 @@ class NewsItemDTO extends Equatable {
   final bool isHosted;
   final String pillarId;
   final String pillarName;
-  
-
 
  const NewsItemDTO(
        this.id,
