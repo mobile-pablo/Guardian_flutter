@@ -29,7 +29,7 @@ class NewsItemDTO extends Equatable {
   );
 
   @override
-  List<Object> get props => [
+  List<Object> get props => <Object>[
         id,
         type,
         sectionId,

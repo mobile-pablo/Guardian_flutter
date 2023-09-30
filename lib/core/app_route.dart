@@ -5,7 +5,7 @@ import 'package:flutter_drift_1/core/app_route.gr.dart';
 class AppRouter extends $AppRouter {      
    
  @override      
- List<AutoRoute> get routes => [      
+ List<AutoRoute> get routes => <AutoRoute>[      
     AutoRoute(page:HomeRoute.page, initial: true),
   ];    
 }    

@@ -14,7 +14,7 @@ void main() {
 @RoutePage()
 @Injectable()
 class MyApp extends HookWidget {
-  final _appRouter = AppRouter();
+  final AppRouter _appRouter = AppRouter();
 
   MyApp({Key? key}) : super(key: key);
 
