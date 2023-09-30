@@ -12,7 +12,7 @@ void main() {
 }
 
 @RoutePage()
-@Injectable()
+@injectable
 class MyApp extends HookWidget {
   final AppRouter _appRouter = AppRouter();
 

@@ -3,7 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
-@Injectable()
+@injectable
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
