@@ -26,7 +26,7 @@ class _GuardianService implements GuardianService {
     final queryParameters = <String, dynamic>{r'q': query};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio.fetch<List<dynamic>>(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
         _setStreamType<HttpResponse<List<NewsItem>>>(Options(
       method: 'GET',
       headers: _headers,
@@ -43,8 +43,8 @@ class _GuardianService implements GuardianService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    var value = _result.data!
-        .map((dynamic i) => NewsItem.fromJson(i as Map<String, dynamic>))
+    List<NewsItem> value = _result.data!['results']
+        .map<NewsItem>((dynamic i) => NewsItem.fromJson(i as Map<String, dynamic>))
         .toList();
     final httpResponse = HttpResponse(value, _result);
     return httpResponse;

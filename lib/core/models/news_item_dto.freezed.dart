@@ -3,11 +3,13 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'news_item_dto.dart';
+
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
+
+part of 'package:flutter_drift_1/core/models/news_item_dto.dart';
 
 T _$identity<T>(T value) => value;
 
@@ -51,8 +53,7 @@ mixin _$NewsItemDTO {
 
 /// @nodoc
 abstract class $NewsItemDTOCopyWith<$Res> {
-  factory $NewsItemDTOCopyWith(
-          NewsItemDTO value, $Res Function(NewsItemDTO) then) =
+  factory $NewsItemDTOCopyWith(NewsItemDTO value, $Res Function(NewsItemDTO) then) =
       _$NewsItemDTOCopyWithImpl<$Res, NewsItemDTO>;
   @useResult
   $Res call(
@@ -257,27 +258,27 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       _$$NewsItemDTOImplFromJson(json);
 
   @override
-  String id;
+  final String id;
   @override
-  String type;
+  final String type;
   @override
-  String sectionId;
+  final String sectionId;
   @override
-  String sectionName;
+  final String sectionName;
   @override
-  String webPublicationDate;
+  final String webPublicationDate;
   @override
-  String webTitle;
+  final String webTitle;
   @override
-  String webUrl;
+  final String webUrl;
   @override
-  String apiUrl;
+  final String apiUrl;
   @override
-  bool isHosted;
+  final bool isHosted;
   @override
-  String pillarId;
+  final String pillarId;
   @override
-  String pillarName;
+  final String pillarName;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -314,6 +315,39 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       this,
     );
   }
+  
+  @override
+  set apiUrl(String value) => apiUrl = value;
+  
+  @override
+  set id(String value) => id = value;
+  
+  @override
+  set isHosted(bool value) => isHosted = value;
+  
+  @override
+  set pillarId(String value) => pillarId = value;
+  
+  @override
+  set pillarName(String value) => pillarName = value;
+  
+  @override
+  set sectionId(String value) => sectionId = value;
+  
+  @override
+  set sectionName(String value) => sectionName = value;
+
+  @override
+  set type(String value) => type = value;
+  
+  @override
+  set webPublicationDate(String value) => webPublicationDate = value;
+  
+  @override
+  set webTitle(String value) => webTitle = value;
+  
+  @override
+  set webUrl(String value) => webUrl = value;
 }
 
 abstract class _NewsItemDTO implements NewsItemDTO {
