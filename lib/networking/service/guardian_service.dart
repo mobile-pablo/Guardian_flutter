@@ -10,6 +10,7 @@ part 'guardian_service.g.dart';
 @injectable
 abstract class GuardianService {
 
+  @factoryMethod
   factory GuardianService(Dio dio) = _GuardianService;
 
   @GET(searchParameter)

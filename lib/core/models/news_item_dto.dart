@@ -1,46 +1,25 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-class NewsItemDTO extends Equatable {
+part 'news_item_dto.freezed.dart';
+part 'news_item_dto.g.dart';
 
-  final String id;
-  final String type;
-  final String sectionId;
-  final String sectionName;
-  final String webPublicationDate;
-  final String webTitle;
-  final String webUrl;
-  final String apiUrl;
-  final bool isHosted;
-  final String pillarId;
-  final String pillarName;
+@unfreezed
+class NewsItemDTO with _$NewsItemDTO {
+  const factory NewsItemDTO({
+    required String id,
+    required String type,
+    required String sectionId,
+    required String sectionName,
+    required String webPublicationDate,
+    required String webTitle,
+    required String webUrl,
+    required String apiUrl,
+    required bool isHosted,
+    required String pillarId,
+    required String pillarName,
+  }) = _NewsItemDTO;
 
- const NewsItemDTO(
-       this.id,
-       this.type,
-       this.sectionId,
-       this.sectionName,
-       this.webPublicationDate,
-       this.webTitle,
-       this.webUrl,
-       this.apiUrl,
-       this.isHosted,
-       this.pillarId,
-       this.pillarName
-  );
-
-  @override
-  List<Object> get props => <Object>[
-        id,
-        type,
-        sectionId,
-        sectionName,
-        webPublicationDate,
-        webTitle,
-        webUrl,
-        apiUrl,
-        isHosted,
-        pillarId,
-        pillarName
-      ];
-
+   factory NewsItemDTO.fromJson(Map<String, dynamic> json) =>
+    _$NewsItemDTOFromJson(json);
 }

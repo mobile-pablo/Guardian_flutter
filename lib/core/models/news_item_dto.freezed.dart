@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'news_item.dart';
+part of 'news_item_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-NewsItem _$NewsItemFromJson(Map<String, dynamic> json) {
-  return _NewsItem.fromJson(json);
+NewsItemDTO _$NewsItemDTOFromJson(Map<String, dynamic> json) {
+  return _NewsItemDTO.fromJson(json);
 }
 
 /// @nodoc
-mixin _$NewsItem {
+mixin _$NewsItemDTO {
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
@@ -45,14 +45,15 @@ mixin _$NewsItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NewsItemCopyWith<NewsItem> get copyWith =>
+  $NewsItemDTOCopyWith<NewsItemDTO> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $NewsItemCopyWith<$Res> {
-  factory $NewsItemCopyWith(NewsItem value, $Res Function(NewsItem) then) =
-      _$NewsItemCopyWithImpl<$Res, NewsItem>;
+abstract class $NewsItemDTOCopyWith<$Res> {
+  factory $NewsItemDTOCopyWith(
+          NewsItemDTO value, $Res Function(NewsItemDTO) then) =
+      _$NewsItemDTOCopyWithImpl<$Res, NewsItemDTO>;
   @useResult
   $Res call(
       {String id,
@@ -69,9 +70,9 @@ abstract class $NewsItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$NewsItemCopyWithImpl<$Res, $Val extends NewsItem>
-    implements $NewsItemCopyWith<$Res> {
-  _$NewsItemCopyWithImpl(this._value, this._then);
+class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
+    implements $NewsItemDTOCopyWith<$Res> {
+  _$NewsItemDTOCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -143,11 +144,11 @@ class _$NewsItemCopyWithImpl<$Res, $Val extends NewsItem>
 }
 
 /// @nodoc
-abstract class _$$NewsItemImplCopyWith<$Res>
-    implements $NewsItemCopyWith<$Res> {
-  factory _$$NewsItemImplCopyWith(
-          _$NewsItemImpl value, $Res Function(_$NewsItemImpl) then) =
-      __$$NewsItemImplCopyWithImpl<$Res>;
+abstract class _$$NewsItemDTOImplCopyWith<$Res>
+    implements $NewsItemDTOCopyWith<$Res> {
+  factory _$$NewsItemDTOImplCopyWith(
+          _$NewsItemDTOImpl value, $Res Function(_$NewsItemDTOImpl) then) =
+      __$$NewsItemDTOImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -165,11 +166,11 @@ abstract class _$$NewsItemImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$NewsItemImplCopyWithImpl<$Res>
-    extends _$NewsItemCopyWithImpl<$Res, _$NewsItemImpl>
-    implements _$$NewsItemImplCopyWith<$Res> {
-  __$$NewsItemImplCopyWithImpl(
-      _$NewsItemImpl _value, $Res Function(_$NewsItemImpl) _then)
+class __$$NewsItemDTOImplCopyWithImpl<$Res>
+    extends _$NewsItemDTOCopyWithImpl<$Res, _$NewsItemDTOImpl>
+    implements _$$NewsItemDTOImplCopyWith<$Res> {
+  __$$NewsItemDTOImplCopyWithImpl(
+      _$NewsItemDTOImpl _value, $Res Function(_$NewsItemDTOImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -187,7 +188,7 @@ class __$$NewsItemImplCopyWithImpl<$Res>
     Object? pillarId = null,
     Object? pillarName = null,
   }) {
-    return _then(_$NewsItemImpl(
+    return _then(_$NewsItemDTOImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -238,8 +239,8 @@ class __$$NewsItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
-  const _$NewsItemImpl(
+class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
+  const _$NewsItemDTOImpl(
       {required this.id,
       required this.type,
       required this.sectionId,
@@ -252,42 +253,42 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
       required this.pillarId,
       required this.pillarName});
 
-  factory _$NewsItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NewsItemImplFromJson(json);
+  factory _$NewsItemDTOImpl.fromJson(Map<String, dynamic> json) =>
+      _$$NewsItemDTOImplFromJson(json);
 
   @override
-  final String id;
+  String id;
   @override
-  final String type;
+  String type;
   @override
-  final String sectionId;
+  String sectionId;
   @override
-  final String sectionName;
+  String sectionName;
   @override
-  final String webPublicationDate;
+  String webPublicationDate;
   @override
-  final String webTitle;
+  String webTitle;
   @override
-  final String webUrl;
+  String webUrl;
   @override
-  final String apiUrl;
+  String apiUrl;
   @override
-  final bool isHosted;
+  bool isHosted;
   @override
-  final String pillarId;
+  String pillarId;
   @override
-  final String pillarName;
+  String pillarName;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItem(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName)';
+    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'NewsItem'))
+      ..add(DiagnosticsProperty('type', 'NewsItemDTO'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('sectionId', sectionId))
@@ -304,52 +305,19 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$NewsItemImplCopyWith<_$NewsItemImpl> get copyWith =>
-      __$$NewsItemImplCopyWithImpl<_$NewsItemImpl>(this, _$identity);
+  _$$NewsItemDTOImplCopyWith<_$NewsItemDTOImpl> get copyWith =>
+      __$$NewsItemDTOImplCopyWithImpl<_$NewsItemDTOImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$NewsItemImplToJson(
+    return _$$NewsItemDTOImplToJson(
       this,
     );
   }
-  
-  @override
-  set apiUrl(String value) => apiUrl = value;
-  
-  @override
-  set id(String value) => id = value;
-  
-  @override
-  set isHosted(bool value) => isHosted = value;
-  
-  @override
-  set pillarId(String value) => pillarId = value;
-  
-  @override
-  set pillarName(String value) => pillarName = value;
-  
-  @override
-  set sectionId(String value) => sectionId = value;
-  
-  @override
-  set sectionName(String value) => sectionName = value;
-
-  @override
-  set type(String value) => type = value;
-  
-  @override
-  set webPublicationDate(String value) => webPublicationDate = value;
-  
-  @override
-  set webTitle(String value) => webTitle = value;
-  
-  @override
-  set webUrl(String value) => webUrl = value;
 }
 
-abstract class _NewsItem implements NewsItem {
-  const factory _NewsItem(
+abstract class _NewsItemDTO implements NewsItemDTO {
+  const factory _NewsItemDTO(
       {required String id,
       required String type,
       required String sectionId,
@@ -360,10 +328,10 @@ abstract class _NewsItem implements NewsItem {
       required String apiUrl,
       required bool isHosted,
       required String pillarId,
-      required String pillarName}) = _$NewsItemImpl;
+      required String pillarName}) = _$NewsItemDTOImpl;
 
-  factory _NewsItem.fromJson(Map<String, dynamic> json) =
-      _$NewsItemImpl.fromJson;
+  factory _NewsItemDTO.fromJson(Map<String, dynamic> json) =
+      _$NewsItemDTOImpl.fromJson;
 
   @override
   String get id;
@@ -400,6 +368,6 @@ abstract class _NewsItem implements NewsItem {
   set pillarName(String value);
   @override
   @JsonKey(ignore: true)
-  _$$NewsItemImplCopyWith<_$NewsItemImpl> get copyWith =>
+  _$$NewsItemDTOImplCopyWith<_$NewsItemDTOImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

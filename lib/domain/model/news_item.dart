@@ -2,8 +2,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
 part 'news_item.freezed.dart';
+part 'news_item.g.dart';
 
-@freezed
+@unfreezed
 class NewsItem with _$NewsItem {
   const factory NewsItem({
     required String id,
@@ -19,5 +20,7 @@ class NewsItem with _$NewsItem {
     required String pillarName,
   }) = _NewsItem;
 
-  factory NewsItem.fromJson(Map<String,Object?> json) => _$NewsItemFromJson(json);
+
+   factory NewsItem.fromJson(Map<String, dynamic> json) =>
+    _$NewsItemFromJson(json);
 }
