@@ -20,7 +20,6 @@ class NewsItem with _$NewsItem {
     required String pillarName,
   }) = _NewsItem;
 
-
-   factory NewsItem.fromJson(Map<String, dynamic> json) =>
-    _$NewsItemFromJson(json);
+  factory NewsItem.fromJson(Map<String, dynamic> json) =>
+      _$NewsItemFromJson(json);
 }

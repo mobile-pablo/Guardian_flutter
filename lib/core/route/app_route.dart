@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_drift_1/core/app_route.gr.dart';
+import 'package:flutter_drift_1/core/route/app_route.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')           
 class AppRouter extends $AppRouter {      
