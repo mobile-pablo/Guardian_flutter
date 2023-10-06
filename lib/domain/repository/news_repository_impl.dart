@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_drift_1/core/utils/data_transfer.dart';
+import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
 import 'package:flutter_drift_1/domain/model/news_item.dart';
 import 'package:flutter_drift_1/domain/repository/news_repository.dart';
 import 'package:flutter_drift_1/networking/service/guardian_service.dart';
@@ -12,6 +13,7 @@ import 'package:injectable/injectable.dart';
 class NewsRepositoryImpl implements NewsRepository {
   final GuardianService _guardianService;
   final NewsDao _newsDao;
+  final NewsDTOMapper _newsDTOMapper = NewsDTOMapper();
 
   NewsRepositoryImpl(this._guardianService, this._newsDao);
 
@@ -23,7 +25,7 @@ class NewsRepositoryImpl implements NewsRepository {
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;
         newsList.forEach((newsItem) async {
-          await _newsDao.insertNews(newsItem.toJson());
+          await _newsDao.insertNews(_newsDTOMapper.convert(newsItem));
         });
 
         return DataTransfer(data: httpResponse.data);
