@@ -13,7 +13,7 @@ import 'package:dio/dio.dart' as _i5;
 import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_drift_1/domain/repository/news_repository_impl.dart'
     as _i10;
-import 'package:flutter_drift_1/feature/home/home_screen.dart' as _i6;
+import 'package:flutter_drift_1/feature/home/page/home_screen.dart' as _i6;
 import 'package:flutter_drift_1/main.dart' as _i8;
 import 'package:flutter_drift_1/networking/service/guardian_service.dart'
     as _i4;
