@@ -4,7 +4,7 @@ import 'package:flutter_drift_1/domain/model/news_item.dart';
 
 import 'news_dto_mapper.auto_mappr.dart';
 
-@AutoMappr([
+@AutoMappr(<MapType<Object, Object>>[
   MapType<NewsItemDTO, NewsItem>(),
 ])
 class NewsDTOMapper extends $NewsDTOMapper {}

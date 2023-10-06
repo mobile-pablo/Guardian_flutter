@@ -8,6 +8,7 @@ import 'package:flutter_drift_1/domain/repository/news_repository.dart';
 import 'package:flutter_drift_1/networking/service/guardian_service.dart';
 import 'package:flutter_drift_1/storage/dao/news_dao.dart';
 import 'package:injectable/injectable.dart';
+import 'package:retrofit/dio.dart';
 
 @injectable
 class NewsRepositoryImpl implements NewsRepository {
@@ -20,17 +21,18 @@ class NewsRepositoryImpl implements NewsRepository {
   @override
   Future<DataTransfer<List<NewsItem>>> getNews({required String query}) async {
     try {
-      final httpResponse = await _guardianService.getNews(query: query);
+      final HttpResponse<List<NewsItem>> httpResponse =
+          await _guardianService.getNews(query: query);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;
-        newsList.forEach((newsItem) async {
+        newsList.forEach((NewsItem newsItem) async {
           await _newsDao.insertNews(_newsDTOMapper.convert(newsItem));
         });
 
-        return DataTransfer(data: httpResponse.data);
+        return DataTransfer<List<NewsItem>>(data: httpResponse.data);
       } else {
-        return DataTransfer(
+        return DataTransfer<List<NewsItem>>(
             exception: DioException(
           error: httpResponse.response.statusMessage,
           response: httpResponse.response,
@@ -39,7 +41,7 @@ class NewsRepositoryImpl implements NewsRepository {
         ));
       }
     } on DioException catch (e) {
-      return DataTransfer(exception: e);
+      return DataTransfer<List<NewsItem>>(exception: e);
     }
   }
 }
