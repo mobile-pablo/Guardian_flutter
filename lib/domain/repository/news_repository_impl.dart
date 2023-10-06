@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_drift_1/core/models/news_item_dto.dart';
 import 'package:flutter_drift_1/core/utils/data_transfer.dart';
 import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
 import 'package:flutter_drift_1/domain/model/news_item.dart';
@@ -21,20 +22,26 @@ class NewsRepositoryImpl implements NewsRepository {
   NewsRepositoryImpl(this._guardianService, this._newsDao);
 
   @override
-  Future<DataTransfer<List<NewsItem>>> getNews({required String query}) async {
+  Future<DataTransfer<List<NewsItemDTO>>> getNews(
+      {required String query}) async {
     try {
       final HttpResponse<List<NewsItem>> httpResponse =
           await _guardianService.getNews(query: query);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;
-        newsList.forEach((NewsItem newsItem) async {
-          await _newsDao.insertNews(_newsDTOMapper.convert(newsItem));
+
+        List<NewsItemDTO> newsListDTO = newsList
+            .map((e) => _newsDTOMapper.convert<NewsItem, NewsItemDTO>(e))
+            .toList();
+
+        newsListDTO.forEach((NewsItemDTO newsItemDTO) async {
+          await _newsDao.insertNews(newsItemDTO);
         });
 
-        return DataTransfer<List<NewsItem>>(data: httpResponse.data);
+        return DataTransfer<List<NewsItemDTO>>(data: httpResponse.data);
       } else {
-        return DataTransfer<List<NewsItem>>(
+        return DataTransfer<List<NewsItemDTO>>(
             exception: DioException(
           error: httpResponse.response.statusMessage,
           response: httpResponse.response,
@@ -43,7 +50,7 @@ class NewsRepositoryImpl implements NewsRepository {
         ));
       }
     } on DioException catch (e) {
-      return DataTransfer<List<NewsItem>>(exception: e);
+      return DataTransfer<List<NewsItemDTO>>(exception: e);
     }
   }
 }
