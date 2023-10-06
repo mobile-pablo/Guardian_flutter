@@ -9,17 +9,16 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:dio/dio.dart' as _i4;
-import 'package:flutter/material.dart' as _i6;
+import 'package:dio/dio.dart' as _i5;
+import 'package:flutter/material.dart' as _i7;
 import 'package:flutter_drift_1/domain/repository/news_repository_impl.dart'
     as _i10;
-import 'package:flutter_drift_1/feature/home/home_screen.dart' as _i5;
-import 'package:flutter_drift_1/main.dart' as _i7;
+import 'package:flutter_drift_1/feature/home/home_screen.dart' as _i6;
+import 'package:flutter_drift_1/main.dart' as _i8;
 import 'package:flutter_drift_1/networking/service/guardian_service.dart'
-    as _i3;
-import 'package:flutter_drift_1/storage/dao/news_dao.dart' as _i11;
-import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart' as _i8;
-import 'package:flutter_drift_1/storage/database/app_database.dart' as _i9;
+    as _i4;
+import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart' as _i9;
+import 'package:flutter_drift_1/storage/database/app_database.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -29,18 +28,19 @@ extension GetItInjectableX on _i1.GetIt {
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
   }) {
-    final _i2.GetItHelper gh = _i2.GetItHelper(
+    final gh = _i2.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
-    gh.factory<_i3.GuardianService>(() => _i3.GuardianService(gh<_i4.Dio>()));
-    gh.factory<_i5.HomeScreen>(() => _i5.HomeScreen(key: gh<_i6.Key>()));
-    gh.factory<_i7.MyApp>(() => _i7.MyApp(key: gh<_i6.Key>()));
-    gh.factory<_i8.NewsDaoImpl>(() => _i8.NewsDaoImpl(gh<_i9.AppDatabase>()));
+    gh.factory<_i3.AppDatabase>(() => _i3.AppDatabase());
+    gh.factory<_i4.GuardianService>(() => _i4.GuardianService(gh<_i5.Dio>()));
+    gh.factory<_i6.HomeScreen>(() => _i6.HomeScreen(key: gh<_i7.Key>()));
+    gh.factory<_i8.MyApp>(() => _i8.MyApp(key: gh<_i7.Key>()));
+    gh.factory<_i9.NewsDaoImpl>(() => _i9.NewsDaoImpl(gh<_i3.AppDatabase>()));
     gh.factory<_i10.NewsRepositoryImpl>(() => _i10.NewsRepositoryImpl(
-          gh<_i3.GuardianService>(),
-          gh<_i11.NewsDao>(),
+          gh<_i4.GuardianService>(),
+          gh<_i9.NewsDaoImpl>(),
         ));
     return this;
   }
