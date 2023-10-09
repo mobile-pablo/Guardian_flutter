@@ -7,10 +7,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class GetNewsUseCase
     implements UseCase<DataTransfer<List<NewsItemDTO>>, String> {
-  /*
-       I dont know yet how to inject via interface with injectable
-       Unfortunatly for now its via Impl
-  */
+
   final NewsRepository _newsRepository;
 
   GetNewsUseCase(this._newsRepository);

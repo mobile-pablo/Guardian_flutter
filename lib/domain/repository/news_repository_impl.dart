@@ -9,14 +9,14 @@ import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
 import 'package:flutter_drift_1/domain/model/news_item.dart';
 import 'package:flutter_drift_1/domain/repository/news_repository.dart';
 import 'package:flutter_drift_1/networking/service/guardian_service.dart';
-import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart';
+import 'package:flutter_drift_1/storage/dao/news_dao.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/dio.dart';
 
 @Injectable(as: NewsRepository)
 class NewsRepositoryImpl implements NewsRepository {
   final GuardianService _guardianService;
-  final NewsDaoImpl _newsDao;
+  final NewsDao _newsDao;
   final NewsDTOMapper _newsDTOMapper = NewsDTOMapper();
 
   NewsRepositoryImpl(this._guardianService, this._newsDao);
