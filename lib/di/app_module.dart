@@ -1,10 +1,9 @@
-
 import 'package:dio/dio.dart';
+import 'package:flutter_drift_1/networking/dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 @module
 abstract class AppModule {
-
   @Injectable()
-  Dio get dio => Dio();
+  Dio get dio => buildDio();
 }

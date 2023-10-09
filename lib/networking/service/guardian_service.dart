@@ -6,7 +6,7 @@ import 'package:flutter_drift_1/domain/model/news_item.dart';
 
 part 'guardian_service.g.dart';
 
-@RestApi(baseUrl: guardianBaseUrl)
+@RestApi()
 @injectable
 abstract class GuardianService {
 
