@@ -12,7 +12,7 @@ import 'package:injectable/injectable.dart';
 @RoutePage()
 @injectable
 class HomeScreen extends HookWidget {
-  const HomeScreen( {super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class HomeScreen extends HookWidget {
         }
 
         if (state is HomeRemoteNewsError) {
-          return const Center(child: Icon(Icons.refresh));
+          return Center(child: Text(state.error!.toString()));
         }
 
         if (state is HomeRemoteNewsDone) {

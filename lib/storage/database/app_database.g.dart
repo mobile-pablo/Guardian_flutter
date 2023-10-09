@@ -554,6 +554,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   late final $NewsItemsEntityTable newsItemsEntity =
       $NewsItemsEntityTable(this);
+  late final NewsDao newsDaoImpl = NewsDaoImpl(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
