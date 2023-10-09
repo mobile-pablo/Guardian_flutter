@@ -14,7 +14,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<HomeRemoteBloc>(
-        create: (context) => sl()..add(GetHomeNews(query: "Flutter")),
+        create: (BuildContext context) =>
+            sl()..add(GetHomeNewsEvent(query: 'Flutter')),
         child: Scaffold(
           appBar: AppBar(
             title: const Text('HomeScreen'),

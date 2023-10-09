@@ -32,7 +32,8 @@ class NewsRepositoryImpl implements NewsRepository {
         List<NewsItem> newsList = httpResponse.data;
 
         List<NewsItemDTO> newsListDTO = newsList
-            .map((e) => _newsDTOMapper.convert<NewsItem, NewsItemDTO>(e))
+            .map((NewsItem e) =>
+                _newsDTOMapper.convert<NewsItem, NewsItemDTO>(e))
             .toList();
 
         newsListDTO.forEach((NewsItemDTO newsItemDTO) async {
@@ -53,4 +54,16 @@ class NewsRepositoryImpl implements NewsRepository {
       return DataTransfer<List<NewsItemDTO>>(exception: e);
     }
   }
+
+  @override
+  Future<void> insertNews(NewsItemDTO newsItemDTO) =>
+      _newsDao.insertNews(newsItemDTO);
+
+  @override
+  Future<void> updateNews(NewsItemDTO newsItemDTO) =>
+      _newsDao.updateNews(newsItemDTO);
+
+  @override
+  Future<void> removeNews(NewsItemDTO newsItemDTO) =>
+      _newsDao.removeNews(newsItemDTO);
 }

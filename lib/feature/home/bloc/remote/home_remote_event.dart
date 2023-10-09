@@ -2,7 +2,7 @@ abstract class HomeRemoteEvent {
   const HomeRemoteEvent();
 }
 
-class GetHomeNews extends HomeRemoteEvent {
+class GetHomeNewsEvent extends HomeRemoteEvent {
   String query;
-  GetHomeNews({this.query = 'dogs'});
+  GetHomeNewsEvent({this.query = 'dogs'});
 }
