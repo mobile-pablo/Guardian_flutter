@@ -4,5 +4,5 @@ abstract class HomeRemoteEvent {
 
 class GetHomeNewsEvent extends HomeRemoteEvent {
   String query;
-  GetHomeNewsEvent({this.query = 'dogs'});
+  GetHomeNewsEvent({this.query = ''});
 }

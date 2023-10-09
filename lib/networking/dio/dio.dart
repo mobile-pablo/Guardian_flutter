@@ -8,10 +8,14 @@ BaseOptions _createOptions() => BaseOptions(
       sendTimeout: const Duration(seconds: 15),
       connectTimeout: const Duration(seconds: 5),
       queryParameters: <String, dynamic>{'api-key': guardianApiKey},
+      headers: <String, dynamic>{
+        'Accept': '*/*',
+        'Connection': 'keep-alive',
+      },
     );
 
 Dio buildDio() {
-  Dio dio = Dio(_createOptions());
+  final Dio dio = Dio()..options = _createOptions();
 
   dio.interceptors.addAll([
     LogInterceptor(
