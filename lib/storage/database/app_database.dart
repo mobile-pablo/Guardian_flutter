@@ -10,7 +10,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDaoImpl])
+@DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDao])
 @injectable
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());

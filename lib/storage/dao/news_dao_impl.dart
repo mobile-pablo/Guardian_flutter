@@ -8,7 +8,7 @@ import 'package:flutter_drift_1/storage/entity/news_item_entity.dart';
 part 'news_dao_impl.g.dart';
 
 @DriftAccessor(tables: <Type>[NewsItemsEntity])
-@injectable
+@Injectable(as : NewsDao)
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
     implements NewsDao {

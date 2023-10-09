@@ -13,7 +13,7 @@ import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/dio.dart';
 
-@injectable
+@Injectable(as: NewsRepository)
 class NewsRepositoryImpl implements NewsRepository {
   final GuardianService _guardianService;
   final NewsDaoImpl _newsDao;
