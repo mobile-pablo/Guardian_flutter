@@ -9,10 +9,11 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:dio/dio.dart' as _i6;
+import 'package:dio/dio.dart' as _i5;
 import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i10;
 import 'package:flutter_drift_1/core/route/app_route.dart' as _i4;
+import 'package:flutter_drift_1/di/app_module.dart' as _i21;
 import 'package:flutter_drift_1/domain/repository/news_repository.dart' as _i13;
 import 'package:flutter_drift_1/domain/repository/news_repository_impl.dart'
     as _i14;
@@ -31,7 +32,7 @@ import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_bloc.dart'
 import 'package:flutter_drift_1/feature/home/page/home_screen.dart' as _i7;
 import 'package:flutter_drift_1/main.dart' as _i9;
 import 'package:flutter_drift_1/networking/service/guardian_service.dart'
-    as _i5;
+    as _i6;
 import 'package:flutter_drift_1/storage/dao/news_dao.dart' as _i11;
 import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart' as _i12;
 import 'package:flutter_drift_1/storage/database/app_database.dart' as _i3;
@@ -49,14 +50,16 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
+    final appModule = _$AppModule();
     gh.factory<_i3.AppDatabase>(() => _i3.AppDatabase());
     gh.factory<_i4.AppRouter>(() => _i4.AppRouter());
-    gh.factory<_i5.GuardianService>(() => _i5.GuardianService(gh<_i6.Dio>()));
+    gh.factory<_i5.Dio>(() => appModule.dio);
+    gh.factory<_i6.GuardianService>(() => _i6.GuardianService(gh<_i5.Dio>()));
     gh.factory<_i7.HomeScreen>(() => _i7.HomeScreen(key: gh<_i8.Key>()));
     gh.factory<_i9.MyApp>(() => _i9.MyApp(key: gh<_i10.Key>()));
     gh.factory<_i11.NewsDao>(() => _i12.NewsDaoImpl(gh<_i3.AppDatabase>()));
     gh.factory<_i13.NewsRepository>(() => _i14.NewsRepositoryImpl(
-          gh<_i5.GuardianService>(),
+          gh<_i6.GuardianService>(),
           gh<_i11.NewsDao>(),
         ));
     gh.factory<_i15.RemoveNewsItemUseCase>(
@@ -77,3 +80,5 @@ extension GetItInjectableX on _i1.GetIt {
     return this;
   }
 }
+
+class _$AppModule extends _i21.AppModule {}
