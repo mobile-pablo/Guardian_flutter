@@ -19,9 +19,9 @@ class NewsItemDTO with _$NewsItemDTO {
     required String pillarId,
     required String pillarName,
     required String thumbnail,
-    required String standFirst,
+    required String trailText,
   }) = _NewsItemDTO;
 
-   factory NewsItemDTO.fromJson(Map<String, dynamic> json) =>
-    _$NewsItemDTOFromJson(json);
+  factory NewsItemDTO.fromJson(Map<String, dynamic> json) =>
+      _$NewsItemDTOFromJson(json);
 }

@@ -35,7 +35,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           pillarId: news.pillarId,
           pillarName: news.pillarName,
           thumbnail: news.thumbnail,
-          standFirst: news.standFirst,
+          trailText: news.trailText,
         ),
       );
 
@@ -59,7 +59,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           pillarId: news.pillarId,
           pillarName: news.pillarName,
           thumbnail: news.thumbnail,
-          standFirst: news.standFirst,
+          trailText: news.trailText,
         ),
       ));
 }

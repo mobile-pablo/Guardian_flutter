@@ -44,8 +44,8 @@ mixin _$NewsItemDTO {
   set pillarName(String value) => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   set thumbnail(String value) => throw _privateConstructorUsedError;
-  String get standFirst => throw _privateConstructorUsedError;
-  set standFirst(String value) => throw _privateConstructorUsedError;
+  String get trailText => throw _privateConstructorUsedError;
+  set trailText(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,7 +72,7 @@ abstract class $NewsItemDTOCopyWith<$Res> {
       String pillarId,
       String pillarName,
       String thumbnail,
-      String standFirst});
+      String trailText});
 }
 
 /// @nodoc
@@ -100,7 +100,7 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
     Object? pillarId = null,
     Object? pillarName = null,
     Object? thumbnail = null,
-    Object? standFirst = null,
+    Object? trailText = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -151,9 +151,9 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      standFirst: null == standFirst
-          ? _value.standFirst
-          : standFirst // ignore: cast_nullable_to_non_nullable
+      trailText: null == trailText
+          ? _value.trailText
+          : trailText // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -180,7 +180,7 @@ abstract class _$$NewsItemDTOImplCopyWith<$Res>
       String pillarId,
       String pillarName,
       String thumbnail,
-      String standFirst});
+      String trailText});
 }
 
 /// @nodoc
@@ -206,7 +206,7 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
     Object? pillarId = null,
     Object? pillarName = null,
     Object? thumbnail = null,
-    Object? standFirst = null,
+    Object? trailText = null,
   }) {
     return _then(_$NewsItemDTOImpl(
       id: null == id
@@ -257,9 +257,9 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      standFirst: null == standFirst
-          ? _value.standFirst
-          : standFirst // ignore: cast_nullable_to_non_nullable
+      trailText: null == trailText
+          ? _value.trailText
+          : trailText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -281,7 +281,7 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       required this.pillarId,
       required this.pillarName,
       required this.thumbnail,
-      required this.standFirst});
+      required this.trailText});
 
   factory _$NewsItemDTOImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemDTOImplFromJson(json);
@@ -311,11 +311,11 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
   @override
   final String thumbnail;
   @override
-  final String standFirst;
+  final String trailText;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, thumbnail: $thumbnail, standFirst: $standFirst)';
+    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, thumbnail: $thumbnail, trailText: $trailText)';
   }
 
   @override
@@ -335,7 +335,7 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       ..add(DiagnosticsProperty('pillarId', pillarId))
       ..add(DiagnosticsProperty('pillarName', pillarName))
       ..add(DiagnosticsProperty('thumbnail', thumbnail))
-      ..add(DiagnosticsProperty('standFirst', standFirst));
+      ..add(DiagnosticsProperty('trailText', trailText));
   }
 
   @JsonKey(ignore: true)
@@ -350,45 +350,45 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       this,
     );
   }
-  
+
   @override
   set apiUrl(String value) => apiUrl = value;
-  
+
   @override
   set id(String value) => id = value;
-  
+
   @override
   set isHosted(bool value) => isHosted = value;
-  
+
   @override
   set pillarId(String value) => pillarId = value;
-  
+
   @override
   set pillarName(String value) => pillarName = value;
-  
+
   @override
   set sectionId(String value) => sectionId = value;
-  
+
   @override
   set sectionName(String value) => sectionName = value;
-  
+
   @override
   set thumbnail(String value) => thumbnail = value;
-  
+
   @override
   set type(String value) => type = value;
-  
+
   @override
   set webPublicationDate(String value) => webPublicationDate = value;
-  
+
   @override
   set webTitle(String value) => webTitle = value;
-  
+
   @override
   set webUrl(String value) => webUrl = value;
 
   @override
-  set standFirst(String value) => standFirst = value;
+  set trailText(String value) => trailText = value;
 }
 
 abstract class _NewsItemDTO implements NewsItemDTO {
@@ -405,7 +405,7 @@ abstract class _NewsItemDTO implements NewsItemDTO {
       required String pillarId,
       required String pillarName,
       required String thumbnail,
-      required String standFirst}) = _$NewsItemDTOImpl;
+      required String trailText}) = _$NewsItemDTOImpl;
 
   factory _NewsItemDTO.fromJson(Map<String, dynamic> json) =
       _$NewsItemDTOImpl.fromJson;
@@ -447,8 +447,8 @@ abstract class _NewsItemDTO implements NewsItemDTO {
   String get thumbnail;
   set thumbnail(String value);
   @override
-  String get standFirst;
-  set standFirst(String value);
+  String get trailText;
+  set trailText(String value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemDTOImplCopyWith<_$NewsItemDTOImpl> get copyWith =>

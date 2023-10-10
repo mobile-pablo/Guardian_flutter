@@ -225,7 +225,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       pillarId: model.pillarId,
       pillarName: model.pillarName,
       thumbnail: model.fields.thumbnail,
-      standFirst: model.fields.standFirst,
+      trailText: model.fields.trailText,
     );
   }
 }

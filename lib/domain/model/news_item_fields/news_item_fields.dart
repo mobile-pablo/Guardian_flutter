@@ -8,7 +8,7 @@ part 'news_item_fields.g.dart';
 class NewsItemFields with _$NewsItemFields {
   const factory NewsItemFields({
     required String thumbnail,
-    required String standFirst,
+    required String trailText,
   }) = _NewsItemFields;
 
   factory NewsItemFields.fromJson(Map<String, dynamic> json) =>

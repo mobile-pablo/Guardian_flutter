@@ -13,5 +13,5 @@ class NewsItemsEntity extends Table {
   TextColumn get pillarId => text()();
   TextColumn get pillarName => text()();
   TextColumn get thumbnail => text()();
-  TextColumn get standFirst => text()();
+  TextColumn get trailText => text()();
 }

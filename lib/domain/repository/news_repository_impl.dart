@@ -26,8 +26,8 @@ class NewsRepositoryImpl implements NewsRepository {
   Future<DataTransfer<List<NewsItemDTO>>> getNews(
       {required String query}) async {
     try {
-      final HttpResponse<List<NewsItem>> httpResponse =
-          await _guardianService.getNews(query: query, showFields: thumbnailAndStandFirst);
+      final HttpResponse<List<NewsItem>> httpResponse = await _guardianService
+          .getNews(query: query, showFields: thumbnailAndTrailText);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;

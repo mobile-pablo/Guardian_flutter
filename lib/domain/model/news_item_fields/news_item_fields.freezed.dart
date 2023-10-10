@@ -22,8 +22,8 @@ NewsItemFields _$NewsItemFieldsFromJson(Map<String, dynamic> json) {
 mixin _$NewsItemFields {
   String get thumbnail => throw _privateConstructorUsedError;
   set thumbnail(String value) => throw _privateConstructorUsedError;
-  String get standFirst => throw _privateConstructorUsedError;
-  set standFirst(String value) => throw _privateConstructorUsedError;
+  String get trailText => throw _privateConstructorUsedError;
+  set trailText(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $NewsItemFieldsCopyWith<$Res> {
           NewsItemFields value, $Res Function(NewsItemFields) then) =
       _$NewsItemFieldsCopyWithImpl<$Res, NewsItemFields>;
   @useResult
-  $Res call({String thumbnail, String standFirst});
+  $Res call({String thumbnail, String trailText});
 }
 
 /// @nodoc
@@ -54,16 +54,16 @@ class _$NewsItemFieldsCopyWithImpl<$Res, $Val extends NewsItemFields>
   @override
   $Res call({
     Object? thumbnail = null,
-    Object? standFirst = null,
+    Object? trailText = null,
   }) {
     return _then(_value.copyWith(
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      standFirst: null == standFirst
-          ? _value.standFirst
-          : standFirst // ignore: cast_nullable_to_non_nullable
+      trailText: null == trailText
+          ? _value.trailText
+          : trailText // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -77,7 +77,7 @@ abstract class _$$NewsItemFieldsImplCopyWith<$Res>
       __$$NewsItemFieldsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String thumbnail, String standFirst});
+  $Res call({String thumbnail, String trailText});
 }
 
 /// @nodoc
@@ -92,16 +92,16 @@ class __$$NewsItemFieldsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? thumbnail = null,
-    Object? standFirst = null,
+    Object? trailText = null,
   }) {
     return _then(_$NewsItemFieldsImpl(
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
-      standFirst: null == standFirst
-          ? _value.standFirst
-          : standFirst // ignore: cast_nullable_to_non_nullable
+      trailText: null == trailText
+          ? _value.trailText
+          : trailText // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -113,19 +113,19 @@ class _$NewsItemFieldsImpl
     with DiagnosticableTreeMixin
     implements _NewsItemFields {
   const _$NewsItemFieldsImpl(
-      {required this.thumbnail, required this.standFirst});
+      {required this.thumbnail, required this.trailText});
 
   factory _$NewsItemFieldsImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemFieldsImplFromJson(json);
 
   @override
- final String thumbnail;
+  final String thumbnail;
   @override
-  final String standFirst;
+  final String trailText;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItemFields(thumbnail: $thumbnail, standFirst: $standFirst)';
+    return 'NewsItemFields(thumbnail: $thumbnail, trailText: $trailText)';
   }
 
   @override
@@ -134,7 +134,7 @@ class _$NewsItemFieldsImpl
     properties
       ..add(DiagnosticsProperty('type', 'NewsItemFields'))
       ..add(DiagnosticsProperty('thumbnail', thumbnail))
-      ..add(DiagnosticsProperty('standFirst', standFirst));
+      ..add(DiagnosticsProperty('trailText', trailText));
   }
 
   @JsonKey(ignore: true)
@@ -150,10 +150,10 @@ class _$NewsItemFieldsImpl
       this,
     );
   }
-  
+
   @override
-  set standFirst(String value) => standFirst = value;
-  
+  set trailText(String value) => trailText = value;
+
   @override
   set thumbnail(String value) => thumbnail = value;
 }
@@ -161,7 +161,7 @@ class _$NewsItemFieldsImpl
 abstract class _NewsItemFields implements NewsItemFields {
   const factory _NewsItemFields(
       {required String thumbnail,
-      required String standFirst}) = _$NewsItemFieldsImpl;
+      required String trailText}) = _$NewsItemFieldsImpl;
 
   factory _NewsItemFields.fromJson(Map<String, dynamic> json) =
       _$NewsItemFieldsImpl.fromJson;
@@ -170,8 +170,8 @@ abstract class _NewsItemFields implements NewsItemFields {
   String get thumbnail;
   set thumbnail(String value);
   @override
-  String get standFirst;
-  set standFirst(String value);
+  String get trailText;
+  set trailText(String value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemFieldsImplCopyWith<_$NewsItemFieldsImpl> get copyWith =>

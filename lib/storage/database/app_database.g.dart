@@ -80,11 +80,11 @@ class $NewsItemsEntityTable extends NewsItemsEntity
   late final GeneratedColumn<String> thumbnail = GeneratedColumn<String>(
       'thumbnail', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
-  static const VerificationMeta _standFirstMeta =
-      const VerificationMeta('standFirst');
+  static const VerificationMeta _trailTextMeta =
+      const VerificationMeta('trailText');
   @override
-  late final GeneratedColumn<String> standFirst = GeneratedColumn<String>(
-      'stand_first', aliasedName, false,
+  late final GeneratedColumn<String> trailText = GeneratedColumn<String>(
+      'trail_text', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns => [
@@ -100,7 +100,7 @@ class $NewsItemsEntityTable extends NewsItemsEntity
         pillarId,
         pillarName,
         thumbnail,
-        standFirst
+        trailText
       ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -190,13 +190,13 @@ class $NewsItemsEntityTable extends NewsItemsEntity
     } else if (isInserting) {
       context.missing(_thumbnailMeta);
     }
-    if (data.containsKey('stand_first')) {
+    if (data.containsKey('trail_text')) {
       context.handle(
-          _standFirstMeta,
-          standFirst.isAcceptableOrUnknown(
-              data['stand_first']!, _standFirstMeta));
+          _trailTextMeta,
+          trailText.isAcceptableOrUnknown(
+              data['trail_text']!, _trailTextMeta));
     } else if (isInserting) {
-      context.missing(_standFirstMeta);
+      context.missing(_trailTextMeta);
     }
     return context;
   }
@@ -231,8 +231,8 @@ class $NewsItemsEntityTable extends NewsItemsEntity
           .read(DriftSqlType.string, data['${effectivePrefix}pillar_name'])!,
       thumbnail: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}thumbnail'])!,
-      standFirst: attachedDatabase.typeMapping
-          .read(DriftSqlType.string, data['${effectivePrefix}stand_first'])!,
+      trailText: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}trail_text'])!,
     );
   }
 
@@ -256,7 +256,7 @@ class NewsItemsEntityData extends DataClass
   final String pillarId;
   final String pillarName;
   final String thumbnail;
-  final String standFirst;
+  final String trailText;
   const NewsItemsEntityData(
       {required this.id,
       required this.type,
@@ -270,7 +270,7 @@ class NewsItemsEntityData extends DataClass
       required this.pillarId,
       required this.pillarName,
       required this.thumbnail,
-      required this.standFirst});
+      required this.trailText});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -286,7 +286,7 @@ class NewsItemsEntityData extends DataClass
     map['pillar_id'] = Variable<String>(pillarId);
     map['pillar_name'] = Variable<String>(pillarName);
     map['thumbnail'] = Variable<String>(thumbnail);
-    map['stand_first'] = Variable<String>(standFirst);
+    map['trail_text'] = Variable<String>(trailText);
     return map;
   }
 
@@ -304,7 +304,7 @@ class NewsItemsEntityData extends DataClass
       pillarId: Value(pillarId),
       pillarName: Value(pillarName),
       thumbnail: Value(thumbnail),
-      standFirst: Value(standFirst),
+      trailText: Value(trailText),
     );
   }
 
@@ -325,7 +325,7 @@ class NewsItemsEntityData extends DataClass
       pillarId: serializer.fromJson<String>(json['pillarId']),
       pillarName: serializer.fromJson<String>(json['pillarName']),
       thumbnail: serializer.fromJson<String>(json['thumbnail']),
-      standFirst: serializer.fromJson<String>(json['standFirst']),
+      trailText: serializer.fromJson<String>(json['trailText']),
     );
   }
   @override
@@ -344,7 +344,7 @@ class NewsItemsEntityData extends DataClass
       'pillarId': serializer.toJson<String>(pillarId),
       'pillarName': serializer.toJson<String>(pillarName),
       'thumbnail': serializer.toJson<String>(thumbnail),
-      'standFirst': serializer.toJson<String>(standFirst),
+      'trailText': serializer.toJson<String>(trailText),
     };
   }
 
@@ -361,7 +361,7 @@ class NewsItemsEntityData extends DataClass
           String? pillarId,
           String? pillarName,
           String? thumbnail,
-          String? standFirst}) =>
+          String? trailText}) =>
       NewsItemsEntityData(
         id: id ?? this.id,
         type: type ?? this.type,
@@ -375,7 +375,7 @@ class NewsItemsEntityData extends DataClass
         pillarId: pillarId ?? this.pillarId,
         pillarName: pillarName ?? this.pillarName,
         thumbnail: thumbnail ?? this.thumbnail,
-        standFirst: standFirst ?? this.standFirst,
+        trailText: trailText ?? this.trailText,
       );
   @override
   String toString() {
@@ -392,7 +392,7 @@ class NewsItemsEntityData extends DataClass
           ..write('pillarId: $pillarId, ')
           ..write('pillarName: $pillarName, ')
           ..write('thumbnail: $thumbnail, ')
-          ..write('standFirst: $standFirst')
+          ..write('trailText: $trailText')
           ..write(')'))
         .toString();
   }
@@ -411,7 +411,7 @@ class NewsItemsEntityData extends DataClass
       pillarId,
       pillarName,
       thumbnail,
-      standFirst);
+      trailText);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -428,7 +428,7 @@ class NewsItemsEntityData extends DataClass
           other.pillarId == this.pillarId &&
           other.pillarName == this.pillarName &&
           other.thumbnail == this.thumbnail &&
-          other.standFirst == this.standFirst);
+          other.trailText == this.trailText);
 }
 
 class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
@@ -444,7 +444,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
   final Value<String> pillarId;
   final Value<String> pillarName;
   final Value<String> thumbnail;
-  final Value<String> standFirst;
+  final Value<String> trailText;
   final Value<int> rowid;
   const NewsItemsEntityCompanion({
     this.id = const Value.absent(),
@@ -459,7 +459,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     this.pillarId = const Value.absent(),
     this.pillarName = const Value.absent(),
     this.thumbnail = const Value.absent(),
-    this.standFirst = const Value.absent(),
+    this.trailText = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   NewsItemsEntityCompanion.insert({
@@ -475,7 +475,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     required String pillarId,
     required String pillarName,
     required String thumbnail,
-    required String standFirst,
+    required String trailText,
     this.rowid = const Value.absent(),
   })  : id = Value(id),
         type = Value(type),
@@ -489,7 +489,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
         pillarId = Value(pillarId),
         pillarName = Value(pillarName),
         thumbnail = Value(thumbnail),
-        standFirst = Value(standFirst);
+        trailText = Value(trailText);
   static Insertable<NewsItemsEntityData> custom({
     Expression<String>? id,
     Expression<String>? type,
@@ -503,7 +503,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     Expression<String>? pillarId,
     Expression<String>? pillarName,
     Expression<String>? thumbnail,
-    Expression<String>? standFirst,
+    Expression<String>? trailText,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -520,7 +520,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       if (pillarId != null) 'pillar_id': pillarId,
       if (pillarName != null) 'pillar_name': pillarName,
       if (thumbnail != null) 'thumbnail': thumbnail,
-      if (standFirst != null) 'stand_first': standFirst,
+      if (trailText != null) 'trail_text': trailText,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -538,7 +538,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       Value<String>? pillarId,
       Value<String>? pillarName,
       Value<String>? thumbnail,
-      Value<String>? standFirst,
+      Value<String>? trailText,
       Value<int>? rowid}) {
     return NewsItemsEntityCompanion(
       id: id ?? this.id,
@@ -553,7 +553,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       pillarId: pillarId ?? this.pillarId,
       pillarName: pillarName ?? this.pillarName,
       thumbnail: thumbnail ?? this.thumbnail,
-      standFirst: standFirst ?? this.standFirst,
+      trailText: trailText ?? this.trailText,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -597,8 +597,8 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     if (thumbnail.present) {
       map['thumbnail'] = Variable<String>(thumbnail.value);
     }
-    if (standFirst.present) {
-      map['stand_first'] = Variable<String>(standFirst.value);
+    if (trailText.present) {
+      map['trail_text'] = Variable<String>(trailText.value);
     }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
@@ -621,7 +621,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
           ..write('pillarId: $pillarId, ')
           ..write('pillarName: $pillarName, ')
           ..write('thumbnail: $thumbnail, ')
-          ..write('standFirst: $standFirst, ')
+          ..write('trailText: $trailText, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();

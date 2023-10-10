@@ -20,7 +20,7 @@ _$NewsItemDTOImpl _$$NewsItemDTOImplFromJson(Map<String, dynamic> json) =>
       pillarId: json['pillarId'] as String,
       pillarName: json['pillarName'] as String,
       thumbnail: json['thumbnail'] as String,
-      standFirst: json['standFirst'] as String,
+      trailText: json['trailText'] as String,
     );
 
 Map<String, dynamic> _$$NewsItemDTOImplToJson(_$NewsItemDTOImpl instance) =>
@@ -37,5 +37,5 @@ Map<String, dynamic> _$$NewsItemDTOImplToJson(_$NewsItemDTOImpl instance) =>
       'pillarId': instance.pillarId,
       'pillarName': instance.pillarName,
       'thumbnail': instance.thumbnail,
-      'standFirst': instance.standFirst,
+      'trailText': instance.trailText,
     };
