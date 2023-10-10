@@ -9,11 +9,12 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
-import '../../core/models/news_item_dto.dart' as _i2;
-import '../model/news_item.dart' as _i3;
+import '../../core/models/news_item_dto.dart' as _i3;
+import '../model/news_item.dart' as _i2;
 
 /// {@template package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
 /// Available mappings:
+/// - `NewsItem` → `NewsItemDTO`.
 /// - `NewsItemDTO` → `NewsItem`.
 /// {@endtemplate}
 class $NewsDTOMapper implements _i1.AutoMapprInterface {
@@ -29,10 +30,16 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   bool canConvert<SOURCE, TARGET>({bool recursive = true}) {
     final sourceTypeOf = _typeOf<SOURCE>();
     final targetTypeOf = _typeOf<TARGET>();
-    if ((sourceTypeOf == _typeOf<_i2.NewsItemDTO>() ||
-            sourceTypeOf == _typeOf<_i2.NewsItemDTO?>()) &&
-        (targetTypeOf == _typeOf<_i3.NewsItem>() ||
-            targetTypeOf == _typeOf<_i3.NewsItem?>())) {
+    if ((sourceTypeOf == _typeOf<_i2.NewsItem>() ||
+            sourceTypeOf == _typeOf<_i2.NewsItem?>()) &&
+        (targetTypeOf == _typeOf<_i3.NewsItemDTO>() ||
+            targetTypeOf == _typeOf<_i3.NewsItemDTO?>())) {
+      return true;
+    }
+    if ((sourceTypeOf == _typeOf<_i3.NewsItemDTO>() ||
+            sourceTypeOf == _typeOf<_i3.NewsItemDTO?>()) &&
+        (targetTypeOf == _typeOf<_i2.NewsItem>() ||
+            targetTypeOf == _typeOf<_i2.NewsItem?>())) {
       return true;
     }
     if (recursive) {
@@ -192,27 +199,59 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }) {
     final sourceTypeOf = _typeOf<SOURCE>();
     final targetTypeOf = _typeOf<TARGET>();
-    if ((sourceTypeOf == _typeOf<_i2.NewsItemDTO>() ||
-            sourceTypeOf == _typeOf<_i2.NewsItemDTO?>()) &&
-        (targetTypeOf == _typeOf<_i3.NewsItem>() ||
-            targetTypeOf == _typeOf<_i3.NewsItem?>())) {
+    if ((sourceTypeOf == _typeOf<_i2.NewsItem>() ||
+            sourceTypeOf == _typeOf<_i2.NewsItem?>()) &&
+        (targetTypeOf == _typeOf<_i3.NewsItemDTO>() ||
+            targetTypeOf == _typeOf<_i3.NewsItemDTO?>())) {
       if (canReturnNull && model == null) {
         return null;
       }
-      return (_map__i2$NewsItemDTO_To__i3$NewsItem((model as _i2.NewsItemDTO?))
+      return (_map__i2$NewsItem_To__i3$NewsItemDTO((model as _i2.NewsItem?))
+          as TARGET);
+    }
+    if ((sourceTypeOf == _typeOf<_i3.NewsItemDTO>() ||
+            sourceTypeOf == _typeOf<_i3.NewsItemDTO?>()) &&
+        (targetTypeOf == _typeOf<_i2.NewsItem>() ||
+            targetTypeOf == _typeOf<_i2.NewsItem?>())) {
+      if (canReturnNull && model == null) {
+        return null;
+      }
+      return (_map__i3$NewsItemDTO_To__i2$NewsItem((model as _i3.NewsItemDTO?))
           as TARGET);
     }
     throw Exception('No ${model.runtimeType} -> $targetTypeOf mapping.');
   }
 
-  _i3.NewsItem _map__i2$NewsItemDTO_To__i3$NewsItem(_i2.NewsItemDTO? input) {
+  _i3.NewsItemDTO _map__i2$NewsItem_To__i3$NewsItemDTO(_i2.NewsItem? input) {
+    final model = input;
+    if (model == null) {
+      throw Exception(
+          r'Mapping NewsItem → NewsItemDTO failed because NewsItem was null, and no default value was provided. '
+          r'Consider setting the whenSourceIsNull parameter on the MapType<NewsItem, NewsItemDTO> to handle null values during mapping.');
+    }
+    return _i3.NewsItemDTO(
+      id: model.id,
+      type: model.type,
+      sectionId: model.sectionId,
+      sectionName: model.sectionName,
+      webPublicationDate: model.webPublicationDate,
+      webTitle: model.webTitle,
+      webUrl: model.webUrl,
+      apiUrl: model.apiUrl,
+      isHosted: model.isHosted,
+      pillarId: model.pillarId,
+      pillarName: model.pillarName,
+    );
+  }
+
+  _i2.NewsItem _map__i3$NewsItemDTO_To__i2$NewsItem(_i3.NewsItemDTO? input) {
     final model = input;
     if (model == null) {
       throw Exception(
           r'Mapping NewsItemDTO → NewsItem failed because NewsItemDTO was null, and no default value was provided. '
           r'Consider setting the whenSourceIsNull parameter on the MapType<NewsItemDTO, NewsItem> to handle null values during mapping.');
     }
-    return _i3.NewsItem(
+    return _i2.NewsItem(
       id: model.id,
       type: model.type,
       sectionId: model.sectionId,

@@ -40,7 +40,7 @@ class NewsRepositoryImpl implements NewsRepository {
           await _newsDao.insertNews(newsItemDTO);
         });
 
-        return DataTransfer<List<NewsItemDTO>>(data: httpResponse.data);
+        return DataTransfer<List<NewsItemDTO>>(data: newsListDTO);
       } else {
         return DataTransfer<List<NewsItemDTO>>(
             exception: DioException(

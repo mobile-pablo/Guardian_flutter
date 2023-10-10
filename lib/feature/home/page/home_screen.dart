@@ -49,12 +49,16 @@ class HomeScreen extends HookWidget {
         }
 
         if (state is HomeRemoteNewsDone) {
+          if (state.news == null) {
+            return const SizedBox();
+          }
           return ListView.builder(
+              itemCount: state.news!.length,
               itemBuilder: (BuildContext context, int index) {
-            return Center(
-              child: Text(state.news?[index].id.toString() ?? ''),
-            );
-          });
+                return Center(
+                  child: Text(state.news![index].id.toString()),
+                );
+              });
         }
         return const SizedBox();
       },
