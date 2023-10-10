@@ -7,10 +7,7 @@ import 'news_dto_mapper.auto_mappr.dart';
 @AutoMappr(<MapType<Object, Object>>[
   MapType<NewsItem, NewsItemDTO>(
       fields: [Field('thumbnail', custom: NewsDTOMapper.mapThumbnailToDTO)]),
-  MapType<NewsItemDTO, NewsItem>(
-      fields: [Field('fields.thumbnail', custom: NewsDTOMapper.mapThumbnail)]),
 ])
 class NewsDTOMapper extends $NewsDTOMapper {
   static String mapThumbnailToDTO(NewsItem item) => item.fields.thumbnail;
-  static String mapThumbnail(NewsItemDTO item) => item.thumbnail;
 }

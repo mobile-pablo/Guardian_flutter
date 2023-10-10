@@ -8,7 +8,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
-import 'package:flutter_drift_1/domain/model/news_item_fields/news_item_fields.dart';
 
 import '../../core/models/news_item_dto.dart' as _i3;
 import '../model/news_item/news_item.dart' as _i2;
@@ -16,7 +15,6 @@ import '../model/news_item/news_item.dart' as _i2;
 /// {@template package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
 /// Available mappings:
 /// - `NewsItem` → `NewsItemDTO`.
-/// - `NewsItemDTO` → `NewsItem`.
 /// {@endtemplate}
 class $NewsDTOMapper implements _i1.AutoMapprInterface {
   const $NewsDTOMapper();
@@ -35,12 +33,6 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
             sourceTypeOf == _typeOf<_i2.NewsItem?>()) &&
         (targetTypeOf == _typeOf<_i3.NewsItemDTO>() ||
             targetTypeOf == _typeOf<_i3.NewsItemDTO?>())) {
-      return true;
-    }
-    if ((sourceTypeOf == _typeOf<_i3.NewsItemDTO>() ||
-            sourceTypeOf == _typeOf<_i3.NewsItemDTO?>()) &&
-        (targetTypeOf == _typeOf<_i2.NewsItem>() ||
-            targetTypeOf == _typeOf<_i2.NewsItem?>())) {
       return true;
     }
     if (recursive) {
@@ -210,16 +202,6 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       return (_map__i2$NewsItem_To__i3$NewsItemDTO((model as _i2.NewsItem?))
           as TARGET);
     }
-    if ((sourceTypeOf == _typeOf<_i3.NewsItemDTO>() ||
-            sourceTypeOf == _typeOf<_i3.NewsItemDTO?>()) &&
-        (targetTypeOf == _typeOf<_i2.NewsItem>() ||
-            targetTypeOf == _typeOf<_i2.NewsItem?>())) {
-      if (canReturnNull && model == null) {
-        return null;
-      }
-      return (_map__i3$NewsItemDTO_To__i2$NewsItem((model as _i3.NewsItemDTO?))
-          as TARGET);
-    }
     throw Exception('No ${model.runtimeType} -> $targetTypeOf mapping.');
   }
 
@@ -243,29 +225,6 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       pillarId: model.pillarId,
       pillarName: model.pillarName,
       thumbnail: model.fields.thumbnail,
-    );
-  }
-
-  _i2.NewsItem _map__i3$NewsItemDTO_To__i2$NewsItem(_i3.NewsItemDTO? input) {
-    final model = input;
-    if (model == null) {
-      throw Exception(
-          r'Mapping NewsItemDTO → NewsItem failed because NewsItemDTO was null, and no default value was provided. '
-          r'Consider setting the whenSourceIsNull parameter on the MapType<NewsItemDTO, NewsItem> to handle null values during mapping.');
-    }
-    return _i2.NewsItem(
-      id: model.id,
-      type: model.type,
-      sectionId: model.sectionId,
-      sectionName: model.sectionName,
-      webPublicationDate: model.webPublicationDate,
-      webTitle: model.webTitle,
-      webUrl: model.webUrl,
-      apiUrl: model.apiUrl,
-      isHosted: model.isHosted,
-      pillarId: model.pillarId,
-      pillarName: model.pillarName,
-      fields: NewsItemFields(thumbnail: model.thumbnail),
     );
   }
 }

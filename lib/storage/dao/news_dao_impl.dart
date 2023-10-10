@@ -8,7 +8,7 @@ import 'package:flutter_drift_1/storage/entity/news_item_entity.dart';
 part 'news_dao_impl.g.dart';
 
 @DriftAccessor(tables: <Type>[NewsItemsEntity])
-@Injectable(as : NewsDao)
+@Injectable(as: NewsDao)
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
     implements NewsDao {
@@ -34,6 +34,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           isHosted: news.isHosted,
           pillarId: news.pillarId,
           pillarName: news.pillarName,
+          thumbnail: news.thumbnail,
         ),
       );
 
@@ -56,6 +57,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           isHosted: news.isHosted,
           pillarId: news.pillarId,
           pillarName: news.pillarName,
+          thumbnail: news.thumbnail,
         ),
       ));
 }

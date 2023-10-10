@@ -10,13 +10,26 @@ import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
 part 'app_database.g.dart';
 
-@DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDao])
+@DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDaoImpl])
 @injectable
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 2;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+        onCreate: (Migrator m) async {
+          await m.createAll();
+        },
+        onUpgrade: (Migrator m, int from, int to) async {
+          for (var table in allTables) {
+            await m.deleteTable(table.actualTableName);
+            await m.createTable(table);
+          }
+        },
+      );
 }
 
 LazyDatabase _openConnection() {

@@ -12,4 +12,5 @@ class NewsItemsEntity extends Table {
   BoolColumn get isHosted => boolean()();
   TextColumn get pillarId => text()();
   TextColumn get pillarName => text()();
+  TextColumn get thumbnail => text()();
 }

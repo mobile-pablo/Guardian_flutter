@@ -19,9 +19,16 @@ class _GuardianService implements GuardianService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<List<NewsItem>>> getNews({required String query}) async {
+  Future<HttpResponse<List<NewsItem>>> getNews({
+    required String query,
+    List<String>? showFields,
+  }) async {
+    const List<String> showFields = <String>['thumbnail'];
     const Map<String, dynamic> extra = <String, dynamic>{};
-    final Map<String, dynamic> queryParameters = <String, dynamic>{r'q': query};
+    final Map<String, dynamic> queryParameters = <String, dynamic>{
+      r'q': query,
+      r'show-fields': showFields,
+    };
     // ignore: always_specify_types
     queryParameters.removeWhere((String k, v) => v == null);
     final Map<String, dynamic> headers = <String, dynamic>{};
