@@ -1,3 +1,4 @@
+import 'package:flutter_drift_1/domain/model/news_item_fields/news_item_fields.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
@@ -18,6 +19,7 @@ class NewsItem with _$NewsItem {
     required bool isHosted,
     required String pillarId,
     required String pillarName,
+    required NewsItemFields fields,
   }) = _NewsItem;
 
   factory NewsItem.fromJson(Map<String, dynamic> json) =>

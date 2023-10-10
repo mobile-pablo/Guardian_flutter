@@ -19,6 +19,7 @@ _$NewsItemImpl _$$NewsItemImplFromJson(Map<String, dynamic> json) =>
       isHosted: json['isHosted'] as bool,
       pillarId: json['pillarId'] as String,
       pillarName: json['pillarName'] as String,
+      fields: NewsItemFields.fromJson(json['fields'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$NewsItemImplToJson(_$NewsItemImpl instance) =>
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$NewsItemImplToJson(_$NewsItemImpl instance) =>
       'isHosted': instance.isHosted,
       'pillarId': instance.pillarId,
       'pillarName': instance.pillarName,
+      'fields': instance.fields,
     };

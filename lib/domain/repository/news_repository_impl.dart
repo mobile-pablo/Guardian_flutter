@@ -6,7 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_drift_1/core/models/news_item_dto.dart';
 import 'package:flutter_drift_1/core/utils/data_transfer.dart';
 import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
-import 'package:flutter_drift_1/domain/model/news_item.dart';
+import 'package:flutter_drift_1/domain/model/news_item/news_item.dart';
 import 'package:flutter_drift_1/domain/repository/news_repository.dart';
 import 'package:flutter_drift_1/networking/service/guardian_service.dart';
 import 'package:flutter_drift_1/storage/dao/news_dao.dart';

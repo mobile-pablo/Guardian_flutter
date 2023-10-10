@@ -42,6 +42,8 @@ mixin _$NewsItem {
   set pillarId(String value) => throw _privateConstructorUsedError;
   String get pillarName => throw _privateConstructorUsedError;
   set pillarName(String value) => throw _privateConstructorUsedError;
+  NewsItemFields get fields => throw _privateConstructorUsedError;
+  set fields(NewsItemFields value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,7 +67,10 @@ abstract class $NewsItemCopyWith<$Res> {
       String apiUrl,
       bool isHosted,
       String pillarId,
-      String pillarName});
+      String pillarName,
+      NewsItemFields fields});
+
+  $NewsItemFieldsCopyWith<$Res> get fields;
 }
 
 /// @nodoc
@@ -92,6 +97,7 @@ class _$NewsItemCopyWithImpl<$Res, $Val extends NewsItem>
     Object? isHosted = null,
     Object? pillarId = null,
     Object? pillarName = null,
+    Object? fields = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -138,7 +144,19 @@ class _$NewsItemCopyWithImpl<$Res, $Val extends NewsItem>
           ? _value.pillarName
           : pillarName // ignore: cast_nullable_to_non_nullable
               as String,
+      fields: null == fields
+          ? _value.fields
+          : fields // ignore: cast_nullable_to_non_nullable
+              as NewsItemFields,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NewsItemFieldsCopyWith<$Res> get fields {
+    return $NewsItemFieldsCopyWith<$Res>(_value.fields, (value) {
+      return _then(_value.copyWith(fields: value) as $Val);
+    });
   }
 }
 
@@ -161,7 +179,11 @@ abstract class _$$NewsItemImplCopyWith<$Res>
       String apiUrl,
       bool isHosted,
       String pillarId,
-      String pillarName});
+      String pillarName,
+      NewsItemFields fields});
+
+  @override
+  $NewsItemFieldsCopyWith<$Res> get fields;
 }
 
 /// @nodoc
@@ -186,6 +208,7 @@ class __$$NewsItemImplCopyWithImpl<$Res>
     Object? isHosted = null,
     Object? pillarId = null,
     Object? pillarName = null,
+    Object? fields = null,
   }) {
     return _then(_$NewsItemImpl(
       id: null == id
@@ -232,6 +255,10 @@ class __$$NewsItemImplCopyWithImpl<$Res>
           ? _value.pillarName
           : pillarName // ignore: cast_nullable_to_non_nullable
               as String,
+      fields: null == fields
+          ? _value.fields
+          : fields // ignore: cast_nullable_to_non_nullable
+              as NewsItemFields,
     ));
   }
 }
@@ -250,7 +277,8 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
       required this.apiUrl,
       required this.isHosted,
       required this.pillarId,
-      required this.pillarName});
+      required this.pillarName,
+      required this.fields});
 
   factory _$NewsItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemImplFromJson(json);
@@ -277,10 +305,12 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
   final String pillarId;
   @override
   final String pillarName;
+  @override
+  final NewsItemFields fields;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItem(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName)';
+    return 'NewsItem(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, fields: $fields)';
   }
 
   @override
@@ -298,7 +328,8 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
       ..add(DiagnosticsProperty('apiUrl', apiUrl))
       ..add(DiagnosticsProperty('isHosted', isHosted))
       ..add(DiagnosticsProperty('pillarId', pillarId))
-      ..add(DiagnosticsProperty('pillarName', pillarName));
+      ..add(DiagnosticsProperty('pillarName', pillarName))
+      ..add(DiagnosticsProperty('fields', fields));
   }
 
   @JsonKey(ignore: true)
@@ -314,7 +345,7 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
     );
   }
   
-  @override
+ @override
   set apiUrl(String value) => apiUrl = value;
   
   @override
@@ -345,6 +376,9 @@ class _$NewsItemImpl with DiagnosticableTreeMixin implements _NewsItem {
   
   @override
   set webUrl(String value) => webUrl = value;
+
+  @override
+  set fields(NewsItemFields value) => fields = value;
 }
 
 abstract class _NewsItem implements NewsItem {
@@ -359,7 +393,8 @@ abstract class _NewsItem implements NewsItem {
       required String apiUrl,
       required bool isHosted,
       required String pillarId,
-      required String pillarName}) = _$NewsItemImpl;
+      required String pillarName,
+      required NewsItemFields fields}) = _$NewsItemImpl;
 
   factory _NewsItem.fromJson(Map<String, dynamic> json) =
       _$NewsItemImpl.fromJson;
@@ -397,6 +432,9 @@ abstract class _NewsItem implements NewsItem {
   @override
   String get pillarName;
   set pillarName(String value);
+  @override
+  NewsItemFields get fields;
+  set fields(NewsItemFields value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemImplCopyWith<_$NewsItemImpl> get copyWith =>
