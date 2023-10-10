@@ -19,6 +19,7 @@ _$NewsItemDTOImpl _$$NewsItemDTOImplFromJson(Map<String, dynamic> json) =>
       isHosted: json['isHosted'] as bool,
       pillarId: json['pillarId'] as String,
       pillarName: json['pillarName'] as String,
+      thumbnail: json['thumbnail'] as String,
     );
 
 Map<String, dynamic> _$$NewsItemDTOImplToJson(_$NewsItemDTOImpl instance) =>
@@ -34,4 +35,5 @@ Map<String, dynamic> _$$NewsItemDTOImplToJson(_$NewsItemDTOImpl instance) =>
       'isHosted': instance.isHosted,
       'pillarId': instance.pillarId,
       'pillarName': instance.pillarName,
+      'thumbnail': instance.thumbnail,
     };

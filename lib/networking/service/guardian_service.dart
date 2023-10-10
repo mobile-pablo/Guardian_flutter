@@ -8,11 +8,12 @@ part 'guardian_service.g.dart';
 @RestApi()
 @injectable
 abstract class GuardianService {
-
   @factoryMethod
   factory GuardianService(Dio dio) = _GuardianService;
 
   @GET(searchParameter)
-  Future<HttpResponse<List<NewsItem>>> getNews(
-      {@Query('q') required String query});
+  Future<HttpResponse<List<NewsItem>>> getNews({
+    @Query('q') required String query,
+    @Query('show-fields') List<String> showFields = const <String>['thumbnail'],
+  });
 }

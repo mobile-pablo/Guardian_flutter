@@ -8,6 +8,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
+import 'package:flutter_drift_1/domain/model/news_item_fields/news_item_fields.dart';
 
 import '../../core/models/news_item_dto.dart' as _i3;
 import '../model/news_item/news_item.dart' as _i2;
@@ -241,6 +242,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       isHosted: model.isHosted,
       pillarId: model.pillarId,
       pillarName: model.pillarName,
+      thumbnail: model.fields.thumbnail,
     );
   }
 
@@ -263,7 +265,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       isHosted: model.isHosted,
       pillarId: model.pillarId,
       pillarName: model.pillarName,
-      fields: model.fields,
+      fields: NewsItemFields(thumbnail: model.thumbnail),
     );
   }
 }

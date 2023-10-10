@@ -5,7 +5,12 @@ import 'package:flutter_drift_1/domain/model/news_item/news_item.dart';
 import 'news_dto_mapper.auto_mappr.dart';
 
 @AutoMappr(<MapType<Object, Object>>[
-  MapType<NewsItem, NewsItemDTO>(),
-  MapType<NewsItemDTO, NewsItem>(),
+  MapType<NewsItem, NewsItemDTO>(
+      fields: [Field('thumbnail', custom: NewsDTOMapper.mapThumbnailToDTO)]),
+  MapType<NewsItemDTO, NewsItem>(
+      fields: [Field('fields.thumbnail', custom: NewsDTOMapper.mapThumbnail)]),
 ])
-class NewsDTOMapper extends $NewsDTOMapper {}
+class NewsDTOMapper extends $NewsDTOMapper {
+  static String mapThumbnailToDTO(NewsItem item) => item.fields.thumbnail;
+  static String mapThumbnail(NewsItemDTO item) => item.thumbnail;
+}

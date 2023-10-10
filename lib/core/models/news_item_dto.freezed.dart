@@ -3,13 +3,11 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-
+part of 'news_item_dto.dart';
 
 // **************************************************************************
 // FreezedGenerator
 // **************************************************************************
-
-part of 'package:flutter_drift_1/core/models/news_item_dto.dart';
 
 T _$identity<T>(T value) => value;
 
@@ -44,6 +42,8 @@ mixin _$NewsItemDTO {
   set pillarId(String value) => throw _privateConstructorUsedError;
   String get pillarName => throw _privateConstructorUsedError;
   set pillarName(String value) => throw _privateConstructorUsedError;
+  String get thumbnail => throw _privateConstructorUsedError;
+  set thumbnail(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -53,7 +53,8 @@ mixin _$NewsItemDTO {
 
 /// @nodoc
 abstract class $NewsItemDTOCopyWith<$Res> {
-  factory $NewsItemDTOCopyWith(NewsItemDTO value, $Res Function(NewsItemDTO) then) =
+  factory $NewsItemDTOCopyWith(
+          NewsItemDTO value, $Res Function(NewsItemDTO) then) =
       _$NewsItemDTOCopyWithImpl<$Res, NewsItemDTO>;
   @useResult
   $Res call(
@@ -67,7 +68,8 @@ abstract class $NewsItemDTOCopyWith<$Res> {
       String apiUrl,
       bool isHosted,
       String pillarId,
-      String pillarName});
+      String pillarName,
+      String thumbnail});
 }
 
 /// @nodoc
@@ -94,6 +96,7 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
     Object? isHosted = null,
     Object? pillarId = null,
     Object? pillarName = null,
+    Object? thumbnail = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -140,6 +143,10 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
           ? _value.pillarName
           : pillarName // ignore: cast_nullable_to_non_nullable
               as String,
+      thumbnail: null == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -163,7 +170,8 @@ abstract class _$$NewsItemDTOImplCopyWith<$Res>
       String apiUrl,
       bool isHosted,
       String pillarId,
-      String pillarName});
+      String pillarName,
+      String thumbnail});
 }
 
 /// @nodoc
@@ -188,6 +196,7 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
     Object? isHosted = null,
     Object? pillarId = null,
     Object? pillarName = null,
+    Object? thumbnail = null,
   }) {
     return _then(_$NewsItemDTOImpl(
       id: null == id
@@ -234,6 +243,10 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
           ? _value.pillarName
           : pillarName // ignore: cast_nullable_to_non_nullable
               as String,
+      thumbnail: null == thumbnail
+          ? _value.thumbnail
+          : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -241,18 +254,20 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
-  const _$NewsItemDTOImpl(
-      {required this.id,
-      required this.type,
-      required this.sectionId,
-      required this.sectionName,
-      required this.webPublicationDate,
-      required this.webTitle,
-      required this.webUrl,
-      required this.apiUrl,
-      required this.isHosted,
-      required this.pillarId,
-      required this.pillarName});
+  const _$NewsItemDTOImpl({
+    required this.id,
+    required this.type,
+    required this.sectionId,
+    required this.sectionName,
+    required this.webPublicationDate,
+    required this.webTitle,
+    required this.webUrl,
+    required this.apiUrl,
+    required this.isHosted,
+    required this.pillarId,
+    required this.pillarName,
+    required this.thumbnail,
+  });
 
   factory _$NewsItemDTOImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemDTOImplFromJson(json);
@@ -279,10 +294,12 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
   final String pillarId;
   @override
   final String pillarName;
+  @override
+  final String thumbnail;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName)';
+    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, thumbnail: $thumbnail)';
   }
 
   @override
@@ -300,7 +317,8 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       ..add(DiagnosticsProperty('apiUrl', apiUrl))
       ..add(DiagnosticsProperty('isHosted', isHosted))
       ..add(DiagnosticsProperty('pillarId', pillarId))
-      ..add(DiagnosticsProperty('pillarName', pillarName));
+      ..add(DiagnosticsProperty('pillarName', pillarName))
+      ..add(DiagnosticsProperty('thumbnail', thumbnail));
   }
 
   @JsonKey(ignore: true)
@@ -336,7 +354,10 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
   
   @override
   set sectionName(String value) => sectionName = value;
-
+  
+  @override
+  set thumbnail(String value) => thumbnail = value;
+  
   @override
   set type(String value) => type = value;
   
@@ -362,7 +383,8 @@ abstract class _NewsItemDTO implements NewsItemDTO {
       required String apiUrl,
       required bool isHosted,
       required String pillarId,
-      required String pillarName}) = _$NewsItemDTOImpl;
+      required String pillarName,
+      required String thumbnail}) = _$NewsItemDTOImpl;
 
   factory _NewsItemDTO.fromJson(Map<String, dynamic> json) =
       _$NewsItemDTOImpl.fromJson;
@@ -400,6 +422,9 @@ abstract class _NewsItemDTO implements NewsItemDTO {
   @override
   String get pillarName;
   set pillarName(String value);
+  @override
+  String get thumbnail;
+  set thumbnail(String value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemDTOImplCopyWith<_$NewsItemDTOImpl> get copyWith =>

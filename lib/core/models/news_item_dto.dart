@@ -18,6 +18,7 @@ class NewsItemDTO with _$NewsItemDTO {
     required bool isHosted,
     required String pillarId,
     required String pillarName,
+    required String thumbnail,
   }) = _NewsItemDTO;
 
    factory NewsItemDTO.fromJson(Map<String, dynamic> json) =>
