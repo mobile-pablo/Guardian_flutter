@@ -10,8 +10,7 @@ part of 'guardian_service.dart';
 // no_leading_underscores_for_local_identifiers
 
 class _GuardianService implements GuardianService {
-  _GuardianService(
-    this._dio) {
+  _GuardianService(this._dio) {
     baseUrl ??= 'https://content.guardianapis.com/';
   }
 
@@ -23,27 +22,29 @@ class _GuardianService implements GuardianService {
   Future<HttpResponse<List<NewsItem>>> getNews({required String query}) async {
     const Map<String, dynamic> extra = <String, dynamic>{};
     final Map<String, dynamic> queryParameters = <String, dynamic>{r'q': query};
+    // ignore: always_specify_types
+    queryParameters.removeWhere((String k, v) => v == null);
     final Map<String, dynamic> headers = <String, dynamic>{};
-    const Map<String, dynamic>? data = null;
+    final Map<String, dynamic> data = <String, dynamic>{};
     final Response<Map<String, dynamic>> result =
         await _dio.fetch<Map<String, dynamic>>(
-            _setStreamType<HttpResponse<List<NewsItem>>>(Options(
-      method: 'GET',
-      headers: headers,
-      extra: extra,
-    )
-                .compose(
-                  _dio.options,
-                  '/search',
-                  queryParameters: queryParameters,
-                  data: data,
-                )
-                .copyWith(
-                    baseUrl: _combineBaseUrls(
-                  _dio.options.baseUrl,
-                  baseUrl,
-                ))));
-    List<NewsItem> value = result.data!['results']
+      _setStreamType<HttpResponse<List<NewsItem>>>(
+        Options(
+          method: 'GET',
+          headers: headers,
+          extra: extra,
+        )
+            .compose(
+              _dio.options,
+              '/search',
+              queryParameters: queryParameters,
+              data: data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl),
+      ),
+    );
+
+    List<NewsItem> value = await result.data!['response']['results']
         .map<NewsItem>(
             (dynamic i) => NewsItem.fromJson(i as Map<String, dynamic>))
         .toList();
@@ -63,22 +64,5 @@ class _GuardianService implements GuardianService {
       }
     }
     return requestOptions;
-  }
-
-  String _combineBaseUrls(
-    String dioBaseUrl,
-    String? baseUrl,
-  ) {
-    if (baseUrl == null || baseUrl.trim().isEmpty) {
-      return dioBaseUrl;
-    }
-
-    final Uri url = Uri.parse(baseUrl);
-
-    if (url.isAbsolute) {
-      return url.toString();
-    }
-
-    return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }

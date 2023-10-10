@@ -11,13 +11,14 @@ BaseOptions _createOptions() => BaseOptions(
       headers: <String, dynamic>{
         'Accept': '*/*',
         'Connection': 'keep-alive',
+        "Content-Type": "application/json",
       },
     );
 
 Dio buildDio() {
   final Dio dio = Dio()..options = _createOptions();
 
-  dio.interceptors.addAll([
+  dio.interceptors.addAll(<Interceptor>[
     LogInterceptor(
       responseBody: true,
       requestBody: true,
