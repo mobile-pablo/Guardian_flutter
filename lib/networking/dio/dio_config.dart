@@ -11,7 +11,7 @@ BaseOptions _createOptions() => BaseOptions(
       headers: <String, dynamic>{
         'Accept': '*/*',
         'Connection': 'keep-alive',
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     );
 
