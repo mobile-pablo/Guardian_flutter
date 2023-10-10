@@ -21,9 +21,8 @@ class _GuardianService implements GuardianService {
   @override
   Future<HttpResponse<List<NewsItem>>> getNews({
     required String query,
-    List<String>? showFields,
+    required String showFields,
   }) async {
-    const List<String> showFields = <String>['thumbnail'];
     const Map<String, dynamic> extra = <String, dynamic>{};
     final Map<String, dynamic> queryParameters = <String, dynamic>{
       r'q': query,

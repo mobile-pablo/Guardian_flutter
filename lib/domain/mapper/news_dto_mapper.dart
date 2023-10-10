@@ -10,4 +10,6 @@ import 'news_dto_mapper.auto_mappr.dart';
 ])
 class NewsDTOMapper extends $NewsDTOMapper {
   static String mapThumbnailToDTO(NewsItem item) => item.fields.thumbnail;
+
+  static String mapStandFirstToDTO(NewsItem item) => item.fields.standFirst;
 }

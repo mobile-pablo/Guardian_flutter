@@ -22,6 +22,8 @@ NewsItemFields _$NewsItemFieldsFromJson(Map<String, dynamic> json) {
 mixin _$NewsItemFields {
   String get thumbnail => throw _privateConstructorUsedError;
   set thumbnail(String value) => throw _privateConstructorUsedError;
+  String get standFirst => throw _privateConstructorUsedError;
+  set standFirst(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +37,7 @@ abstract class $NewsItemFieldsCopyWith<$Res> {
           NewsItemFields value, $Res Function(NewsItemFields) then) =
       _$NewsItemFieldsCopyWithImpl<$Res, NewsItemFields>;
   @useResult
-  $Res call({String thumbnail});
+  $Res call({String thumbnail, String standFirst});
 }
 
 /// @nodoc
@@ -52,11 +54,16 @@ class _$NewsItemFieldsCopyWithImpl<$Res, $Val extends NewsItemFields>
   @override
   $Res call({
     Object? thumbnail = null,
+    Object? standFirst = null,
   }) {
     return _then(_value.copyWith(
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      standFirst: null == standFirst
+          ? _value.standFirst
+          : standFirst // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -70,7 +77,7 @@ abstract class _$$NewsItemFieldsImplCopyWith<$Res>
       __$$NewsItemFieldsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String thumbnail});
+  $Res call({String thumbnail, String standFirst});
 }
 
 /// @nodoc
@@ -85,11 +92,16 @@ class __$$NewsItemFieldsImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? thumbnail = null,
+    Object? standFirst = null,
   }) {
     return _then(_$NewsItemFieldsImpl(
       thumbnail: null == thumbnail
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
+              as String,
+      standFirst: null == standFirst
+          ? _value.standFirst
+          : standFirst // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -100,19 +112,20 @@ class __$$NewsItemFieldsImplCopyWithImpl<$Res>
 class _$NewsItemFieldsImpl
     with DiagnosticableTreeMixin
     implements _NewsItemFields {
-  const _$NewsItemFieldsImpl({required this.thumbnail});
+  const _$NewsItemFieldsImpl(
+      {required this.thumbnail, required this.standFirst});
 
   factory _$NewsItemFieldsImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemFieldsImplFromJson(json);
 
   @override
-  final String thumbnail;
-
-  
+ final String thumbnail;
+  @override
+  final String standFirst;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItemFields(thumbnail: $thumbnail)';
+    return 'NewsItemFields(thumbnail: $thumbnail, standFirst: $standFirst)';
   }
 
   @override
@@ -120,7 +133,8 @@ class _$NewsItemFieldsImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'NewsItemFields'))
-      ..add(DiagnosticsProperty('thumbnail', thumbnail));
+      ..add(DiagnosticsProperty('thumbnail', thumbnail))
+      ..add(DiagnosticsProperty('standFirst', standFirst));
   }
 
   @JsonKey(ignore: true)
@@ -138,12 +152,16 @@ class _$NewsItemFieldsImpl
   }
   
   @override
+  set standFirst(String value) => standFirst = value;
+  
+  @override
   set thumbnail(String value) => thumbnail = value;
 }
 
 abstract class _NewsItemFields implements NewsItemFields {
-  const factory _NewsItemFields({required String thumbnail}) =
-      _$NewsItemFieldsImpl;
+  const factory _NewsItemFields(
+      {required String thumbnail,
+      required String standFirst}) = _$NewsItemFieldsImpl;
 
   factory _NewsItemFields.fromJson(Map<String, dynamic> json) =
       _$NewsItemFieldsImpl.fromJson;
@@ -151,6 +169,9 @@ abstract class _NewsItemFields implements NewsItemFields {
   @override
   String get thumbnail;
   set thumbnail(String value);
+  @override
+  String get standFirst;
+  set standFirst(String value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemFieldsImplCopyWith<_$NewsItemFieldsImpl> get copyWith =>

@@ -80,6 +80,12 @@ class $NewsItemsEntityTable extends NewsItemsEntity
   late final GeneratedColumn<String> thumbnail = GeneratedColumn<String>(
       'thumbnail', aliasedName, false,
       type: DriftSqlType.string, requiredDuringInsert: true);
+  static const VerificationMeta _standFirstMeta =
+      const VerificationMeta('standFirst');
+  @override
+  late final GeneratedColumn<String> standFirst = GeneratedColumn<String>(
+      'stand_first', aliasedName, false,
+      type: DriftSqlType.string, requiredDuringInsert: true);
   @override
   List<GeneratedColumn> get $columns => [
         id,
@@ -93,7 +99,8 @@ class $NewsItemsEntityTable extends NewsItemsEntity
         isHosted,
         pillarId,
         pillarName,
-        thumbnail
+        thumbnail,
+        standFirst
       ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -183,6 +190,14 @@ class $NewsItemsEntityTable extends NewsItemsEntity
     } else if (isInserting) {
       context.missing(_thumbnailMeta);
     }
+    if (data.containsKey('stand_first')) {
+      context.handle(
+          _standFirstMeta,
+          standFirst.isAcceptableOrUnknown(
+              data['stand_first']!, _standFirstMeta));
+    } else if (isInserting) {
+      context.missing(_standFirstMeta);
+    }
     return context;
   }
 
@@ -216,6 +231,8 @@ class $NewsItemsEntityTable extends NewsItemsEntity
           .read(DriftSqlType.string, data['${effectivePrefix}pillar_name'])!,
       thumbnail: attachedDatabase.typeMapping
           .read(DriftSqlType.string, data['${effectivePrefix}thumbnail'])!,
+      standFirst: attachedDatabase.typeMapping
+          .read(DriftSqlType.string, data['${effectivePrefix}stand_first'])!,
     );
   }
 
@@ -239,6 +256,7 @@ class NewsItemsEntityData extends DataClass
   final String pillarId;
   final String pillarName;
   final String thumbnail;
+  final String standFirst;
   const NewsItemsEntityData(
       {required this.id,
       required this.type,
@@ -251,7 +269,8 @@ class NewsItemsEntityData extends DataClass
       required this.isHosted,
       required this.pillarId,
       required this.pillarName,
-      required this.thumbnail});
+      required this.thumbnail,
+      required this.standFirst});
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
     final map = <String, Expression>{};
@@ -267,6 +286,7 @@ class NewsItemsEntityData extends DataClass
     map['pillar_id'] = Variable<String>(pillarId);
     map['pillar_name'] = Variable<String>(pillarName);
     map['thumbnail'] = Variable<String>(thumbnail);
+    map['stand_first'] = Variable<String>(standFirst);
     return map;
   }
 
@@ -284,6 +304,7 @@ class NewsItemsEntityData extends DataClass
       pillarId: Value(pillarId),
       pillarName: Value(pillarName),
       thumbnail: Value(thumbnail),
+      standFirst: Value(standFirst),
     );
   }
 
@@ -304,6 +325,7 @@ class NewsItemsEntityData extends DataClass
       pillarId: serializer.fromJson<String>(json['pillarId']),
       pillarName: serializer.fromJson<String>(json['pillarName']),
       thumbnail: serializer.fromJson<String>(json['thumbnail']),
+      standFirst: serializer.fromJson<String>(json['standFirst']),
     );
   }
   @override
@@ -322,6 +344,7 @@ class NewsItemsEntityData extends DataClass
       'pillarId': serializer.toJson<String>(pillarId),
       'pillarName': serializer.toJson<String>(pillarName),
       'thumbnail': serializer.toJson<String>(thumbnail),
+      'standFirst': serializer.toJson<String>(standFirst),
     };
   }
 
@@ -337,7 +360,8 @@ class NewsItemsEntityData extends DataClass
           bool? isHosted,
           String? pillarId,
           String? pillarName,
-          String? thumbnail}) =>
+          String? thumbnail,
+          String? standFirst}) =>
       NewsItemsEntityData(
         id: id ?? this.id,
         type: type ?? this.type,
@@ -351,6 +375,7 @@ class NewsItemsEntityData extends DataClass
         pillarId: pillarId ?? this.pillarId,
         pillarName: pillarName ?? this.pillarName,
         thumbnail: thumbnail ?? this.thumbnail,
+        standFirst: standFirst ?? this.standFirst,
       );
   @override
   String toString() {
@@ -366,7 +391,8 @@ class NewsItemsEntityData extends DataClass
           ..write('isHosted: $isHosted, ')
           ..write('pillarId: $pillarId, ')
           ..write('pillarName: $pillarName, ')
-          ..write('thumbnail: $thumbnail')
+          ..write('thumbnail: $thumbnail, ')
+          ..write('standFirst: $standFirst')
           ..write(')'))
         .toString();
   }
@@ -384,7 +410,8 @@ class NewsItemsEntityData extends DataClass
       isHosted,
       pillarId,
       pillarName,
-      thumbnail);
+      thumbnail,
+      standFirst);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -400,7 +427,8 @@ class NewsItemsEntityData extends DataClass
           other.isHosted == this.isHosted &&
           other.pillarId == this.pillarId &&
           other.pillarName == this.pillarName &&
-          other.thumbnail == this.thumbnail);
+          other.thumbnail == this.thumbnail &&
+          other.standFirst == this.standFirst);
 }
 
 class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
@@ -416,6 +444,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
   final Value<String> pillarId;
   final Value<String> pillarName;
   final Value<String> thumbnail;
+  final Value<String> standFirst;
   final Value<int> rowid;
   const NewsItemsEntityCompanion({
     this.id = const Value.absent(),
@@ -430,6 +459,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     this.pillarId = const Value.absent(),
     this.pillarName = const Value.absent(),
     this.thumbnail = const Value.absent(),
+    this.standFirst = const Value.absent(),
     this.rowid = const Value.absent(),
   });
   NewsItemsEntityCompanion.insert({
@@ -445,6 +475,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     required String pillarId,
     required String pillarName,
     required String thumbnail,
+    required String standFirst,
     this.rowid = const Value.absent(),
   })  : id = Value(id),
         type = Value(type),
@@ -457,7 +488,8 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
         isHosted = Value(isHosted),
         pillarId = Value(pillarId),
         pillarName = Value(pillarName),
-        thumbnail = Value(thumbnail);
+        thumbnail = Value(thumbnail),
+        standFirst = Value(standFirst);
   static Insertable<NewsItemsEntityData> custom({
     Expression<String>? id,
     Expression<String>? type,
@@ -471,6 +503,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     Expression<String>? pillarId,
     Expression<String>? pillarName,
     Expression<String>? thumbnail,
+    Expression<String>? standFirst,
     Expression<int>? rowid,
   }) {
     return RawValuesInsertable({
@@ -487,6 +520,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       if (pillarId != null) 'pillar_id': pillarId,
       if (pillarName != null) 'pillar_name': pillarName,
       if (thumbnail != null) 'thumbnail': thumbnail,
+      if (standFirst != null) 'stand_first': standFirst,
       if (rowid != null) 'rowid': rowid,
     });
   }
@@ -504,6 +538,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       Value<String>? pillarId,
       Value<String>? pillarName,
       Value<String>? thumbnail,
+      Value<String>? standFirst,
       Value<int>? rowid}) {
     return NewsItemsEntityCompanion(
       id: id ?? this.id,
@@ -518,6 +553,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
       pillarId: pillarId ?? this.pillarId,
       pillarName: pillarName ?? this.pillarName,
       thumbnail: thumbnail ?? this.thumbnail,
+      standFirst: standFirst ?? this.standFirst,
       rowid: rowid ?? this.rowid,
     );
   }
@@ -561,6 +597,9 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
     if (thumbnail.present) {
       map['thumbnail'] = Variable<String>(thumbnail.value);
     }
+    if (standFirst.present) {
+      map['stand_first'] = Variable<String>(standFirst.value);
+    }
     if (rowid.present) {
       map['rowid'] = Variable<int>(rowid.value);
     }
@@ -582,6 +621,7 @@ class NewsItemsEntityCompanion extends UpdateCompanion<NewsItemsEntityData> {
           ..write('pillarId: $pillarId, ')
           ..write('pillarName: $pillarName, ')
           ..write('thumbnail: $thumbnail, ')
+          ..write('standFirst: $standFirst, ')
           ..write('rowid: $rowid')
           ..write(')'))
         .toString();

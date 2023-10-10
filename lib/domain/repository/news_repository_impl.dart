@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter_drift_1/core/const/news_service_const.dart';
 import 'package:flutter_drift_1/core/models/news_item_dto.dart';
 import 'package:flutter_drift_1/core/utils/data_transfer.dart';
 import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
@@ -26,7 +27,7 @@ class NewsRepositoryImpl implements NewsRepository {
       {required String query}) async {
     try {
       final HttpResponse<List<NewsItem>> httpResponse =
-          await _guardianService.getNews(query: query);
+          await _guardianService.getNews(query: query, showFields: thumbnailAndStandFirst);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;

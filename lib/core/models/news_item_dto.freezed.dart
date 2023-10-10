@@ -44,6 +44,8 @@ mixin _$NewsItemDTO {
   set pillarName(String value) => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   set thumbnail(String value) => throw _privateConstructorUsedError;
+  String get standFirst => throw _privateConstructorUsedError;
+  set standFirst(String value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -69,7 +71,8 @@ abstract class $NewsItemDTOCopyWith<$Res> {
       bool isHosted,
       String pillarId,
       String pillarName,
-      String thumbnail});
+      String thumbnail,
+      String standFirst});
 }
 
 /// @nodoc
@@ -97,6 +100,7 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
     Object? pillarId = null,
     Object? pillarName = null,
     Object? thumbnail = null,
+    Object? standFirst = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -147,6 +151,10 @@ class _$NewsItemDTOCopyWithImpl<$Res, $Val extends NewsItemDTO>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      standFirst: null == standFirst
+          ? _value.standFirst
+          : standFirst // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -171,7 +179,8 @@ abstract class _$$NewsItemDTOImplCopyWith<$Res>
       bool isHosted,
       String pillarId,
       String pillarName,
-      String thumbnail});
+      String thumbnail,
+      String standFirst});
 }
 
 /// @nodoc
@@ -197,6 +206,7 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
     Object? pillarId = null,
     Object? pillarName = null,
     Object? thumbnail = null,
+    Object? standFirst = null,
   }) {
     return _then(_$NewsItemDTOImpl(
       id: null == id
@@ -247,6 +257,10 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      standFirst: null == standFirst
+          ? _value.standFirst
+          : standFirst // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -254,20 +268,20 @@ class __$$NewsItemDTOImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
-  const _$NewsItemDTOImpl({
-    required this.id,
-    required this.type,
-    required this.sectionId,
-    required this.sectionName,
-    required this.webPublicationDate,
-    required this.webTitle,
-    required this.webUrl,
-    required this.apiUrl,
-    required this.isHosted,
-    required this.pillarId,
-    required this.pillarName,
-    required this.thumbnail,
-  });
+  const _$NewsItemDTOImpl(
+      {required this.id,
+      required this.type,
+      required this.sectionId,
+      required this.sectionName,
+      required this.webPublicationDate,
+      required this.webTitle,
+      required this.webUrl,
+      required this.apiUrl,
+      required this.isHosted,
+      required this.pillarId,
+      required this.pillarName,
+      required this.thumbnail,
+      required this.standFirst});
 
   factory _$NewsItemDTOImpl.fromJson(Map<String, dynamic> json) =>
       _$$NewsItemDTOImplFromJson(json);
@@ -296,10 +310,12 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
   final String pillarName;
   @override
   final String thumbnail;
+  @override
+  final String standFirst;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, thumbnail: $thumbnail)';
+    return 'NewsItemDTO(id: $id, type: $type, sectionId: $sectionId, sectionName: $sectionName, webPublicationDate: $webPublicationDate, webTitle: $webTitle, webUrl: $webUrl, apiUrl: $apiUrl, isHosted: $isHosted, pillarId: $pillarId, pillarName: $pillarName, thumbnail: $thumbnail, standFirst: $standFirst)';
   }
 
   @override
@@ -318,7 +334,8 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
       ..add(DiagnosticsProperty('isHosted', isHosted))
       ..add(DiagnosticsProperty('pillarId', pillarId))
       ..add(DiagnosticsProperty('pillarName', pillarName))
-      ..add(DiagnosticsProperty('thumbnail', thumbnail));
+      ..add(DiagnosticsProperty('thumbnail', thumbnail))
+      ..add(DiagnosticsProperty('standFirst', standFirst));
   }
 
   @JsonKey(ignore: true)
@@ -369,6 +386,9 @@ class _$NewsItemDTOImpl with DiagnosticableTreeMixin implements _NewsItemDTO {
   
   @override
   set webUrl(String value) => webUrl = value;
+
+  @override
+  set standFirst(String value) => standFirst = value;
 }
 
 abstract class _NewsItemDTO implements NewsItemDTO {
@@ -384,7 +404,8 @@ abstract class _NewsItemDTO implements NewsItemDTO {
       required bool isHosted,
       required String pillarId,
       required String pillarName,
-      required String thumbnail}) = _$NewsItemDTOImpl;
+      required String thumbnail,
+      required String standFirst}) = _$NewsItemDTOImpl;
 
   factory _NewsItemDTO.fromJson(Map<String, dynamic> json) =
       _$NewsItemDTOImpl.fromJson;
@@ -425,6 +446,9 @@ abstract class _NewsItemDTO implements NewsItemDTO {
   @override
   String get thumbnail;
   set thumbnail(String value);
+  @override
+  String get standFirst;
+  set standFirst(String value);
   @override
   @JsonKey(ignore: true)
   _$$NewsItemDTOImplCopyWith<_$NewsItemDTOImpl> get copyWith =>

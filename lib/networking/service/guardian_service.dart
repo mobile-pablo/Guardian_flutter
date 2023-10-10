@@ -14,6 +14,7 @@ abstract class GuardianService {
   @GET(searchParameter)
   Future<HttpResponse<List<NewsItem>>> getNews({
     @Query('q') required String query,
-    @Query('show-fields') List<String> showFields = const <String>['thumbnail'],
+    @Query('show-fields')
+    required String showFields,
   });
 }

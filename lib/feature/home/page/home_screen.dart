@@ -60,7 +60,7 @@ class HomeScreen extends HookWidget {
                     child: NewsItemWidget(
                   title: state.news![index].webTitle,
                   imageUrl: state.news![index].thumbnail,
-                  description: state.news![index].sectionName,
+                  description: state.news![index].standFirst,
                 ));
               });
         }
