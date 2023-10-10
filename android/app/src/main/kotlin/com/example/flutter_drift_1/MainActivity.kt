@@ -1,4 +1,4 @@
-package com.example.flutter_drift_1
+package com.example.guardian_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 

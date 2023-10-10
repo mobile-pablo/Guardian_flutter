@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_drift_1/networking/dio/dio_config.dart';
+import 'package:guardian_flutter/networking/dio/dio_config.dart';
 import 'package:injectable/injectable.dart';
 
 @module

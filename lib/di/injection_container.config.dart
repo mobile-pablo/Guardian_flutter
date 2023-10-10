@@ -12,30 +12,30 @@
 import 'package:dio/dio.dart' as _i5;
 import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i10;
-import 'package:flutter_drift_1/core/route/app_route.dart' as _i4;
-import 'package:flutter_drift_1/di/app_module.dart' as _i21;
-import 'package:flutter_drift_1/domain/repository/news_repository.dart' as _i13;
-import 'package:flutter_drift_1/domain/repository/news_repository_impl.dart'
+import 'package:guardian_flutter/core/route/app_route.dart' as _i4;
+import 'package:guardian_flutter/di/app_module.dart' as _i21;
+import 'package:guardian_flutter/domain/repository/news_repository.dart' as _i13;
+import 'package:guardian_flutter/domain/repository/news_repository_impl.dart'
     as _i14;
-import 'package:flutter_drift_1/domain/use_cases/get_news_use_case.dart'
+import 'package:guardian_flutter/domain/use_cases/get_news_use_case.dart'
     as _i17;
-import 'package:flutter_drift_1/domain/use_cases/insert_news_item_use_case.dart'
+import 'package:guardian_flutter/domain/use_cases/insert_news_item_use_case.dart'
     as _i19;
-import 'package:flutter_drift_1/domain/use_cases/remove_news_item_use_case.dart'
+import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart'
     as _i15;
-import 'package:flutter_drift_1/domain/use_cases/update_news_item_use_case.dart'
+import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart'
     as _i16;
-import 'package:flutter_drift_1/feature/home/bloc/local/home_local_bloc.dart'
+import 'package:guardian_flutter/feature/home/bloc/local/home_local_bloc.dart'
     as _i20;
-import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_bloc.dart'
+import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart'
     as _i18;
-import 'package:flutter_drift_1/feature/home/page/home_screen.dart' as _i7;
-import 'package:flutter_drift_1/main.dart' as _i9;
-import 'package:flutter_drift_1/networking/service/guardian_service.dart'
+import 'package:guardian_flutter/feature/home/page/home_screen.dart' as _i7;
+import 'package:guardian_flutter/main.dart' as _i9;
+import 'package:guardian_flutter/networking/service/guardian_service.dart'
     as _i6;
-import 'package:flutter_drift_1/storage/dao/news_dao.dart' as _i11;
-import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart' as _i12;
-import 'package:flutter_drift_1/storage/database/app_database.dart' as _i3;
+import 'package:guardian_flutter/storage/dao/news_dao.dart' as _i11;
+import 'package:guardian_flutter/storage/dao/news_dao_impl.dart' as _i12;
+import 'package:guardian_flutter/storage/database/app_database.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 

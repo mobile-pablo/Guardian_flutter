@@ -1,4 +1,4 @@
-import 'package:flutter_drift_1/domain/model/news_item_fields/news_item_fields.dart';
+import 'package:guardian_flutter/domain/model/news_item_fields/news_item_fields.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 

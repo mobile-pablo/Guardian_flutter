@@ -1,4 +1,4 @@
-import 'package:flutter_drift_1/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
 
 abstract class HomeLocalEvent {
   const HomeLocalEvent();

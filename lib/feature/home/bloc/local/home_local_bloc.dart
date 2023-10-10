@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_drift_1/feature/home/bloc/local/home_local_event.dart';
-import 'package:flutter_drift_1/feature/home/bloc/local/home_local_state.dart';
-import 'package:flutter_drift_1/domain/use_cases/insert_news_item_use_case.dart';
-import 'package:flutter_drift_1/domain/use_cases/remove_news_item_use_case.dart';
-import 'package:flutter_drift_1/domain/use_cases/update_news_item_use_case.dart';
+import 'package:guardian_flutter/feature/home/bloc/local/home_local_event.dart';
+import 'package:guardian_flutter/feature/home/bloc/local/home_local_state.dart';
+import 'package:guardian_flutter/domain/use_cases/insert_news_item_use_case.dart';
+import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart';
+import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_drift_1/core/api_key.dart';
-import 'package:flutter_drift_1/core/const/news_service_const.dart';
+import 'package:guardian_flutter/core/api_key.dart';
+import 'package:guardian_flutter/core/const/news_service_const.dart';
 
 BaseOptions _createOptions() => BaseOptions(
       baseUrl: guardianBaseUrl,

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_drift_1/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
 
 abstract class HomeRemoteState extends Equatable {
   final List<NewsItemDTO>? news;
@@ -9,7 +9,6 @@ abstract class HomeRemoteState extends Equatable {
 
   @override
   List<Object?> get props => <Object?>[news!, error];
-
 }
 
 class HomeRemoteNewsLoading extends HomeRemoteState {

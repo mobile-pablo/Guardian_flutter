@@ -1,9 +1,9 @@
 import 'package:drift/drift.dart';
-import 'package:flutter_drift_1/core/models/news_item_dto.dart';
-import 'package:flutter_drift_1/storage/dao/news_dao.dart';
-import 'package:flutter_drift_1/storage/database/app_database.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/storage/dao/news_dao.dart';
+import 'package:guardian_flutter/storage/database/app_database.dart';
 import 'package:injectable/injectable.dart';
-import 'package:flutter_drift_1/storage/entity/news_item_entity.dart';
+import 'package:guardian_flutter/storage/entity/news_item_entity.dart';
 
 part 'news_dao_impl.g.dart';
 

@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_drift_1/core/route/app_route.gr.dart';
+import 'package:guardian_flutter/core/route/app_route.gr.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

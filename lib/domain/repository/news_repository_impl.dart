@@ -3,14 +3,14 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:flutter_drift_1/core/const/news_service_const.dart';
-import 'package:flutter_drift_1/core/models/news_item_dto.dart';
-import 'package:flutter_drift_1/core/utils/data_transfer.dart';
-import 'package:flutter_drift_1/domain/mapper/news_dto_mapper.dart';
-import 'package:flutter_drift_1/domain/model/news_item/news_item.dart';
-import 'package:flutter_drift_1/domain/repository/news_repository.dart';
-import 'package:flutter_drift_1/networking/service/guardian_service.dart';
-import 'package:flutter_drift_1/storage/dao/news_dao.dart';
+import 'package:guardian_flutter/core/const/news_service_const.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/core/utils/data_transfer.dart';
+import 'package:guardian_flutter/domain/mapper/news_dto_mapper.dart';
+import 'package:guardian_flutter/domain/model/news_item/news_item.dart';
+import 'package:guardian_flutter/domain/repository/news_repository.dart';
+import 'package:guardian_flutter/networking/service/guardian_service.dart';
+import 'package:guardian_flutter/storage/dao/news_dao.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/dio.dart';
 

@@ -12,7 +12,7 @@ import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 import '../../core/models/news_item_dto.dart' as _i3;
 import '../model/news_item/news_item.dart' as _i2;
 
-/// {@template package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+/// {@template package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
 /// Available mappings:
 /// - `NewsItem` → `NewsItemDTO`.
 /// {@endtemplate}
@@ -24,7 +24,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   List<_i1.AutoMapprInterface> get _delegates => const [];
 
   /// {@macro AutoMapprInterface:canConvert}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   bool canConvert<SOURCE, TARGET>({bool recursive = true}) {
     final sourceTypeOf = _typeOf<SOURCE>();
@@ -46,7 +46,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }
 
   /// {@macro AutoMapprInterface:convert}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   TARGET convert<SOURCE, TARGET>(SOURCE? model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -62,7 +62,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }
 
   /// {@macro AutoMapprInterface:tryConvert}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   TARGET? tryConvert<SOURCE, TARGET>(SOURCE? model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -81,7 +81,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }
 
   /// {@macro AutoMapprInterface:convertIterable}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   Iterable<TARGET> convertIterable<SOURCE, TARGET>(Iterable<SOURCE?> model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -100,7 +100,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   ///
   /// When an item in the source iterable is null, uses `whenSourceIsNull` if defined or null
   ///
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   Iterable<TARGET?> tryConvertIterable<SOURCE, TARGET>(
       Iterable<SOURCE?> model) {
@@ -117,7 +117,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }
 
   /// {@macro AutoMapprInterface:convertList}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   List<TARGET> convertList<SOURCE, TARGET>(Iterable<SOURCE?> model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -136,7 +136,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   ///
   /// When an item in the source iterable is null, uses `whenSourceIsNull` if defined or null
   ///
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   List<TARGET?> tryConvertList<SOURCE, TARGET>(Iterable<SOURCE?> model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -152,7 +152,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   }
 
   /// {@macro AutoMapprInterface:convertSet}
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   Set<TARGET> convertSet<SOURCE, TARGET>(Iterable<SOURCE?> model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {
@@ -171,7 +171,7 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
   ///
   /// When an item in the source iterable is null, uses `whenSourceIsNull` if defined or null
   ///
-  /// {@macro package:flutter_drift_1/domain/mapper/news_dto_mapper.dart}
+  /// {@macro package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
   @override
   Set<TARGET?> tryConvertSet<SOURCE, TARGET>(Iterable<SOURCE?> model) {
     if (canConvert<SOURCE, TARGET>(recursive: false)) {

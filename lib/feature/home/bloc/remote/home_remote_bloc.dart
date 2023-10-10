@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_drift_1/core/models/news_item_dto.dart';
-import 'package:flutter_drift_1/core/utils/data_transfer.dart';
-import 'package:flutter_drift_1/domain/use_cases/get_news_use_case.dart';
-import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_event.dart';
-import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_state.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/core/utils/data_transfer.dart';
+import 'package:guardian_flutter/domain/use_cases/get_news_use_case.dart';
+import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart';
+import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable

@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
-import 'package:flutter_drift_1/storage/dao/news_dao.dart';
-import 'package:flutter_drift_1/storage/dao/news_dao_impl.dart';
-import 'package:flutter_drift_1/storage/entity/news_item_entity.dart';
+import 'package:guardian_flutter/storage/dao/news_dao.dart';
+import 'package:guardian_flutter/storage/dao/news_dao_impl.dart';
+import 'package:guardian_flutter/storage/entity/news_item_entity.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
