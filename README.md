@@ -7,3 +7,8 @@ Small news app based on flutter
 * Retrofit + Dio
 * Bloc
 * GetIt + Injectable
+* Freezed
+* Equatable
+* Auto Mappr
+* Tests
+* Bitrise CI/CD
