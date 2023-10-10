@@ -6,6 +6,7 @@ import 'package:flutter_drift_1/di/injection_container.dart';
 import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_bloc.dart';
 import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_event.dart';
 import 'package:flutter_drift_1/feature/home/bloc/remote/home_remote_state.dart';
+import 'package:flutter_drift_1/feature/home/widgets/news_item_widget.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:injectable/injectable.dart';
 
@@ -56,8 +57,11 @@ class HomeScreen extends HookWidget {
               itemCount: state.news!.length,
               itemBuilder: (BuildContext context, int index) {
                 return Center(
-                  child: Text(state.news![index].id.toString()),
-                );
+                    child: NewsItemWidget(
+                  title: state.news![index].webTitle,
+                  imageUrl: state.news![index].thumbnail,
+                  description: state.news![index].sectionName,
+                ));
               });
         }
         return const SizedBox();
