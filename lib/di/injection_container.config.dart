@@ -12,9 +12,11 @@
 import 'package:dio/dio.dart' as _i5;
 import 'package:flutter/cupertino.dart' as _i8;
 import 'package:flutter/material.dart' as _i10;
+import 'package:get_it/get_it.dart' as _i1;
 import 'package:guardian_flutter/core/route/app_route.dart' as _i4;
 import 'package:guardian_flutter/di/app_module.dart' as _i21;
-import 'package:guardian_flutter/domain/repository/news_repository.dart' as _i13;
+import 'package:guardian_flutter/domain/repository/news_repository.dart'
+    as _i13;
 import 'package:guardian_flutter/domain/repository/news_repository_impl.dart'
     as _i14;
 import 'package:guardian_flutter/domain/use_cases/get_news_use_case.dart'
@@ -36,7 +38,6 @@ import 'package:guardian_flutter/networking/service/guardian_service.dart'
 import 'package:guardian_flutter/storage/dao/news_dao.dart' as _i11;
 import 'package:guardian_flutter/storage/dao/news_dao_impl.dart' as _i12;
 import 'package:guardian_flutter/storage/database/app_database.dart' as _i3;
-import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
