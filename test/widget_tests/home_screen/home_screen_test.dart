@@ -1,15 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:get_it/get_it.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/feature/home/page/home_screen.dart';
 import 'package:guardian_flutter/networking/service/guardian_service.dart';
 import 'package:mockito/annotations.dart';
 
 import 'home_screen_test.mocks.dart';
-
-final GetIt sl = GetIt.instance;
 
 @GenerateMocks(<Type>[StackRouter, GuardianService])
 
