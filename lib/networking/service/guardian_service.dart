@@ -6,7 +6,7 @@ import 'package:guardian_flutter/core/const/news_service_const.dart';
 part 'guardian_service.g.dart';
 
 @RestApi()
-@injectable
+@Injectable(env: <String>[Environment.prod, Environment.dev])
 abstract class GuardianService {
   @factoryMethod
   factory GuardianService(Dio dio) = _GuardianService;

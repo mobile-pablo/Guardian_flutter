@@ -11,7 +11,7 @@ import 'package:path/path.dart' as p;
 part 'app_database.g.dart';
 
 @DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDaoImpl])
-@injectable
+@Injectable(env : <String>[Environment.prod, Environment.dev])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(_openConnection());
 

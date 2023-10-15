@@ -13,7 +13,7 @@ import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
-@injectable
+@Injectable(env: <String>[Environment.prod, Environment.dev, Environment.test])
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
 
@@ -28,14 +28,11 @@ class HomeScreen extends HookWidget {
           DefaultWidgetsLocalizations.delegate,
           DefaultMaterialLocalizations.delegate,
         ],
-        child: MediaQuery(
-          data: const MediaQueryData(),
-          child: Directionality(
-            textDirection: TextDirection.ltr,
-            child: Scaffold(
-              appBar: _buildAppBar(context),
-              body: _buildBody(),
-            ),
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Scaffold(
+            appBar: _buildAppBar(context),
+            body: _buildBody(),
           ),
         ),
       ),
