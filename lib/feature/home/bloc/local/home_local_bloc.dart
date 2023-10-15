@@ -6,7 +6,7 @@ import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart
 import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart';
 import 'package:injectable/injectable.dart';
 
-@injectable
+@Injectable(env: <String>[Environment.prod, Environment.dev])
 class HomeLocalBloc extends Bloc<HomeLocalEvent, HomeLocalState> {
   final InsertNewsItemUseCase _insertNewsItemUseCase;
   final RemoveNewsItemUseCase _removeNewsItemUseCase;
