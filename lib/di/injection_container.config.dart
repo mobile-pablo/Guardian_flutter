@@ -50,22 +50,22 @@ extension GetItInjectableX on _i1.GetIt {
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
   }) {
-    final gh = _i2.GetItHelper(
+    final _i2.GetItHelper gh = _i2.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
-    final appModule = _$AppModule();
+    final _$AppModule appModule = _$AppModule();
     gh.factory<_i3.AppDatabase>(
       () => _i3.AppDatabase(),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i4.AppRouter>(
       () => _i4.AppRouter(),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
         _test,
@@ -73,21 +73,21 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i5.Dio>(
       () => appModule.dio,
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i6.GuardianService>(
       () => _i6.GuardianService(gh<_i5.Dio>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i7.HomeScreen>(
       () => _i7.HomeScreen(key: gh<_i8.Key>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
         _test,
@@ -95,14 +95,14 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i9.MyApp>(
       () => _i9.MyApp(key: gh<_i10.Key>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i11.NewsDao>(
       () => _i12.NewsDaoImpl(gh<_i3.AppDatabase>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
@@ -112,14 +112,14 @@ extension GetItInjectableX on _i1.GetIt {
         gh<_i6.GuardianService>(),
         gh<_i11.NewsDao>(),
       ),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i15.RemoveNewsItemUseCase>(
       () => _i15.RemoveNewsItemUseCase(gh<_i13.NewsRepository>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
@@ -128,16 +128,17 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i16.UpdateNewsItemUseCase(gh<_i13.NewsRepository>()));
     gh.factory<_i17.GetNewsUseCase>(
       () => _i17.GetNewsUseCase(gh<_i13.NewsRepository>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },
     );
     gh.factory<_i18.HomeRemoteBloc>(
       () => _i18.HomeRemoteBloc(gh<_i17.GetNewsUseCase>()),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
+        _test,
       },
     );
     gh.factory<_i19.InsertNewsItemUseCase>(
@@ -148,7 +149,7 @@ extension GetItInjectableX on _i1.GetIt {
         gh<_i15.RemoveNewsItemUseCase>(),
         gh<_i16.UpdateNewsItemUseCase>(),
       ),
-      registerFor: {
+      registerFor: <String>{
         _prod,
         _dev,
       },

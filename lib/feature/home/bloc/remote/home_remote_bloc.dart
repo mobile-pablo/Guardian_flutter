@@ -6,7 +6,7 @@ import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable(env: <String>[Environment.prod, Environment.dev])
+@Injectable(env: <String>[Environment.prod, Environment.dev, Environment.test])
 class HomeRemoteBloc extends Bloc<HomeRemoteEvent, HomeRemoteState> {
   final GetNewsUseCase _getNewsUseCase;
 
