@@ -191,10 +191,8 @@ class $NewsItemsEntityTable extends NewsItemsEntity
       context.missing(_thumbnailMeta);
     }
     if (data.containsKey('trail_text')) {
-      context.handle(
-          _trailTextMeta,
-          trailText.isAcceptableOrUnknown(
-              data['trail_text']!, _trailTextMeta));
+      context.handle(_trailTextMeta,
+          trailText.isAcceptableOrUnknown(data['trail_text']!, _trailTextMeta));
     } else if (isInserting) {
       context.missing(_trailTextMeta);
     }

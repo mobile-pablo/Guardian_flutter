@@ -11,9 +11,9 @@ import 'package:path/path.dart' as p;
 part 'app_database.g.dart';
 
 @DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDaoImpl])
-@injectable
+@Injectable(env : <String>[Environment.prod, Environment.dev])
 class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(_openConnection());
+  AppDatabase(QueryExecutor memory) : super(_openConnection());
 
   @override
   int get schemaVersion => 4;
@@ -24,7 +24,7 @@ class AppDatabase extends _$AppDatabase {
           await m.createAll();
         },
         onUpgrade: (Migrator m, int from, int to) async {
-          for (var table in allTables) {
+          for (TableInfo<Table, Object?> table in allTables) {
             await m.deleteTable(table.actualTableName);
             await m.createTable(table);
           }

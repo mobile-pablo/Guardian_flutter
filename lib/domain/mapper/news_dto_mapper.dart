@@ -5,7 +5,7 @@ import 'package:guardian_flutter/domain/model/news_item/news_item.dart';
 import 'news_dto_mapper.auto_mappr.dart';
 
 @AutoMappr(<MapType<Object, Object>>[
-  MapType<NewsItem, NewsItemDTO>(fields: [
+  MapType<NewsItem, NewsItemDTO>(fields: <Field>[
     Field('thumbnail', custom: NewsDTOMapper.mapThumbnailToDTO),
     Field('trailText', custom: NewsDTOMapper.mapTrailTextToDTO)
   ]),
