@@ -13,7 +13,7 @@ import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
-@Injectable(env: <String>[Environment.prod, Environment.dev, Environment.test])
+@injectable
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
 
