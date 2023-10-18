@@ -2,11 +2,11 @@
     "response": {
         "status": "ok",
         "userTier": "developer",
-        "total": 2457989,
+        "total": 2458722,
         "startIndex": 1,
         "pageSize": 10,
         "currentPage": 1,
-        "pages": 245799,
+        "pages": 245873,
         "orderBy": "relevance",
         "results": [
             {
@@ -15,11 +15,11 @@
                 "sectionId": "commentisfree",
                 "sectionName": "Opinion",
                 "webPublicationDate": "2017-12-12T06:00:26Z",
-                "webTitle": "Harry Potter and the £4.50 chocolate frog | Alice O’Keeffe",
+                "webTitle": "Harry Potta and the £4.50 chocolate frog | Alice O’Keeffe",
                 "webUrl": "https://www.theguardian.com/commentisfree/2017/dec/12/harry-potter-magic-jk-rowling",
                 "apiUrl": "https://content.guardianapis.com/commentisfree/2017/dec/12/harry-potter-magic-jk-rowling",
                 "fields": {
-                    "standfirst": "I was delighted when my son discovered JK Rowling’s books. But the boy wizard’s magic is in danger of being sullied by a glut of pricey merchandise",
+                    "trailText": "I was delighted when my son discovered JK Rowling’s books. But the magic is in danger of being sullied by merchandise, says freelance literary critic and journalist Alice O’Keeffe",
                     "thumbnail": "https://media.guim.co.uk/c66852bfdbebb7c12cf66b9b98ccc3fd55fafabf/0_13_640_384/500.jpg"
                 },
                 "isHosted": false,
@@ -36,7 +36,7 @@
                 "webUrl": "https://www.theguardian.com/lifeandstyle/2017/dec/13/oumuamua-interstellar-body-sent-by-aliens-notes-queries",
                 "apiUrl": "https://content.guardianapis.com/lifeandstyle/2017/dec/13/oumuamua-interstellar-body-sent-by-aliens-notes-queries",
                 "fields": {
-                    "standfirst": "<p>The long-running series in which readers answer other readers’ questions on subjects ranging from trivial flights of fancy to profound scientific concepts</p>",
+                    "trailText": "The long-running series in which readers answer other readers’ questions on subjects ranging from trivial flights of fancy to profound scientific concepts",
                     "thumbnail": "https://media.guim.co.uk/520c0c5de51cc2722ba7e8f5deb156167a3e96a6/0_0_1280_768/500.jpg"
                 },
                 "isHosted": false,
@@ -53,7 +53,7 @@
                 "webUrl": "https://www.theguardian.com/us-news/2017/dec/16/mothers-cartoon-france-us",
                 "apiUrl": "https://content.guardianapis.com/us-news/2017/dec/16/mothers-cartoon-france-us",
                 "fields": {
-                    "standfirst": "<p>France offers full coverage for prenatal and postnatal care, but young mothers get little help afterwards. In the US, things can be even worse</p><ul><li><a href=\"https://www.theguardian.com/us-news/2017/dec/04/the-mother-load-guardian-editorial-help-us-donate\">The Mother Load: America is failing mothers. Help us change that</a><br></li></ul>",
+                    "trailText": "France offers full coverage for prenatal and postnatal care, but young mothers get little help afterwards. In the US, things can be even worse",
                     "thumbnail": "https://media.guim.co.uk/c5000a8cf7ff34bf7fec1c2bf5d2f3f534c0b735/29_339_684_411/500.jpg"
                 },
                 "isHosted": false,
@@ -70,7 +70,7 @@
                 "webUrl": "https://www.theguardian.com/artanddesign/2018/jan/02/best-architecture-design-of-2018-windermere-vanda",
                 "apiUrl": "https://content.guardianapis.com/artanddesign/2018/jan/02/best-architecture-design-of-2018-windermere-vanda",
                 "fields": {
-                    "standfirst": "<p>Windermere catches a wave, the V&amp;A unveils the city of tomorrow, and Hope to Nope harnesses the explosive power of graphic design<br></p>",
+                    "trailText": "Windermere catches a wave, the V&amp;A unveils the city of tomorrow, and Hope to Nope harnesses the explosive power of graphic design",
                     "thumbnail": "https://media.guim.co.uk/44ce5476cf861df6496183e503aea7ad0c63f1ee/0_160_5184_3110/500.jpg"
                 },
                 "isHosted": false,
@@ -87,7 +87,7 @@
                 "webUrl": "https://www.theguardian.com/us-news/2017/dec/22/why-medical-students-are-practicing-abortions-on-papayas",
                 "apiUrl": "https://content.guardianapis.com/us-news/2017/dec/22/why-medical-students-are-practicing-abortions-on-papayas",
                 "fields": {
-                    "standfirst": "<p>Amid fears of a future abortion ban, a group teaches a discreet procedure using a fruit that looks a bit like the female reproductive system</p>",
+                    "trailText": "Amid fears of a future abortion ban, a group teaches a discreet procedure using a fruit that looks a bit like the female reproductive system",
                     "thumbnail": "https://media.guim.co.uk/30c3961339afe9edc9de8b037b969e031a410480/0_117_3500_2100/500.jpg"
                 },
                 "isHosted": false,
@@ -104,7 +104,7 @@
                 "webUrl": "https://www.theguardian.com/football/blog/2017/dec/11/atletico-get-back-to-what-they-know-and-make-la-liga-a-four-horse-race",
                 "apiUrl": "https://content.guardianapis.com/football/blog/2017/dec/11/atletico-get-back-to-what-they-know-and-make-la-liga-a-four-horse-race",
                 "fields": {
-                    "standfirst": "<p>Atlético Madrid, despite a number of issues this season, remain unbeaten in the league and still feel like one of the runners who will compete for the title</p>",
+                    "trailText": "Atlético Madrid, despite a number of issues this season, remain unbeaten in the league and still feel like one of the runners who will compete for the title",
                     "thumbnail": "https://media.guim.co.uk/980c55e2aeaab5ea857fe43106fe4b286f39610a/0_68_3876_2326/500.jpg"
                 },
                 "isHosted": false,
@@ -121,7 +121,7 @@
                 "webUrl": "https://www.theguardian.com/books/2017/dec/15/the-house-of-government-by-yuri-slezkine-review-russian-revolution",
                 "apiUrl": "https://content.guardianapis.com/books/2017/dec/15/the-house-of-government-by-yuri-slezkine-review-russian-revolution",
                 "fields": {
-                    "standfirst": "A dizzying epic history of a 1931 block of flats in Moscow, home to the Soviet elite, aims to tell of the rise and fall of Bolshevism",
+                    "trailText": "A dizzying epic history of a 1931 block of flats in Moscow, home to the Soviet elite, aims to tell of the rise and fall of Bolshevism",
                     "thumbnail": "https://media.guim.co.uk/8e6a50e8653652ab3c7d9e72d2ab644c77d78228/35_47_5068_3041/500.jpg"
                 },
                 "isHosted": false,
@@ -138,7 +138,7 @@
                 "webUrl": "https://www.theguardian.com/politics/2017/dec/12/theresa-may-puts-tackling-climate-change-back-on-tory-agenda",
                 "apiUrl": "https://content.guardianapis.com/politics/2017/dec/12/theresa-may-puts-tackling-climate-change-back-on-tory-agenda",
                 "fields": {
-                    "standfirst": "<p>Prime minister says there is a ‘moral imperative’ to help vulnerable countries as she prepares for summit in Paris</p>",
+                    "trailText": "Prime minister says there is a ‘moral imperative’ to help vulnerable countries as she prepares for summit in Paris",
                     "thumbnail": "https://media.guim.co.uk/caf34c172797dc01c2cad6a4d811c2dd16fee9fc/0_157_4724_2834/500.jpg"
                 },
                 "isHosted": false,
@@ -155,7 +155,7 @@
                 "webUrl": "https://www.theguardian.com/world/2017/dec/11/vladimir-putin-visit-to-syria-airbase-bashir-al-assad",
                 "apiUrl": "https://content.guardianapis.com/world/2017/dec/11/vladimir-putin-visit-to-syria-airbase-bashir-al-assad",
                 "fields": {
-                    "standfirst": "<p>President Assad tells Russian leader Syrian people will never forget Russia’s help in driving Islamic State from country<br></p>",
+                    "trailText": "President Assad tells Russian leader Syrian people will never forget Russia’s help in driving Islamic State from country<br>",
                     "thumbnail": "https://media.guim.co.uk/304038367f6042bea77b78b5e70c825539656984/20_345_4720_2832/500.jpg"
                 },
                 "isHosted": false,
@@ -172,7 +172,7 @@
                 "webUrl": "https://www.theguardian.com/lifeandstyle/2017/dec/30/seasonal-gardening-advice-winter-flowering-clematis-dead-hedge-book-of-seeds",
                 "apiUrl": "https://content.guardianapis.com/lifeandstyle/2017/dec/30/seasonal-gardening-advice-winter-flowering-clematis-dead-hedge-book-of-seeds",
                 "fields": {
-                    "standfirst": "<p>Plant winter-flowering clematis, make a dead hedge and read The Book Of Seeds</p>",
+                    "trailText": "Plant winter-flowering clematis, make a dead hedge and read The Book Of Seeds",
                     "thumbnail": "https://media.guim.co.uk/b992a22d6dac53030e326394f9130a128f481e81/0_863_2511_1506/500.jpg"
                 },
                 "isHosted": false,

@@ -3,8 +3,8 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i9;
-import 'dart:ui' as _i10;
+import 'dart:async' as _i8;
+import 'dart:ui' as _i9;
 
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:auto_route/src/matcher/route_matcher.dart' as _i6;
@@ -14,11 +14,7 @@ import 'package:auto_route/src/router/controller/pageless_routes_observer.dart'
     as _i4;
 import 'package:flutter/foundation.dart' as _i2;
 import 'package:flutter/material.dart' as _i5;
-import 'package:guardian_flutter/domain/model/news_item/news_item.dart' as _i12;
-import 'package:guardian_flutter/networking/service/guardian_service.dart'
-    as _i11;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:retrofit/retrofit.dart' as _i8;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -172,17 +168,6 @@ class _FakeRouteMatch_12<T> extends _i1.SmartFake implements _i3.RouteMatch<T> {
 class _FakeRoutingController_13 extends _i1.SmartFake
     implements _i3.RoutingController {
   _FakeRoutingController_13(
-    Object parent,
-    Invocation parentInvocation,
-  ) : super(
-          parent,
-          parentInvocation,
-        );
-}
-
-class _FakeHttpResponse_14<T> extends _i1.SmartFake
-    implements _i8.HttpResponse<T> {
-  _FakeHttpResponse_14(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -449,14 +434,14 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  _i9.Future<void> reevaluateGuards() => (super.noSuchMethod(
+  _i8.Future<void> reevaluateGuards() => (super.noSuchMethod(
         Invocation.method(
           #reevaluateGuards,
           [],
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
   bool canPop({
@@ -478,7 +463,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       ) as bool);
 
   @override
-  _i9.Future<T?> pushWidget<T extends Object?>(
+  _i8.Future<T?> pushWidget<T extends Object?>(
     _i5.Widget? widget, {
     _i5.RouteTransitionsBuilder? transitionBuilder,
     bool? fullscreenDialog = false,
@@ -496,27 +481,27 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #opaque: opaque,
           },
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<T?> pushNativeRoute<T extends Object?>(_i5.Route<T>? route) =>
+  _i8.Future<T?> pushNativeRoute<T extends Object?>(_i5.Route<T>? route) =>
       (super.noSuchMethod(
         Invocation.method(
           #pushNativeRoute,
           [route],
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<bool> pop<T extends Object?>([T? result]) => (super.noSuchMethod(
+  _i8.Future<bool> pop<T extends Object?>([T? result]) => (super.noSuchMethod(
         Invocation.method(
           #pop,
           [result],
         ),
-        returnValue: _i9.Future<bool>.value(false),
-      ) as _i9.Future<bool>);
+        returnValue: _i8.Future<bool>.value(false),
+      ) as _i8.Future<bool>);
 
   @override
   void popForced<T extends Object?>([T? result]) => super.noSuchMethod(
@@ -551,7 +536,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  _i9.Future<T?> push<T extends Object?>(
+  _i8.Future<T?> push<T extends Object?>(
     _i3.PageRouteInfo<dynamic>? route, {
     _i3.OnNavigationFailure? onFailure,
   }) =>
@@ -561,11 +546,11 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [route],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<T?> replace<T extends Object?>(
+  _i8.Future<T?> replace<T extends Object?>(
     _i3.PageRouteInfo<dynamic>? route, {
     _i3.OnNavigationFailure? onFailure,
   }) =>
@@ -575,11 +560,11 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [route],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<void> pushAll(
+  _i8.Future<void> pushAll(
     List<_i3.PageRouteInfo<dynamic>>? routes, {
     _i3.OnNavigationFailure? onFailure,
   }) =>
@@ -589,12 +574,12 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [routes],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
-  _i9.Future<void> popAndPushAll(
+  _i8.Future<void> popAndPushAll(
     List<_i3.PageRouteInfo<dynamic>>? routes, {
     dynamic onFailure,
   }) =>
@@ -604,12 +589,12 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [routes],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
-  _i9.Future<void> replaceAll(
+  _i8.Future<void> replaceAll(
     List<_i3.PageRouteInfo<dynamic>>? routes, {
     _i3.OnNavigationFailure? onFailure,
     bool? updateExistingRoutes = true,
@@ -623,9 +608,9 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #updateExistingRoutes: updateExistingRoutes,
           },
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
   void popUntilRoot() => super.noSuchMethod(
@@ -637,7 +622,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  _i9.Future<T?> popAndPush<T extends Object?, TO extends Object?>(
+  _i8.Future<T?> popAndPush<T extends Object?, TO extends Object?>(
     _i3.PageRouteInfo<dynamic>? route, {
     TO? result,
     _i3.OnNavigationFailure? onFailure,
@@ -651,8 +636,8 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #onFailure: onFailure,
           },
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
   bool removeUntil(
@@ -707,7 +692,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  _i9.Future<void> navigateAll(
+  _i8.Future<void> navigateAll(
     List<_i3.RouteMatch<dynamic>>? routes, {
     _i3.OnNavigationFailure? onFailure,
   }) =>
@@ -717,12 +702,12 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [routes],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
-  _i9.Future<T?> pushAndPopUntil<T extends Object?>(
+  _i8.Future<T?> pushAndPopUntil<T extends Object?>(
     _i3.PageRouteInfo<dynamic>? route, {
     required _i5.RoutePredicate? predicate,
     bool? scopedPopUntil = true,
@@ -738,11 +723,11 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #onFailure: onFailure,
           },
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<T?> replaceNamed<T extends Object?>(
+  _i8.Future<T?> replaceNamed<T extends Object?>(
     String? path, {
     bool? includePrefixMatches = false,
     _i3.OnNavigationFailure? onFailure,
@@ -756,11 +741,11 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #onFailure: onFailure,
           },
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
-  _i9.Future<T?> pushNamed<T extends Object?>(
+  _i8.Future<T?> pushNamed<T extends Object?>(
     String? path, {
     bool? includePrefixMatches = false,
     _i3.OnNavigationFailure? onFailure,
@@ -774,8 +759,8 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #onFailure: onFailure,
           },
         ),
-        returnValue: _i9.Future<T?>.value(),
-      ) as _i9.Future<T?>);
+        returnValue: _i8.Future<T?>.value(),
+      ) as _i8.Future<T?>);
 
   @override
   void popUntilRouteWithName(
@@ -845,7 +830,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  _i9.Future<void> navigateNamed(
+  _i8.Future<void> navigateNamed(
     String? path, {
     bool? includePrefixMatches = false,
     _i3.OnNavigationFailure? onFailure,
@@ -859,9 +844,9 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
             #onFailure: onFailure,
           },
         ),
-        returnValue: _i9.Future<void>.value(),
-        returnValueForMissingStub: _i9.Future<void>.value(),
-      ) as _i9.Future<void>);
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
 
   @override
   List<_i3.HierarchySegment> currentHierarchy({
@@ -917,7 +902,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       )) as _i3.RouteMatch<dynamic>?);
 
   @override
-  _i9.Future<dynamic> navigate(
+  _i8.Future<dynamic> navigate(
     _i3.PageRouteInfo<dynamic>? route, {
     _i3.OnNavigationFailure? onFailure,
   }) =>
@@ -927,8 +912,8 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
           [route],
           {#onFailure: onFailure},
         ),
-        returnValue: _i9.Future<dynamic>.value(),
-      ) as _i9.Future<dynamic>);
+        returnValue: _i8.Future<dynamic>.value(),
+      ) as _i8.Future<dynamic>);
 
   @override
   void navigateBack() => super.noSuchMethod(
@@ -992,14 +977,14 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       )) as T?);
 
   @override
-  _i9.Future<bool> popTop<T extends Object?>([T? result]) =>
+  _i8.Future<bool> popTop<T extends Object?>([T? result]) =>
       (super.noSuchMethod(
         Invocation.method(
           #popTop,
           [result],
         ),
-        returnValue: _i9.Future<bool>.value(false),
-      ) as _i9.Future<bool>);
+        returnValue: _i8.Future<bool>.value(false),
+      ) as _i8.Future<bool>);
 
   @override
   _i3.PageRouteInfo<dynamic>? buildPageRoute(
@@ -1024,7 +1009,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       )) as List<_i3.PageRouteInfo<dynamic>>?);
 
   @override
-  void addListener(_i10.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(_i9.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -1033,7 +1018,7 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
       );
 
   @override
-  void removeListener(_i10.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(_i9.VoidCallback? listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
@@ -1049,41 +1034,4 @@ class MockStackRouter extends _i1.Mock implements _i3.StackRouter {
         ),
         returnValueForMissingStub: null,
       );
-}
-
-/// A class which mocks [GuardianService].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGuardianService extends _i1.Mock implements _i11.GuardianService {
-  MockGuardianService() {
-    _i1.throwOnMissingStub(this);
-  }
-
-  @override
-  _i9.Future<_i8.HttpResponse<List<_i12.NewsItem>>> getNews({
-    required String? query,
-    required String? showFields,
-  }) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getNews,
-          [],
-          {
-            #query: query,
-            #showFields: showFields,
-          },
-        ),
-        returnValue: _i9.Future<_i8.HttpResponse<List<_i12.NewsItem>>>.value(
-            _FakeHttpResponse_14<List<_i12.NewsItem>>(
-          this,
-          Invocation.method(
-            #getNews,
-            [],
-            {
-              #query: query,
-              #showFields: showFields,
-            },
-          ),
-        )),
-      ) as _i9.Future<_i8.HttpResponse<List<_i12.NewsItem>>>);
 }

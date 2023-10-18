@@ -9,11 +9,10 @@ import 'package:guardian_flutter/core/utils/data_transfer.dart';
 import 'package:guardian_flutter/domain/mapper/news_dto_mapper.dart';
 import 'package:guardian_flutter/domain/model/news_item/news_item.dart';
 import 'package:guardian_flutter/domain/repository/news_repository.dart';
+import 'package:guardian_flutter/networking/service/guardian_service_mock.dart';
+import 'package:guardian_flutter/storage/dao/news_dao_mock.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/dio.dart';
-
-import '../networking/guardian_service_mock.dart';
-import '../storage/news_dao_mock.dart';
 
 @Injectable(
   as: NewsRepository,

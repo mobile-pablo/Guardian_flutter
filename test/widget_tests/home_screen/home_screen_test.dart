@@ -5,7 +5,6 @@ import 'package:get_it/get_it.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/feature/home/page/home_screen.dart';
 import 'package:mockito/annotations.dart';
-
 import 'home_screen_test.mocks.dart';
 
 final GetIt sl = GetIt.instance;
@@ -13,7 +12,7 @@ final GetIt getIt = GetIt.I;
 
 @GenerateMocks(<Type>[StackRouter])
 void main() {
-  configureInjection();
+  configureDependenciesTest();
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late StackRouter mockStackRouter;
