@@ -4,7 +4,7 @@ import 'package:guardian_flutter/domain/repository/news_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class RemoveNewsItemUseCase extends UseCase<void, NewsItemDTO> {
+class RemoveNewsItemUseCase implements UseCase<void, NewsItemDTO> {
   final NewsRepository _newsRepository;
 
   RemoveNewsItemUseCase(this._newsRepository);
