@@ -14,37 +14,27 @@ import 'package:drift/drift.dart' as _i4;
 import 'package:flutter/cupertino.dart' as _i10;
 import 'package:flutter/material.dart' as _i12;
 import 'package:get_it/get_it.dart' as _i1;
-import 'package:guardian_flutter/core/route/app_route.dart' as _i5;
-import 'package:guardian_flutter/di/app_module.dart' as _i25;
-import 'package:guardian_flutter/domain/repository/news_repository.dart'
-    as _i16;
-import 'package:guardian_flutter/domain/repository/news_repository_impl.dart'
-    as _i17;
-import 'package:guardian_flutter/domain/repository/news_repository_mock_impl.dart'
-    as _i18;
-import 'package:guardian_flutter/domain/use_cases/get_news_use_case.dart'
-    as _i21;
-import 'package:guardian_flutter/domain/use_cases/insert_news_item_use_case.dart'
-    as _i23;
-import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart'
-    as _i19;
-import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart'
-    as _i20;
-import 'package:guardian_flutter/feature/home/bloc/local/home_local_bloc.dart'
-    as _i24;
-import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart'
-    as _i22;
-import 'package:guardian_flutter/feature/home/page/home_screen.dart' as _i9;
-import 'package:guardian_flutter/main.dart' as _i11;
-import 'package:guardian_flutter/networking/service/guardian_service.dart'
-    as _i7;
-import 'package:guardian_flutter/networking/service/guardian_service_mock.dart'
-    as _i8;
-import 'package:guardian_flutter/storage/dao/news_dao.dart' as _i13;
-import 'package:guardian_flutter/storage/dao/news_dao_impl.dart' as _i14;
-import 'package:guardian_flutter/storage/dao/news_dao_mock.dart' as _i15;
-import 'package:guardian_flutter/storage/database/app_database.dart' as _i3;
 import 'package:injectable/injectable.dart' as _i2;
+
+import '../core/route/app_route.dart' as _i5;
+import '../domain/repository/news_repository.dart' as _i16;
+import '../domain/repository/news_repository_impl.dart' as _i17;
+import '../domain/repository/news_repository_mock_impl.dart' as _i18;
+import '../domain/use_cases/get_news_use_case.dart' as _i21;
+import '../domain/use_cases/insert_news_item_use_case.dart' as _i23;
+import '../domain/use_cases/remove_news_item_use_case.dart' as _i19;
+import '../domain/use_cases/update_news_item_use_case.dart' as _i20;
+import '../feature/home/bloc/local/home_local_bloc.dart' as _i24;
+import '../feature/home/bloc/remote/home_remote_bloc.dart' as _i22;
+import '../feature/home/page/home_screen.dart' as _i9;
+import '../main.dart' as _i11;
+import '../networking/service/guardian_service.dart' as _i7;
+import '../networking/service/guardian_service_mock.dart' as _i8;
+import '../storage/dao/news_dao.dart' as _i13;
+import '../storage/dao/news_dao_impl.dart' as _i14;
+import '../storage/dao/news_dao_mock.dart' as _i15;
+import '../storage/database/app_database.dart' as _i3;
+import 'app_module.dart' as _i25;
 
 const String _prod = 'prod';
 const String _dev = 'dev';

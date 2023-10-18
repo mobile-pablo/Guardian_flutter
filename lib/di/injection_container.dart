@@ -5,6 +5,10 @@ import 'package:guardian_flutter/di/injection_container.config.dart';
 final GetIt sl = GetIt.instance;
 final GetIt getIt = GetIt.I;
 
-@InjectableInit()
+@InjectableInit(
+  initializerName: 'init',
+  preferRelativeImports: true,
+  asExtension: true,
+)
 Future<void> configureInjection() async => sl.init();
-void configureDependenciesTest() => getIt.init(environment: Environment.test);
+void configureDependenciesTest() => sl.init(environment: Environment.test);
