@@ -23,7 +23,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHomeRemoteBloc mockHomeRemoteBloc;
-  final NewsDTOMapper _newsDTOMapper = NewsDTOMapper();
+  final NewsDTOMapper newsDTOMapper = NewsDTOMapper();
 
   setUpAll(() {
     configureInjectionTest();
@@ -66,7 +66,7 @@ void main() {
     (WidgetTester tester) async {
       List<NewsItem> newsItems = await getGuardianMockNewsItems();
       List<NewsItemDTO> newsItemsDTO = newsItems
-          .map((NewsItem e) => _newsDTOMapper.convert<NewsItem, NewsItemDTO>(e))
+          .map((NewsItem e) => newsDTOMapper.convert<NewsItem, NewsItemDTO>(e))
           .toList();
 
       when(() => mockHomeRemoteBloc.state)

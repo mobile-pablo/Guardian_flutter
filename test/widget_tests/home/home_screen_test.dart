@@ -9,7 +9,7 @@ import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:guardian_flutter/feature/home/page/home_screen.dart';
 import 'package:mockito/annotations.dart';
-import 'home_widget_test.mocks.dart';
+import 'home_screen_test.mocks.dart';
 
 class MockHomeRemoteBloc extends MockBloc<HomeRemoteEvent, HomeRemoteState>
     implements HomeRemoteBloc {}
