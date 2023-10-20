@@ -13,25 +13,23 @@ import 'package:flutter/cupertino.dart' as _i10;
 import 'package:flutter/material.dart' as _i12;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:guardian_flutter/core/route/app_route.dart' as _i4;
-import 'package:guardian_flutter/di/app_module.dart' as _i25;
+import 'package:guardian_flutter/di/app_module.dart' as _i24;
 import 'package:guardian_flutter/domain/repository/news_repository.dart'
     as _i16;
 import 'package:guardian_flutter/domain/repository/news_repository_impl.dart'
     as _i17;
-import 'package:guardian_flutter/domain/repository/news_repository_mock_impl.dart'
-    as _i18;
 import 'package:guardian_flutter/domain/use_cases/get_news_use_case.dart'
-    as _i21;
-import 'package:guardian_flutter/domain/use_cases/insert_news_item_use_case.dart'
-    as _i23;
-import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart'
-    as _i19;
-import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart'
     as _i20;
-import 'package:guardian_flutter/feature/home/bloc/local/home_local_bloc.dart'
-    as _i24;
-import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart'
+import 'package:guardian_flutter/domain/use_cases/insert_news_item_use_case.dart'
     as _i22;
+import 'package:guardian_flutter/domain/use_cases/remove_news_item_use_case.dart'
+    as _i18;
+import 'package:guardian_flutter/domain/use_cases/update_news_item_use_case.dart'
+    as _i19;
+import 'package:guardian_flutter/feature/home/bloc/local/home_local_bloc.dart'
+    as _i23;
+import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart'
+    as _i21;
 import 'package:guardian_flutter/feature/home/page/home_screen.dart' as _i9;
 import 'package:guardian_flutter/main.dart' as _i11;
 import 'package:guardian_flutter/networking/service/guardian_service.dart'
@@ -89,40 +87,27 @@ extension GetItInjectableX on _i1.GetIt {
       () => _i15.NewsDaoMock(),
       registerFor: {_test},
     );
-    gh.factory<_i16.NewsRepository>(
-      () => _i17.NewsRepositoryImpl(
-        gh<_i6.GuardianService>(),
-        gh<_i13.NewsDao>(),
-      ),
-      registerFor: {
-        _prod,
-        _dev,
-      },
-    );
-    gh.factory<_i16.NewsRepository>(
-      () => _i18.NewsRepositoryMockImpl(
-        gh<_i8.GuardianServiceMock>(),
-        gh<_i15.NewsDaoMock>(),
-      ),
-      registerFor: {_test},
-    );
-    gh.factory<_i19.RemoveNewsItemUseCase>(
-        () => _i19.RemoveNewsItemUseCase(gh<_i16.NewsRepository>()));
-    gh.factory<_i20.UpdateNewsItemUseCase>(
-        () => _i20.UpdateNewsItemUseCase(gh<_i16.NewsRepository>()));
-    gh.factory<_i21.GetNewsUseCase>(
-        () => _i21.GetNewsUseCase(gh<_i16.NewsRepository>()));
-    gh.factory<_i22.HomeRemoteBloc>(
-        () => _i22.HomeRemoteBloc(gh<_i21.GetNewsUseCase>()));
-    gh.factory<_i23.InsertNewsItemUseCase>(
-        () => _i23.InsertNewsItemUseCase(gh<_i16.NewsRepository>()));
-    gh.factory<_i24.HomeLocalBloc>(() => _i24.HomeLocalBloc(
-          gh<_i23.InsertNewsItemUseCase>(),
-          gh<_i19.RemoveNewsItemUseCase>(),
-          gh<_i20.UpdateNewsItemUseCase>(),
+    gh.factory<_i16.NewsRepository>(() => _i17.NewsRepositoryImpl(
+          gh<_i6.GuardianService>(),
+          gh<_i13.NewsDao>(),
+        ));
+    gh.factory<_i18.RemoveNewsItemUseCase>(
+        () => _i18.RemoveNewsItemUseCase(gh<_i16.NewsRepository>()));
+    gh.factory<_i19.UpdateNewsItemUseCase>(
+        () => _i19.UpdateNewsItemUseCase(gh<_i16.NewsRepository>()));
+    gh.factory<_i20.GetNewsUseCase>(
+        () => _i20.GetNewsUseCase(gh<_i16.NewsRepository>()));
+    gh.factory<_i21.HomeRemoteBloc>(
+        () => _i21.HomeRemoteBloc(gh<_i20.GetNewsUseCase>()));
+    gh.factory<_i22.InsertNewsItemUseCase>(
+        () => _i22.InsertNewsItemUseCase(gh<_i16.NewsRepository>()));
+    gh.factory<_i23.HomeLocalBloc>(() => _i23.HomeLocalBloc(
+          gh<_i22.InsertNewsItemUseCase>(),
+          gh<_i18.RemoveNewsItemUseCase>(),
+          gh<_i19.UpdateNewsItemUseCase>(),
         ));
     return this;
   }
 }
 
-class _$AppModule extends _i25.AppModule {}
+class _$AppModule extends _i24.AppModule {}
