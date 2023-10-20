@@ -13,7 +13,7 @@ part 'app_database.g.dart';
 @DriftDatabase(tables: <Type>[NewsItemsEntity], daos: <Type>[NewsDaoImpl])
 @injectable
 class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(_openConnection());
+  AppDatabase(DatabaseConnection q) : super(_openConnection());
 
   @override
   int get schemaVersion => 4;
