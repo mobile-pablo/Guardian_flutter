@@ -13,6 +13,7 @@ import 'package:retrofit/retrofit.dart';
 class GuardianServiceMock  implements GuardianService{
   JsonDecoder decoder = const JsonDecoder();
 
+  @override
   Future<HttpResponse<List<NewsItem>>> getNews({
     required String query,
     required String showFields,
