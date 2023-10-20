@@ -1,5 +1,3 @@
-import 'package:drift/drift.dart';
-import 'package:drift/native.dart';
 import 'package:guardian_flutter/core/models/news_item_dto.dart';
 import 'package:guardian_flutter/storage/dao/news_dao.dart';
 import 'package:guardian_flutter/storage/database/app_database.dart';
@@ -10,7 +8,7 @@ class NewsDaoMock implements NewsDao {
   late AppDatabase _db;
 
   NewsDaoMock() {
-    _db = AppDatabase(DatabaseConnection(NativeDatabase.memory()));
+    _db = AppDatabase();
   }
 
   @override
