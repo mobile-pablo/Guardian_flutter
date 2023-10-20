@@ -6,4 +6,7 @@ final GetIt sl = GetIt.instance;
 final GetIt getIt = GetIt.I;
 
 @InjectableInit()
-Future<void> configureInjection() async => sl.init();
+Future<void> configureInjectionDev() async =>
+    sl.init(environment: Environment.dev);
+Future<void> configureInjectionTest() async =>
+    sl.init(environment: Environment.test);

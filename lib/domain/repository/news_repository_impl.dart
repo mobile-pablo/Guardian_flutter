@@ -30,7 +30,7 @@ class NewsRepositoryImpl implements NewsRepository {
       {required String query}) async {
     try {
       final HttpResponse<List<NewsItem>> httpResponse = await _guardianService
-          .getNews(query: query, showFields: thumbnailAndTrailText);
+              .getNews(query: query, showFields: thumbnailAndTrailText);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'guardian_service.dart';
+part of 'guardian_service_impl.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -9,10 +9,9 @@ part of 'guardian_service.dart';
 // ignore_for_file: unnecessary_brace_in_string_interps,
 // no_leading_underscores_for_local_identifiers
 
-class _GuardianService implements GuardianService {
-  _GuardianService(this._dio) {
-    baseUrl ??= 'https://content.guardianapis.com/';
-  }
+class _GuardianServiceImpl implements GuardianServiceImpl {
+  _GuardianServiceImpl(
+    this._dio);
 
   final Dio _dio;
 
