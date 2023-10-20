@@ -44,6 +44,7 @@ dependencies:
   injectable: 2.3.2
   auto_mappr_annotation: ^2.1.0
   equatable: ^2.0.5
+  mocktail: ^1.0.1
 
 dev_dependencies:
   flutter_test:
