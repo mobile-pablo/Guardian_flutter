@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/feature/home/page/home_screen.dart';
 import 'package:mockito/annotations.dart';
 import 'home_widget_test.mocks.dart';
@@ -13,6 +14,7 @@ void main() {
   late StackRouter mockStackRouter;
 
   setUpAll(() {
+    configureInjection();
     mockStackRouter = MockStackRouter();
   });
 

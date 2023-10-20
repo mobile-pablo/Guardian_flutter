@@ -17,12 +17,21 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: always_specify_types
-    return BlocProvider(
+    return BlocProvider<HomeRemoteBloc>(
       create: (_) => getIt<HomeRemoteBloc>()..add(GetHomeNewsEvent()),
-      child: Scaffold(
-        appBar: _buildAppBar(context),
-        body: _buildBody(),
+      child: Localizations(
+        locale: const Locale('en', 'US'),
+        delegates: const <LocalizationsDelegate<dynamic>>[
+          DefaultWidgetsLocalizations.delegate,
+          DefaultMaterialLocalizations.delegate,
+        ],
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Scaffold(
+            appBar: _buildAppBar(context),
+            body: _buildBody(),
+          ),
+        ),
       ),
     );
   }
