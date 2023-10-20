@@ -54,12 +54,12 @@ extension GetItInjectableX on _i1.GetIt {
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
   }) {
-    final _i2.GetItHelper gh = _i2.GetItHelper(
+    final gh = _i2.GetItHelper(
       this,
       environment,
       environmentFilter,
     );
-    final _$AppModule appModule = _$AppModule();
+    final appModule = _$AppModule();
     gh.factory<_i3.AppDatabase>(() => _i3.AppDatabase());
     gh.factory<_i4.AppRouter>(() => _i4.AppRouter());
     gh.factory<_i5.Dio>(() => appModule.dio);

@@ -13,14 +13,13 @@ import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
-@Injectable(env: <String>[Environment.prod, Environment.dev, Environment.test])
+@injectable
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // ignore: always_specify_types
-    return BlocProvider(
+    return BlocProvider<HomeRemoteBloc>(
       create: (_) => getIt<HomeRemoteBloc>()..add(GetHomeNewsEvent()),
       child: Localizations(
         locale: const Locale('en', 'US'),
@@ -75,7 +74,9 @@ class HomeScreen extends HookWidget {
                   item.trailText,
                   item.webUrl,
                 );
-                return Center(child: NewsItemWidget(wrapper: homeItemWrapper));
+                return Center(
+                  child: NewsItemWidget(wrapper: homeItemWrapper),
+                );
               });
         }
         return const SizedBox();

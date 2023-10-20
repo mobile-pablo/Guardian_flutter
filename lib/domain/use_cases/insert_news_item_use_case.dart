@@ -3,8 +3,8 @@ import 'package:guardian_flutter/core/utils/usecase.dart';
 import 'package:guardian_flutter/domain/repository/news_repository.dart';
 import 'package:injectable/injectable.dart';
 
-@Injectable(env: <String>[Environment.prod, Environment.dev, Environment.test])
-class InsertNewsItemUseCase extends UseCase<void, NewsItemDTO> {
+@injectable
+class InsertNewsItemUseCase implements UseCase<void, NewsItemDTO> {
   final NewsRepository _newsRepository;
 
   InsertNewsItemUseCase(this._newsRepository);

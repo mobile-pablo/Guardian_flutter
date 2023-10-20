@@ -4,6 +4,6 @@ import 'package:injectable/injectable.dart';
 
 @module
 abstract class AppModule {
-  @Injectable(env: <String>[Environment.prod, Environment.dev])
+  @Injectable()
   Dio get dio => buildDio();
 }

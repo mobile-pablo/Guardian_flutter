@@ -12,7 +12,7 @@ Future<void> main() async {
 }
 
 @RoutePage()
-@Injectable(env: <String>[Environment.prod, Environment.dev])
+@injectable
 class MyApp extends HookWidget {
   final AppRouter _appRouter = getIt<AppRouter>();
 
