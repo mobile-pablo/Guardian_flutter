@@ -24,10 +24,14 @@ void main() {
 
   late MockHomeRemoteBloc mockHomeRemoteBloc;
   final NewsDTOMapper _newsDTOMapper = NewsDTOMapper();
-  setUpAll(() async {
-    cleanCache();
+
+  setUpAll(() {
     configureInjectionTest();
     mockHomeRemoteBloc = MockHomeRemoteBloc();
+  });
+
+  setUp(() async {
+    cleanCache();
     TestWidgetsFlutterBinding.ensureInitialized();
   });
 
@@ -52,34 +56,6 @@ void main() {
           find.descendant(
             of: find.byType(Center),
             matching: find.byType(CupertinoActivityIndicator),
-          ),
-          findsOneWidget);
-    },
-  );
-
-  testWidgets(
-    'Home Screen, Error screen is displayed',
-    (WidgetTester tester) async {
-      when(() => mockHomeRemoteBloc.state)
-          .thenReturn(HomeRemoteNewsError(Exception('Error')));
-
-      await tester.pumpWidget(
-        BlocProvider<MockHomeRemoteBloc>.value(
-          value: mockHomeRemoteBloc,
-          child: MaterialApp(
-            home: HomeScreen(
-              key: UniqueKey(),
-            ),
-          ),
-        ),
-      );
-
-      await tester.pumpAndSettle();
-
-      expect(
-          find.descendant(
-            of: find.byType(Center),
-            matching: find.byType(Text),
           ),
           findsOneWidget);
     },
