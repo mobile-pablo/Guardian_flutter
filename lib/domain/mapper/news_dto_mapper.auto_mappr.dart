@@ -11,6 +11,7 @@ import 'package:auto_mappr_annotation/auto_mappr_annotation.dart' as _i1;
 
 import '../../core/models/news_item_dto.dart' as _i3;
 import '../model/news_item/news_item.dart' as _i2;
+import 'news_dto_mapper.dart' as _i4;
 
 /// {@template package:guardian_flutter/domain/mapper/news_dto_mapper.dart}
 /// Available mappings:
@@ -224,8 +225,8 @@ class $NewsDTOMapper implements _i1.AutoMapprInterface {
       isHosted: model.isHosted,
       pillarId: model.pillarId,
       pillarName: model.pillarName,
-      thumbnail: model.fields.thumbnail,
-      trailText: model.fields.trailText,
+      thumbnail: _i4.NewsDTOMapper.mapThumbnailToDTO(model),
+      trailText: _i4.NewsDTOMapper.mapTrailTextToDTO(model),
     );
   }
 }

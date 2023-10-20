@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/core/route/app_route.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:injectable/injectable.dart';
-
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection();
+  await configureInjection();
   runApp(MyApp());
 }
 
 @RoutePage()
-@Injectable(env: <String>[Environment.prod, Environment.dev])
 class MyApp extends HookWidget {
   final AppRouter _appRouter = getIt<AppRouter>();
 

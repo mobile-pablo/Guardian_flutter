@@ -19,8 +19,7 @@ class HomeScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: always_specify_types
-    return BlocProvider(
+    return BlocProvider<HomeRemoteBloc>(
       create: (_) => getIt<HomeRemoteBloc>()..add(GetHomeNewsEvent()),
       child: Localizations(
         locale: const Locale('en', 'US'),
@@ -75,7 +74,9 @@ class HomeScreen extends HookWidget {
                   item.trailText,
                   item.webUrl,
                 );
-                return Center(child: NewsItemWidget(wrapper: homeItemWrapper));
+                return Center(
+                  child: NewsItemWidget(wrapper: homeItemWrapper),
+                );
               });
         }
         return const SizedBox();

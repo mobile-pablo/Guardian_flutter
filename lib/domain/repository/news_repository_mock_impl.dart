@@ -20,10 +20,10 @@ import 'package:retrofit/dio.dart';
 )
 class NewsRepositoryMockImpl implements NewsRepository {
   final GuardianServiceMock _guardianService;
-  final NewsDaoMock _newsDao = NewsDaoMock();
+  final NewsDaoMock _newsDao;
   final NewsDTOMapper _newsDTOMapper = NewsDTOMapper();
 
-  NewsRepositoryMockImpl(this._guardianService);
+  NewsRepositoryMockImpl(this._guardianService, this._newsDao);
 
   @override
   Future<DataTransfer<List<NewsItemDTO>>> getNews(
