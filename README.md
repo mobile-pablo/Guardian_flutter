@@ -14,5 +14,5 @@ Small news app based on flutter
 * Freezed
 * Equatable
 * Auto Mappr
-* Tests
+* Tests ( Unit + Widget + Integration)
 * Bitrise CI/CD
