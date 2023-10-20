@@ -5,9 +5,9 @@ import 'package:guardian_flutter/core/route/app_route.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:injectable/injectable.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureInjection();
+  await configureInjectionDev();
   runApp(MyApp());
 }
 

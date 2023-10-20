@@ -14,7 +14,7 @@ void main() {
   late StackRouter mockStackRouter;
 
   setUpAll(() {
-    configureInjection();
+    configureInjectionTest();
     mockStackRouter = MockStackRouter();
   });
 

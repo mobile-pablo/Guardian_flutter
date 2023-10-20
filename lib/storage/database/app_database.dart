@@ -24,7 +24,7 @@ class AppDatabase extends _$AppDatabase {
           await m.createAll();
         },
         onUpgrade: (Migrator m, int from, int to) async {
-          for (var table in allTables) {
+          for (TableInfo<Table, Object?> table in allTables) {
             await m.deleteTable(table.actualTableName);
             await m.createTable(table);
           }

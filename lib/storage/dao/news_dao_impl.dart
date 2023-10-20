@@ -8,7 +8,7 @@ import 'package:guardian_flutter/storage/entity/news_item_entity.dart';
 part 'news_dao_impl.g.dart';
 
 @DriftAccessor(tables: <Type>[NewsItemsEntity])
-@Injectable(as: NewsDao)
+@Injectable(as: NewsDao, env: <String>[Environment.prod, Environment.dev])
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
     implements NewsDao {

@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guardian_flutter/core/models/news_item_dto.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:guardian_flutter/feature/home/widgets/news_item_widget.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
@@ -65,12 +67,16 @@ class HomeScreen extends HookWidget {
           return ListView.builder(
               itemCount: state.news!.length,
               itemBuilder: (BuildContext context, int index) {
+                NewsItemDTO item = state.news![index];
+                HomeItemWrapper homeItemWrapper = HomeItemWrapper(
+                  item.webTitle,
+                  item.thumbnail,
+                  item.trailText,
+                  item.webUrl,
+                );
                 return Center(
-                    child: NewsItemWidget(
-                  title: state.news![index].webTitle,
-                  imageUrl: state.news![index].thumbnail,
-                  description: state.news![index].trailText,
-                ));
+                  child: NewsItemWidget(wrapper: homeItemWrapper),
+                );
               });
         }
         return const SizedBox();

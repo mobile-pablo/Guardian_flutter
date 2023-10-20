@@ -14,7 +14,8 @@ import 'package:guardian_flutter/storage/dao/news_dao.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/dio.dart';
 
-@Injectable(as: NewsRepository)
+@Injectable(
+    as: NewsRepository, env: <String>[Environment.prod, Environment.dev])
 class NewsRepositoryImpl implements NewsRepository {
   final GuardianService _guardianService;
   final NewsDao _newsDao;
@@ -27,7 +28,7 @@ class NewsRepositoryImpl implements NewsRepository {
       {required String query}) async {
     try {
       final HttpResponse<List<NewsItem>> httpResponse = await _guardianService
-          .getNews(query: query, showFields: thumbnailAndTrailText);
+              .getNews(query: query, showFields: thumbnailAndTrailText);
 
       if (httpResponse.response.statusCode == HttpStatus.ok) {
         List<NewsItem> newsList = httpResponse.data;

@@ -1,17 +1,17 @@
 import 'dart:convert';
 import 'dart:io';
 
+
 import 'package:dio/dio.dart';
 import 'package:flutter/services.dart';
 import 'package:guardian_flutter/domain/model/news_item/news_item.dart';
+import 'package:guardian_flutter/networking/service/guardian_service.dart';
 import 'package:injectable/injectable.dart';
-import 'package:retrofit/dio.dart';
+import 'package:retrofit/retrofit.dart';
 
-@injectable
-class GuardianServiceMock {
+@Injectable(as: GuardianService, env: <String>[Environment.test])
+class GuardianServiceMock  implements GuardianService{
   JsonDecoder decoder = const JsonDecoder();
-
- 
 
   Future<HttpResponse<List<NewsItem>>> getNews({
     required String query,
