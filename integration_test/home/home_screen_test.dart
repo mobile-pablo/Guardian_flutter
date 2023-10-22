@@ -89,7 +89,6 @@ void main() {
     },
   );
 
-
   testWidgets('News Item Widget, View displayed', (WidgetTester tester) async {
     NewsItemWrapper wrapper = const NewsItemWrapper(
       'Harry Potta and the £4.50 chocolate frog | Alice O Keeffe',
