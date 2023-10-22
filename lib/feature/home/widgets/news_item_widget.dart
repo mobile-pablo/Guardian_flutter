@@ -13,7 +13,7 @@ class NewsItemWidget extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: _onTap,
       child: Container(
-        key: Key('news_item_widget'),
+        key: const Key('news_item_widget'),
         padding: const EdgeInsetsDirectional.only(
           start: 14,
           end: 14,

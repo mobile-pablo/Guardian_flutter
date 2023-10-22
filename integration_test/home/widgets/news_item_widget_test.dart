@@ -7,8 +7,6 @@ import 'package:guardian_flutter/feature/home/widgets/news_item_widget.dart';
 import 'package:guardian_flutter/feature/home/wrapper/news_item_wrapper.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:url_launcher/link.dart';
-import 'package:url_launcher_platform_interface/link.dart';
-import 'package:url_launcher_platform_interface/src/url_launcher_platform.dart';
 import 'package:url_launcher_platform_interface/url_launcher_platform_interface.dart';
 
 void main() {
