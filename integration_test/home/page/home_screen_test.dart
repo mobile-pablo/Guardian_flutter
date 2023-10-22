@@ -107,8 +107,8 @@ void main() {
               ),
             ),
           ),
-          body: Row(
-            children: [
+          body: Column(
+            children: <Widget>[
               NewsItemWidget(wrapper: wrapper),
             ],
           ),
