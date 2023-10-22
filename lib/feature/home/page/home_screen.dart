@@ -9,7 +9,7 @@ import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:guardian_flutter/feature/home/widgets/news_item_widget.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
+import 'package:guardian_flutter/feature/home/wrapper/news_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
@@ -68,7 +68,7 @@ class HomeScreen extends HookWidget {
               itemCount: state.news!.length,
               itemBuilder: (BuildContext context, int index) {
                 NewsItemDTO item = state.news![index];
-                HomeItemWrapper homeItemWrapper = HomeItemWrapper(
+                NewsItemWrapper homeItemWrapper = NewsItemWrapper(
                   item.webTitle,
                   item.thumbnail,
                   item.trailText,
