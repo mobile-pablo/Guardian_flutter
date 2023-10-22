@@ -1,11 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:guardian_flutter/feature/home/wrapper/home_item_wrapper.dart';
+import 'package:guardian_flutter/feature/home/wrapper/news_item_wrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsItemWidget extends StatelessWidget {
-  final HomeItemWrapper wrapper;
-
+  final NewsItemWrapper wrapper;
   const NewsItemWidget({Key? key, required this.wrapper}) : super(key: key);
 
   @override
@@ -31,52 +30,56 @@ class NewsItemWidget extends StatelessWidget {
     );
   }
 
-  Future<void> _onTap()  async {
+  Future<void> _onTap() async {
     final Uri url = Uri.parse(wrapper.webUrl);
-    if(!await launchUrl(url)) {
+    if (!await launchUrl(url)) {
       throw Exception('Could not launch $wrapper.webUrl');
     }
   }
 
   Widget _buildImage(BuildContext context) {
-    return CachedNetworkImage(
-      imageUrl: wrapper.imageUrl,
-      imageBuilder:
-          (BuildContext context, ImageProvider<Object> imageProvider) =>
-              Padding(
-        padding: const EdgeInsetsDirectional.only(
-          end: 14,
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
-          child: Container(
-            width: MediaQuery.of(context).size.width / 3,
-            height: double.maxFinite,
-            decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.08),
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.cover,
-                )),
+    if (wrapper.imageUrl.startsWith('http')) {
+      return CachedNetworkImage(
+        imageUrl: wrapper.imageUrl,
+        imageBuilder:
+            (BuildContext context, ImageProvider<Object> imageProvider) =>
+                Padding(
+          padding: const EdgeInsetsDirectional.only(
+            end: 14,
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Container(
+              width: MediaQuery.of(context).size.width / 3,
+              height: double.maxFinite,
+              decoration: BoxDecoration(
+                  color: Colors.black.withOpacity(0.08),
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.cover,
+                  )),
+            ),
           ),
         ),
-      ),
-      progressIndicatorBuilder: (
-        BuildContext context,
-        String url,
-        DownloadProgress downloadProgress,
-      ) =>
-          CircularProgressIndicator(value: downloadProgress.progress),
-      errorWidget: (
-        BuildContext context,
-        String url,
-        Object error,
-      ) =>
-          const Icon(
-        Icons.error,
-        color: Colors.red,
-      ),
-    );
+        progressIndicatorBuilder: (
+          BuildContext context,
+          String url,
+          DownloadProgress downloadProgress,
+        ) =>
+            CircularProgressIndicator(value: downloadProgress.progress),
+        errorWidget: (
+          BuildContext context,
+          String url,
+          Object error,
+        ) =>
+            const Icon(
+          Icons.error,
+          color: Colors.red,
+        ),
+      );
+    } else {
+      return Image.asset(wrapper.imageUrl);
+    }
   }
 
   Widget _buildTitleAndDescription() {
