@@ -1053,7 +1053,7 @@ packages:
     source: hosted
     version: "3.0.7"
   url_launcher_platform_interface:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: url_launcher_platform_interface
       sha256: "95465b39f83bfe95fcb9d174829d6476216f2d548b79c38ab2506e0458787618"
