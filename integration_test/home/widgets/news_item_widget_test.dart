@@ -75,32 +75,19 @@ NewsItemWrapper _wrapper = const NewsItemWrapper(
 );
 
 MaterialApp _newsItemMockScreen = MaterialApp(
-  home: Localizations(
-    locale: const Locale('en', 'US'),
-    delegates: const <LocalizationsDelegate<dynamic>>[
-      DefaultWidgetsLocalizations.delegate,
-      DefaultMaterialLocalizations.delegate,
-    ],
-    child: Directionality(
-      textDirection: TextDirection.ltr,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Home Screen',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-        ),
-        body: ListView.builder(
-          itemCount: 1,
-          itemBuilder: (BuildContext context, int index) {
-            return Center(
-              child: NewsItemWidget(wrapper: _wrapper),
-            );
-          },
+  home: Scaffold(
+    appBar: AppBar(
+      title: const Text(
+        'Home Screen',
+        style: TextStyle(
+          color: Colors.black,
         ),
       ),
+    ),
+    body: Column(
+      children: <Widget>[
+        NewsItemWidget(wrapper: _wrapper),
+      ],
     ),
   ),
 );
