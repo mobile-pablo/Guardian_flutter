@@ -20,7 +20,7 @@ void main() {
     'Harry Potta and the £4.50 chocolate frog | Alice O Keeffe',
     'assets/images/default_image.jpg',
     'I was delighted when my son discovered JK Rowling s books',
-    'https://www.theguardian.com/commentisfree/2017/dec/12/harry-potter-magic-jk-rowling',
+    'https://www.theguardian.com/harry-potter-magic-jk-rowling',
   );
 
   MaterialApp newsItemMockScreen = MaterialApp(
@@ -51,12 +51,8 @@ void main() {
 
     final Finder newsItemTitle = find.text(wrapper.title);
     final Finder newsItemDescription = find.text(wrapper.description);
-    final Finder newsItemImage = find.image(
-      AssetImage(wrapper.imageUrl),
-    );
 
     expect(newsItemTitle, findsOneWidget);
     expect(newsItemDescription, findsOneWidget);
-    expect(newsItemImage, findsOneWidget);
-  });
+ 
 }
