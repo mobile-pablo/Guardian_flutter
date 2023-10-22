@@ -10,7 +10,6 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-
   setUp(() async {
     cleanCache();
     TestWidgetsFlutterBinding.ensureInitialized();
@@ -54,5 +53,5 @@ void main() {
 
     expect(newsItemTitle, findsOneWidget);
     expect(newsItemDescription, findsOneWidget);
- 
+  });
 }
