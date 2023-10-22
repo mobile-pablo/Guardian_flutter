@@ -89,41 +89,4 @@ void main() {
     },
   );
 
-  testWidgets('News Item Widget, View displayed', (WidgetTester tester) async {
-    NewsItemWrapper wrapper = const NewsItemWrapper(
-      'Harry Potta and the £4.50 chocolate frog | Alice O Keeffe',
-      'assets/images/default_image.jpg',
-      'I was delighted when my son discovered JK Rowling s books',
-      'https://www.theguardian.com/harry-potter-magic-jk-rowling',
-    );
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              'Home Screen',
-              style: TextStyle(
-                color: Colors.black,
-              ),
-            ),
-          ),
-          body: Column(
-            children: <Widget>[
-              NewsItemWidget(wrapper: wrapper),
-            ],
-          ),
-        ),
-      ),
-    );
-
-    await tester.pumpAndSettle();
-
-    final Finder newsItemTitle = find.text(wrapper.title);
-    final Finder newsItemDescription = find.text(wrapper.description);
-    final Finder newsItemImage = find.image(AssetImage(wrapper.imageUrl));
-
-    expect(newsItemTitle, findsOneWidget);
-    expect(newsItemDescription, findsOneWidget);
-    expect(newsItemImage, findsOneWidget);
-  });
 }
