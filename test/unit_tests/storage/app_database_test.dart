@@ -7,6 +7,22 @@ import 'package:sqlite3_flutter_libs/sqlite3_flutter_libs.dart';
 
 void main() {
   late NewsDao newsDao;
+  NewsItemDTO dto = const NewsItemDTO(
+    id: 'id',
+    type: 'type',
+    sectionId: 'sectionId',
+    sectionName: 'sectionName',
+    webPublicationDate: 'webPublicationDate',
+    webTitle: 'webTitle',
+    webUrl: 'webUrl',
+    apiUrl: 'apiUrl',
+    isHosted: false,
+    pillarId: 'pillarId',
+    pillarName: 'pillarName',
+    thumbnail: 'thumbnail',
+    trailText: 'trailText',
+  );
+
   setUpAll(() {
     configureInjectionTest();
     applyWorkaroundToOpenSqlite3OnOldAndroidVersions();
@@ -17,26 +33,38 @@ void main() {
     TestWidgetsFlutterBinding.ensureInitialized();
   });
 
-  test('News Dao, News are stored', () async {
-    await newsDao.insertNews(
-      const NewsItemDTO(
-        id: 'id',
-        type: 'type',
-        sectionId: 'sectionId',
-        sectionName: 'sectionName',
-        webPublicationDate: 'webPublicationDate',
-        webTitle: 'webTitle',
-        webUrl: 'webUrl',
-        apiUrl: 'apiUrl',
-        isHosted: false,
-        pillarId: 'pillarId',
-        pillarName: 'pillarName',
-        thumbnail: 'thumbnail',
-        trailText: 'trailText',
-      ),
-    );
+  group('News Dao', () {
+    test('News Dao, News are stored', () async {
+      await newsDao.insertNews(dto);
 
-    final news = await newsDao.getNews();
-    expect(news.length, 1);
+      List<NewsItemsEntityData> news = await newsDao.getNews();
+      expect(news.length, 1);
+    });
+
+    test('News Dao, News are removed', () async {
+      await newsDao.insertNews(dto);
+
+      List<NewsItemsEntityData> news = await newsDao.getNews();
+
+      expect(news.length, 1);
+
+      await newsDao.removeNews(dto.id);
+      expect(news.length, 0);
+    });
+
+    test('News Dao, News are updated', () async {
+      await newsDao.insertNews(dto);
+
+      List<NewsItemsEntityData> news = await newsDao.getNews();
+
+      expect(news.length, 1);
+
+      NewsItemDTO updatedDto = dto.copyWith(trailText: 'Hello World');
+      await newsDao.updateNews(updatedDto);
+
+      List<NewsItemsEntityData> updatedNews = await newsDao.getNews();
+      expect(updatedNews.length, 1);
+      expect(updatedNews[0].trailText, 'Hello World');
+    });
   });
 }

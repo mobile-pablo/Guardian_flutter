@@ -8,5 +8,5 @@ abstract class NewsDao {
 
   Future<void> updateNews(NewsItemDTO news);
 
-  Future<void> removeNews(NewsItemDTO news);
+  Future<void> removeNews(String newsId);
 }

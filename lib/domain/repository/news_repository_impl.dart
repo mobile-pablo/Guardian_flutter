@@ -66,5 +66,5 @@ class NewsRepositoryImpl implements NewsRepository {
 
   @override
   Future<void> removeNews(NewsItemDTO newsItemDTO) =>
-      _newsDao.removeNews(newsItemDTO);
+      _newsDao.removeNews(newsItemDTO.id);
 }
