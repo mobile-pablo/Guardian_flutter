@@ -19,25 +19,21 @@ void main() {
 
     when(() => getNewsUseCase('Dogs')).thenAnswer((_) async {
       return DataTransfer<List<NewsItemDTO>>(
-        data: <Map<String, Object>>[
-          <String, Object>{
-            'id': 'id',
-            'sectionName': 'sectionName',
-            'webPublicationDate': 'webPublicationDate',
-            'webTitle': 'webTitle',
-            'webUrl': 'webUrl',
-            'fields': <String, String>{
-              'thumbnail': 'thumbnail',
-              'bodyText': 'bodyText',
-            }
-          }
+        data: <NewsItemDTO>[
+          NewsItemDTO.empty().copyWith(id: 'Hello world'),
         ],
       );
     });
 
     expect(
-    await getNewsUseCase('Dogs'),
+      await getNewsUseCase('Dogs'),
       isA<DataTransfer<List<NewsItemDTO>>>(),
+    );
+
+    DataTransfer<List<NewsItemDTO>> result = await getNewsUseCase('Dogs');
+    expect(
+      result.data[0].id,
+      'Hello world',
     );
   });
 }
