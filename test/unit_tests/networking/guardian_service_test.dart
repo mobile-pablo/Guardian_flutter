@@ -8,16 +8,14 @@ import 'package:mocktail/mocktail.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
-class MockGuardianServiceMock extends Mock implements GuardianServiceMock {}
-
 void main() {
-  MockGuardianServiceMock mockGuardianServiceMock = MockGuardianServiceMock();
+  GuardianServiceMock guardianServiceMock = GuardianServiceMock();
 
   test('Get news', () async {
     TestWidgetsFlutterBinding.ensureInitialized();
 
     List<NewsItem> newsItems = await getGuardianMockNewsItems();
-    when(() => mockGuardianServiceMock.getNews(
+    when(() => guardianServiceMock.getNews(
         query: 'Dogs', showFields: 'thumbnail,bodyText')).thenAnswer(
       (_) async {
         return HttpResponse<List<NewsItem>>(
@@ -32,7 +30,7 @@ void main() {
     );
 
     expect(
-        await mockGuardianServiceMock.getNews(
+        await guardianServiceMock.getNews(
             query: 'Dogs', showFields: 'thumbnail,bodyText'),
         isA<HttpResponse<List<NewsItem>>>());
   });
