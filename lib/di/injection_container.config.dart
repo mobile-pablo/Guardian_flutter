@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i5;
-import 'package:drift/drift.dart' as _i12;
+import 'package:drift/native.dart';
 import 'package:flutter/cupertino.dart' as _i10;
 import 'package:flutter/material.dart' as _i14;
 import 'package:get_it/get_it.dart' as _i1;
@@ -79,7 +79,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i9.HomeScreen>(() => _i9.HomeScreen(key: gh<_i10.Key>()));
     gh.factory<_i11.MockAppDatabase>(
-      () => _i11.MockAppDatabase(gh<_i12.QueryExecutor>()),
+      () => _i11.MockAppDatabase(NativeDatabase.memory()),
       registerFor: {_test},
     );
     gh.factory<_i13.MyApp>(() => _i13.MyApp(key: gh<_i14.Key>()));
@@ -91,7 +91,7 @@ extension GetItInjectableX on _i1.GetIt {
       },
     );
     gh.factory<_i15.NewsDao>(
-      () => _i17.NewsDaoMock(),
+      () => _i17.NewsDaoMock(gh<_i11.MockAppDatabase>()),
       registerFor: {_test},
     );
     gh.factory<_i18.NewsRepository>(() => _i19.NewsRepositoryImpl(

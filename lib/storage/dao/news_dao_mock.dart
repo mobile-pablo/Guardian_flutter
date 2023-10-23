@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 import 'package:drift/native.dart';
 import 'package:guardian_flutter/core/models/news_item_dto.dart';
 import 'package:guardian_flutter/storage/dao/news_dao.dart';
+import 'package:guardian_flutter/storage/database/app_database.dart';
 import 'package:guardian_flutter/storage/database/app_database_mock.dart';
 import 'package:guardian_flutter/storage/entity/news_item_entity.dart';
 import 'package:injectable/injectable.dart';
@@ -15,7 +16,7 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
     implements NewsDao {
   late MockAppDatabase _db;
 
-  NewsDaoMock() {
+  NewsDaoMock(super.attachedDatabase) {
     _db = MockAppDatabase(NativeDatabase.memory());
   }
 
