@@ -1,14 +1,22 @@
+import 'package:drift/drift.dart';
+import 'package:drift/native.dart';
 import 'package:guardian_flutter/core/models/news_item_dto.dart';
 import 'package:guardian_flutter/storage/dao/news_dao.dart';
-import 'package:guardian_flutter/storage/database/app_database.dart';
+import 'package:guardian_flutter/storage/database/app_database_mock.dart';
+import 'package:guardian_flutter/storage/entity/news_item_entity.dart';
 import 'package:injectable/injectable.dart';
 
+part 'news_dao_mock.g.dart';
+
+@DriftAccessor(tables: <Type>[NewsItemsEntity])
 @Injectable(as: NewsDao, env: <String>[Environment.test])
-class NewsDaoMock implements NewsDao {
-  late AppDatabase _db;
+class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
+    with _$NewsDaoMockMixin
+    implements NewsDao {
+  late MockAppDatabase _db;
 
   NewsDaoMock() {
-    _db = AppDatabase();
+    _db = MockAppDatabase(NativeDatabase.memory());
   }
 
   @override
