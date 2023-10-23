@@ -63,6 +63,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
         ),
       ));
 
+  @override
   void closeDatabase() {
     db.close();
   }

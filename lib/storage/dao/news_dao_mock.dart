@@ -69,6 +69,7 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
             ),
           ));
 
+  @override
   void closeDatabase() {
     _db.close();
   }
