@@ -9,4 +9,6 @@ abstract class NewsDao {
   Future<void> updateNews(NewsItemDTO news);
 
   Future<void> removeNews(String newsId);
+
+  void closeDatabase();
 }

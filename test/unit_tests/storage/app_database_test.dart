@@ -1,5 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guardian_flutter/core/models/news_item_dto.dart';
+import 'package:guardian_flutter/core/utils/cache.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/storage/dao/news_dao.dart';
 import 'package:guardian_flutter/storage/database/app_database.dart';
@@ -30,6 +31,7 @@ void main() {
   });
 
   setUp(() async {
+    cleanCache();
     TestWidgetsFlutterBinding.ensureInitialized();
   });
 
@@ -66,5 +68,9 @@ void main() {
       expect(updatedNews.length, 1);
       expect(updatedNews[0].trailText, 'Hello World');
     });
+  });
+
+  tearDown(() {
+    newsDao.closeDatabase();
   });
 }

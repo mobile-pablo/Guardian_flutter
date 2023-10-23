@@ -68,4 +68,8 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
               trailText: news.trailText,
             ),
           ));
+
+  void closeDatabase() {
+    _db.close();
+  }
 }

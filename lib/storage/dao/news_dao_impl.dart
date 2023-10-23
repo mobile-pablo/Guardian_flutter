@@ -40,7 +40,7 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
       );
 
   @override
-  Future<void> removeNews( String newsId) => (delete(newsItemsEntity)
+  Future<void> removeNews(String newsId) => (delete(newsItemsEntity)
         ..where(($NewsItemsEntityTable t) => t.id.equals(newsId)))
       .go();
 
@@ -62,4 +62,8 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           trailText: news.trailText,
         ),
       ));
+
+  void closeDatabase() {
+    db.close();
+  }
 }
