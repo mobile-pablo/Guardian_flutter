@@ -26,11 +26,12 @@ void main() {
 
   setUpAll(() {
     configureInjectionTest();
+    newsDao = sl<NewsDao>();
     applyWorkaroundToOpenSqlite3OnOldAndroidVersions();
   });
 
   setUp(() async {
-    newsDao = sl<NewsDao>();
+    newsDao.openDatabase();
     cleanCache();
     TestWidgetsFlutterBinding.ensureInitialized();
   });

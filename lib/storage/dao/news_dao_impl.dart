@@ -12,7 +12,10 @@ part 'news_dao_impl.g.dart';
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
     implements NewsDao {
-  NewsDaoImpl(AppDatabase db) : super(db);
+  AppDatabase db;
+  NewsDaoImpl(this.db) : super(db) {
+    openDatabase();
+  }
 
   @override
   Future<List<NewsItemsEntityData>> getNews() {
@@ -62,6 +65,11 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
           trailText: news.trailText,
         ),
       ));
+
+  @override
+  void openDatabase() {
+    db = AppDatabase();
+  }
 
   @override
   void closeDatabase() {
