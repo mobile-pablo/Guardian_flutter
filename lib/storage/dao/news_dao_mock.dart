@@ -22,11 +22,11 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
 
   @override
   Future<List<NewsItemsEntityData>> getNews() =>
-      (_db.select(_db.newsItemsEntity)).get();
+      (select(newsItemsEntity)).get();
 
   @override
   Future<void> insertNews(NewsItemDTO news) =>
-      _db.into(_db.newsItemsEntity).insertReturning(
+      into(newsItemsEntity).insertReturning(
             NewsItemsEntityCompanion.insert(
               id: news.id,
               type: news.type,
@@ -45,29 +45,32 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
           );
 
   @override
-  Future<void> removeNews(String newsId) => (_db.delete(_db.newsItemsEntity)
+  Future<void> removeNews(String newsId) => (delete(newsItemsEntity)
         ..where(($NewsItemsEntityTable t) => t.id.equals(newsId)))
       .go();
 
   @override
-  Future<void> updateNews(NewsItemDTO news) =>
-      (_db.update(_db.newsItemsEntity).replace(
-            NewsItemsEntityCompanion.insert(
-              id: news.id,
-              type: news.type,
-              sectionId: news.sectionId,
-              sectionName: news.sectionName,
-              webPublicationDate: news.webPublicationDate,
-              webTitle: news.webTitle,
-              webUrl: news.webUrl,
-              apiUrl: news.apiUrl,
-              isHosted: news.isHosted,
-              pillarId: news.pillarId,
-              pillarName: news.pillarName,
-              thumbnail: news.thumbnail,
-              trailText: news.trailText,
-            ),
-          ));
+  Future<int> updateNews(NewsItemDTO news) async {
+    return (update(newsItemsEntity)
+          ..where(($NewsItemsEntityTable tbl) => tbl.id.equals(news.id)))
+        .write(
+      NewsItemsEntityData(
+        id: news.id,
+        type: news.type,
+        sectionId: news.sectionId,
+        sectionName: news.sectionName,
+        webPublicationDate: news.webPublicationDate,
+        webTitle: news.webTitle,
+        webUrl: news.webUrl,
+        apiUrl: news.apiUrl,
+        isHosted: news.isHosted,
+        pillarId: news.pillarId,
+        pillarName: news.pillarName,
+        thumbnail: news.thumbnail,
+        trailText: news.trailText,
+      ),
+    );
+  }
 
   @override
   void cleanDatabase() {

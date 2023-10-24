@@ -30,19 +30,17 @@ void main() {
   });
 
   group('News Dao', () {
- 
-
     test('News Dao, News are stored', () async {
       TestWidgetsFlutterBinding.ensureInitialized();
       await newsDao.insertNews(dto);
 
       List<NewsItemsEntityData> news = await newsDao.getNews();
       expect(news.length, 1);
-       newsDao.cleanDatabase();
     });
 
     test('News Dao, News are removed', () async {
       TestWidgetsFlutterBinding.ensureInitialized();
+      newsDao.cleanDatabase();
       await newsDao.insertNews(dto);
 
       List<NewsItemsEntityData> news = await newsDao.getNews();
@@ -51,11 +49,11 @@ void main() {
 
       await newsDao.removeNews(dto.id);
       expect(news.length, 0);
-       newsDao.cleanDatabase();
     });
 
     test('News Dao, News are updated', () async {
       TestWidgetsFlutterBinding.ensureInitialized();
+      newsDao.cleanDatabase();
       await newsDao.insertNews(dto);
 
       List<NewsItemsEntityData> news = await newsDao.getNews();
@@ -68,8 +66,6 @@ void main() {
       List<NewsItemsEntityData> updatedNews = await newsDao.getNews();
       expect(updatedNews.length, 1);
       expect(updatedNews[0].trailText, 'Hello World');
-       newsDao.cleanDatabase();
     });
-
   });
 }

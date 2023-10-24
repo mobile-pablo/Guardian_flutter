@@ -45,23 +45,27 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
       .go();
 
   @override
-  Future<void> updateNews(NewsItemDTO news) => (update(newsItemsEntity).replace(
-        NewsItemsEntityCompanion.insert(
-          id: news.id,
-          type: news.type,
-          sectionId: news.sectionId,
-          sectionName: news.sectionName,
-          webPublicationDate: news.webPublicationDate,
-          webTitle: news.webTitle,
-          webUrl: news.webUrl,
-          apiUrl: news.apiUrl,
-          isHosted: news.isHosted,
-          pillarId: news.pillarId,
-          pillarName: news.pillarName,
-          thumbnail: news.thumbnail,
-          trailText: news.trailText,
-        ),
-      ));
+  Future<int> updateNews(NewsItemDTO news) async {
+    return (update(newsItemsEntity)
+          ..where(($NewsItemsEntityTable tbl) => tbl.id.equals(news.id)))
+        .write(
+      NewsItemsEntityData(
+        id: news.id,
+        type: news.type,
+        sectionId: news.sectionId,
+        sectionName: news.sectionName,
+        webPublicationDate: news.webPublicationDate,
+        webTitle: news.webTitle,
+        webUrl: news.webUrl,
+        apiUrl: news.apiUrl,
+        isHosted: news.isHosted,
+        pillarId: news.pillarId,
+        pillarName: news.pillarName,
+        thumbnail: news.thumbnail,
+        trailText: news.trailText,
+      ),
+    );
+  }
 
   @override
   void cleanDatabase() {
