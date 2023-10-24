@@ -48,7 +48,7 @@ void main() {
 
       expect(news.length, 1);
 
-      await newsDao.removeNews(dto.id);
+      await newsDao.removeNews(dto);
       expect(news.length, 0);
       await newsDao.cleanDatabase();
     });
