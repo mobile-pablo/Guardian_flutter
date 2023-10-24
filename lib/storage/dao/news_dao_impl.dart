@@ -68,12 +68,11 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
   }
 
   @override
-  void cleanDatabase() {
-    db.delete(newsItemsEntity).go();
+  Future<void> cleanDatabase() async {
+       final tables = db.allTables.toList().reversed;
+    for (final table in tables) {
+      await delete(table).go();
+    }
   }
 
-  @override
-  void closeDatabase() {
-    db.close();
-  }
 }

@@ -36,6 +36,7 @@ void main() {
 
       List<NewsItemsEntityData> news = await newsDao.getNews();
       expect(news.length, 1);
+      await newsDao.cleanDatabase();
     });
 
     test('News Dao, News are removed', () async {
@@ -49,6 +50,7 @@ void main() {
 
       await newsDao.removeNews(dto.id);
       expect(news.length, 0);
+      await newsDao.cleanDatabase();
     });
 
     test('News Dao, News are updated', () async {
@@ -66,6 +68,7 @@ void main() {
       List<NewsItemsEntityData> updatedNews = await newsDao.getNews();
       expect(updatedNews.length, 1);
       expect(updatedNews[0].trailText, 'Hello World');
+      await newsDao.cleanDatabase();
     });
   });
 }

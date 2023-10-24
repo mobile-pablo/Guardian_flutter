@@ -27,22 +27,22 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
   @override
   Future<void> insertNews(NewsItemDTO news) =>
       into(newsItemsEntity).insertReturning(
-            NewsItemsEntityCompanion.insert(
-              id: news.id,
-              type: news.type,
-              sectionId: news.sectionId,
-              sectionName: news.sectionName,
-              webPublicationDate: news.webPublicationDate,
-              webTitle: news.webTitle,
-              webUrl: news.webUrl,
-              apiUrl: news.apiUrl,
-              isHosted: news.isHosted,
-              pillarId: news.pillarId,
-              pillarName: news.pillarName,
-              thumbnail: news.thumbnail,
-              trailText: news.trailText,
-            ),
-          );
+        NewsItemsEntityCompanion.insert(
+          id: news.id,
+          type: news.type,
+          sectionId: news.sectionId,
+          sectionName: news.sectionName,
+          webPublicationDate: news.webPublicationDate,
+          webTitle: news.webTitle,
+          webUrl: news.webUrl,
+          apiUrl: news.apiUrl,
+          isHosted: news.isHosted,
+          pillarId: news.pillarId,
+          pillarName: news.pillarName,
+          thumbnail: news.thumbnail,
+          trailText: news.trailText,
+        ),
+      );
 
   @override
   Future<void> removeNews(String newsId) => (delete(newsItemsEntity)
@@ -73,13 +73,12 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
   }
 
   @override
-  void cleanDatabase() {
-    _db.delete(_db.newsItemsEntity).go();
-    _db = MockAppDatabase(NativeDatabase.memory());
-  }
+  Future<void> cleanDatabase() async {
+    final tables = _db.allTables.toList().reversed;
+    for (final table in tables) {
+      await delete(table).go();
+    }
 
-  @override
-  void closeDatabase() {
-    _db.close();
+    _db = MockAppDatabase(NativeDatabase.memory());
   }
 }
