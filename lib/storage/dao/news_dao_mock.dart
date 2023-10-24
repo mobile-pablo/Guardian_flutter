@@ -74,8 +74,9 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
 
   @override
   Future<void> cleanDatabase() async {
-    final tables = _db.allTables.toList().reversed;
-    for (final table in tables) {
+    final Iterable<TableInfo<Table, Object?>> tables =
+        _db.allTables.toList().reversed;
+    for (final TableInfo<Table, Object?> table in tables) {
       await delete(table).go();
     }
 

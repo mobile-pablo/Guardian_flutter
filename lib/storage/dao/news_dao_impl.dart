@@ -69,10 +69,10 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
 
   @override
   Future<void> cleanDatabase() async {
-       final tables = db.allTables.toList().reversed;
-    for (final table in tables) {
+    final Iterable<TableInfo<Table, Object?>> tables =
+        db.allTables.toList().reversed;
+    for (final TableInfo<Table, Object?> table in tables) {
       await delete(table).go();
     }
   }
-
 }
