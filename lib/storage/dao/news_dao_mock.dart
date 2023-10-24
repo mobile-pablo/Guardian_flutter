@@ -17,7 +17,7 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
   late MockAppDatabase _db;
 
   NewsDaoMock(super.attachedDatabase) {
-    openDatabase();
+    _db = MockAppDatabase(NativeDatabase.memory());
   }
 
   @override
@@ -70,8 +70,7 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
           ));
 
   @override
-  void openDatabase() {
-    _db = MockAppDatabase(NativeDatabase.memory());
+  void cleanDatabase() {
     _db.delete(_db.newsItemsEntity).go();
   }
 

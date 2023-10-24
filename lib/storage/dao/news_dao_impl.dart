@@ -12,10 +12,7 @@ part 'news_dao_impl.g.dart';
 class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
     with _$NewsDaoImplMixin
     implements NewsDao {
-  AppDatabase db;
-  NewsDaoImpl(this.db) : super(db) {
-    openDatabase();
-  }
+  NewsDaoImpl(AppDatabase db) : super(db);
 
   @override
   Future<List<NewsItemsEntityData>> getNews() {
@@ -67,8 +64,8 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
       ));
 
   @override
-  void openDatabase() {
-    db = AppDatabase();
+  void cleanDatabase() {
+    db.delete(newsItemsEntity).go();
   }
 
   @override

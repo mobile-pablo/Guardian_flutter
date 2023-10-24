@@ -31,7 +31,7 @@ void main() {
   });
 
   setUp(() async {
-    newsDao.openDatabase();
+    newsDao.cleanDatabase();
     cleanCache();
     TestWidgetsFlutterBinding.ensureInitialized();
   });
