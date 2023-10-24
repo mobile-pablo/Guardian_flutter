@@ -45,8 +45,8 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
       );
 
   @override
-  Future<void> removeNews(String newsId) => (delete(newsItemsEntity)
-        ..where(($NewsItemsEntityTable t) => t.id.equals(newsId)))
+  Future<int> removeNews(NewsItemDTO news) => (delete(newsItemsEntity)
+        ..where(($NewsItemsEntityTable t) => t.id.equals(news.id)))
       .go();
 
   @override
