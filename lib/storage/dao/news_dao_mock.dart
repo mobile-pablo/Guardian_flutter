@@ -72,6 +72,7 @@ class NewsDaoMock extends DatabaseAccessor<MockAppDatabase>
   @override
   void cleanDatabase() {
     _db.delete(_db.newsItemsEntity).go();
+    _db = MockAppDatabase(NativeDatabase.memory());
   }
 
   @override
