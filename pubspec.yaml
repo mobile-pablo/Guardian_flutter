@@ -46,6 +46,7 @@ dependencies:
   equatable: ^2.0.5
   mocktail: ^1.0.1
   flutter_cache_manager: ^3.3.1
+  firebase_core: ^2.19.0
 
 dev_dependencies:
   integration_test:
@@ -65,6 +66,7 @@ dev_dependencies:
   bloc_test: ^9.1.4
   test: ^1.24.3
   mockito: ^5.4.2
+
 
 
 flutter:
