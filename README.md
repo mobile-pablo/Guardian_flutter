@@ -14,5 +14,18 @@ Small news app based on flutter
 * Freezed
 * Equatable
 * Auto Mappr
-* Tests ( Unit + Widget + Integration)
+* Tests | Coverage  	████████░░ 80% 
+
+    * Mocktail
+    * Mockito
+    * Bloc Test
+    * Drift
+    
 * Bitrise CI/CD
+    * CI (primary workflow) with integration, widget and unit tests
+    * CD (staging workflow) with deploy to Firebase App Distribution
+    * CD (deploy workflow) with deploy to Google App Store
+* Github Actions
+    * Delete Branch
+    * Lint
+    * Mark stale issues
