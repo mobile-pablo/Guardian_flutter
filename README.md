@@ -1,9 +1,8 @@
-# Guardian  [![Master](https://app.bitrise.io/app/52e1a8d8-90a3-4a04-b253-374292af1e04/status.svg?token=S7UQKT5ZA8F2slIDlUjTLA&branch=master)](https://app.bitrise.io/app/52e1a8d8-90a3-4a04-b253-374292af1e04) 
-
+# 📰​ Guardian  [![Master](https://app.bitrise.io/app/52e1a8d8-90a3-4a04-b253-374292af1e04/status.svg?token=S7UQKT5ZA8F2slIDlUjTLA&branch=master)](https://app.bitrise.io/app/52e1a8d8-90a3-4a04-b253-374292af1e04) <a href="https://github.com/mobile-pablo/Guardian_flutter/blob/master/LICENSE"><img src="https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square"/></a>
 
 Small news app based on flutter
 
-## Tech stack
+## 🛠️​ Tech stack
 * <h4>Drift </h4>
 * <h4>Hooks</h4>
 * <h4>Retrofit + Dio</h4>
@@ -31,3 +30,24 @@ Small news app based on flutter
     * Delete Branch
     * Lint
     * Mark stale issues
+
+### 🚨​ How to run
+    
+To build and run this project:
+
+1. Get Flutter [here](https://flutter.dev) if you don't already have it. Configure environment.
+2. Clone this repository.
+3. `cd` into the repo folder.
+4. Run `flutter build` to build the app.
+
+(Please note that a Mac with XCode is required to build for iOS)
+
+
+###  📸​ Images
+    
+* <b>CI</b> <i>(primary)</i>
+    <div> <img  src="assets/images/readme_primary.png" width="100%"  /> </div>
+
+* <b>CD</b> <i>(staging)</i>
+
+    <div> <img  src="assets/images/readme_staging.png" width="100%"  /> </div>
