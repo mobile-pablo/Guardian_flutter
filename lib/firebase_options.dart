@@ -66,7 +66,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     storageBucket: 'guardian-3348e.appspot.com',
-    iosBundleId: 'com.example.flutterDrift1',
+    iosBundleId: 'com.mobilepablo.flutterDrift1',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -75,6 +75,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     storageBucket: 'guardian-3348e.appspot.com',
-    iosBundleId: 'com.example.flutterDrift1.RunnerTests',
+    iosBundleId: 'com.mobilepablo.flutterDrift1.RunnerTests',
   );
 }
