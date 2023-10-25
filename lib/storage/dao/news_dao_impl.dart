@@ -40,26 +40,39 @@ class NewsDaoImpl extends DatabaseAccessor<AppDatabase>
       );
 
   @override
-  Future<void> removeNews(NewsItemDTO news) => (delete(newsItemsEntity)
+  Future<int> removeNews(NewsItemDTO news) => (delete(newsItemsEntity)
         ..where(($NewsItemsEntityTable t) => t.id.equals(news.id)))
       .go();
 
   @override
-  Future<void> updateNews(NewsItemDTO news) => (update(newsItemsEntity).replace(
-        NewsItemsEntityCompanion.insert(
-          id: news.id,
-          type: news.type,
-          sectionId: news.sectionId,
-          sectionName: news.sectionName,
-          webPublicationDate: news.webPublicationDate,
-          webTitle: news.webTitle,
-          webUrl: news.webUrl,
-          apiUrl: news.apiUrl,
-          isHosted: news.isHosted,
-          pillarId: news.pillarId,
-          pillarName: news.pillarName,
-          thumbnail: news.thumbnail,
-          trailText: news.trailText,
-        ),
-      ));
+  Future<int> updateNews(NewsItemDTO news) async {
+    return (update(newsItemsEntity)
+          ..where(($NewsItemsEntityTable tbl) => tbl.id.equals(news.id)))
+        .write(
+      NewsItemsEntityData(
+        id: news.id,
+        type: news.type,
+        sectionId: news.sectionId,
+        sectionName: news.sectionName,
+        webPublicationDate: news.webPublicationDate,
+        webTitle: news.webTitle,
+        webUrl: news.webUrl,
+        apiUrl: news.apiUrl,
+        isHosted: news.isHosted,
+        pillarId: news.pillarId,
+        pillarName: news.pillarName,
+        thumbnail: news.thumbnail,
+        trailText: news.trailText,
+      ),
+    );
+  }
+
+  @override
+  Future<void> cleanDatabase() async {
+    final Iterable<TableInfo<Table, Object?>> tables =
+        db.allTables.toList().reversed;
+    for (final TableInfo<Table, Object?> table in tables) {
+      await delete(table).go();
+    }
+  }
 }

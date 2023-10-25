@@ -6,7 +6,9 @@ abstract class NewsDao {
 
   Future<void> insertNews(NewsItemDTO news);
 
-  Future<void> updateNews(NewsItemDTO news);
+  Future<int> updateNews(NewsItemDTO news);
 
-  Future<void> removeNews(NewsItemDTO news);
+  Future<int> removeNews(NewsItemDTO news);
+  
+  Future<void> cleanDatabase();
 }

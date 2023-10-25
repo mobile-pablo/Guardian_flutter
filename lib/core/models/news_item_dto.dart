@@ -24,4 +24,20 @@ class NewsItemDTO with _$NewsItemDTO {
 
   factory NewsItemDTO.fromJson(Map<String, dynamic> json) =>
       _$NewsItemDTOFromJson(json);
+
+  factory NewsItemDTO.empty() => const NewsItemDTO(
+        id: '',
+        type: '',
+        sectionId: '',
+        sectionName: '',
+        webPublicationDate: '',
+        webTitle: '',
+        webUrl: '',
+        apiUrl: '',
+        isHosted: false,
+        pillarId: '',
+        pillarName: '',
+        thumbnail: '',
+        trailText: '',
+      );
 }
