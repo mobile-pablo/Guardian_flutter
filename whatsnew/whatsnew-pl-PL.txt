@@ -1,0 +1,7 @@
+
+## 1.0.0
+ - Stworzenie aplikacji z podstawowym designem i czystą architekturą
+ - Dodanie unit testy
+ - Dodanie integracyjne testy
+ - Dodanie widgetów testy
+ - Dodanie CI/CD przez Bitrise
