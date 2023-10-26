@@ -1,0 +1,6 @@
+## 1.0.0
+ - Create application with basic design and clean architecture
+ - Create unit test 
+ - Create integration test 
+ - Create widget tests
+ - Add CI/CD via Bitrise
