@@ -45,7 +45,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyDt234Tl0on09iH2sbfMMxBQlj0DMlX4w4',
-    appId: '1:449556113823:web:39b879a9924f7ceac1b5aa',
+    appId: '1:449556113823:web:b9beea0ea8f211f9c1b5aa',
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     authDomain: 'guardian-3348e.firebaseapp.com',
@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyC0oTUiUcKR3JSDqytbWz4GTvuLeHMttiA',
-    appId: '1:449556113823:android:54e38c7dd8fe2fd8c1b5aa',
+    appId: '1:449556113823:android:a80cd96a264b00c3c1b5aa',
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     storageBucket: 'guardian-3348e.appspot.com',
@@ -62,7 +62,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCb7O5Kp1WHnZRWXgkKKBS0MM5LSbaWCts',
-    appId: '1:449556113823:ios:a6574e6411ad3734c1b5aa',
+    appId: '1:449556113823:ios:4fd86ba551a2923ec1b5aa',
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     storageBucket: 'guardian-3348e.appspot.com',
@@ -71,7 +71,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCb7O5Kp1WHnZRWXgkKKBS0MM5LSbaWCts',
-    appId: '1:449556113823:ios:a48b262df4fda825c1b5aa',
+    appId: '1:449556113823:ios:18720539c43794adc1b5aa',
     messagingSenderId: '449556113823',
     projectId: 'guardian-3348e',
     storageBucket: 'guardian-3348e.appspot.com',
