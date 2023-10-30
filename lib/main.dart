@@ -21,6 +21,7 @@ class MyApp extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: 'News of Guardian - Clone',
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
     );
