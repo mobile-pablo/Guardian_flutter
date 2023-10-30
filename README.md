@@ -44,10 +44,25 @@ To build and run this project:
 
 
 ###  📸​ Images
-    
-* <b>CI</b> <i>(primary)</i>
-    <div> <img  src="assets/images/readme_primary.png" width="100%"  /> </div>
 
-* <b>CD</b> <i>(staging)</i>
+   * CI/CD
+        * <b>CI</b> <i>(primary)</i>
+            <div> <img  src="assets/images/readme_primary.png" width="100%"  /> </div>
 
-    <div> <img  src="assets/images/readme_staging.png" width="100%"  /> </div>
+        * <b>CD</b> <i>(staging)</i>
+
+            <div> <img  src="assets/images/readme_staging.png" width="100%"  /> </div>
+
+        * <b>CD</b> <i>(deploy)</i>
+
+            <div> <img  src="assets/images/readme_deploy.png" width="100%"  /> </div>
+
+
+   * Preview
+        * <b>Home Screen</b> <i>views</i>
+
+            <div> <img  src="assets/images/readme_open_home.png" width="100%"/> </div>
+
+        * <b>Home Screen</b> <i>web view</i>
+
+            <div> <img  src="assets/images/readme_open_link.png" width="100%"/> </div>
