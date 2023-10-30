@@ -23,7 +23,7 @@ class MyApp extends HookWidget {
     return MaterialApp.router(
       title: 'News of Guardian - Clone',
       routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+      routeInformationParser: _appRouter.defaultRouteParser()
     );
   }
 }
