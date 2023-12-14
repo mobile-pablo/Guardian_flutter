@@ -1,21 +1,23 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:guardian_flutter/core/models/news_item_dto.dart';
 import 'package:guardian_flutter/di/injection_container.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_bloc.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_event.dart';
 import 'package:guardian_flutter/feature/home/bloc/remote/home_remote_state.dart';
 import 'package:guardian_flutter/feature/home/widgets/news_item_widget.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:guardian_flutter/feature/home/wrapper/news_item_wrapper.dart';
 import 'package:injectable/injectable.dart';
 
 @RoutePage()
 @injectable
 class HomeScreen extends HookWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +42,29 @@ class HomeScreen extends HookWidget {
 
   AppBar _buildAppBar(BuildContext context) {
     return AppBar(
-      title: const Text(
-        'Home Screen',
-        style: TextStyle(
-          color: Colors.black,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.blue.shade700,
+              Colors.cyan.shade300,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
         ),
+      ),
+      title: TextField(
+        controller: _searchController,
+        style: const TextStyle(color: Colors.white),
+        decoration: const InputDecoration(
+          hintText: 'Search...',
+          hintStyle: TextStyle(color: Colors.white54),
+          border: InputBorder.none,
+        ),
+        onChanged: (String value) {
+          // Search
+        },
       ),
     );
   }
